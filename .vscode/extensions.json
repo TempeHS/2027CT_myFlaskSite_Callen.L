@@ -2,6 +2,7 @@
   "recommendations": [
         "bierner.markdown-mermaid",
         "bierner.markdown-preview-github-styles",
+        "ecmel.vscode-html-css",
         "esbenp.prettier-vscode",
         "GitHub.codespaces",
         "mathematic.vscode-pdf",
