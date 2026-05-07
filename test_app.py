@@ -40,10 +40,10 @@ def test_home_page_has_bootstrap(client):
 # ============ CONTACT PAGE TESTS ============
 
 
-# def test_contact_page_loads(client):
-#    """Test that the contact page returns status 200."""
-#    response = client.get("/contact")
-#    assert response.status_code == 200
+def test_contact_page_loads(client):
+    """Test that the contact page returns status 200."""
+    response = client.get("/contact")
+    assert response.status_code == 200
 
 
 # def test_contact_page_has_form(client):
