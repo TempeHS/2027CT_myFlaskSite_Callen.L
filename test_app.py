@@ -46,7 +46,7 @@ def test_contact_page_loads(client):
     assert response.status_code == 200
 
 
-# def test_contact_page_has_form(client):
-#    """Test that the contact page has a form."""
-#    response = client.get("/contact")
-#    assert b"<form" in response.data
+def test_contact_page_has_form(client):
+    """Test that the contact page has a form."""
+    response = client.get("/contact")
+    assert b"<form" in response.data
