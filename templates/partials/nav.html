@@ -1,8 +1,9 @@
-<!-- Navigation Bar -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
   <div class="container">
-    <a class="navbar-brand" href="{{ url_for('home') }}">My Flask Site</a>
-    <button
+  <a class="navbar-brand" href="#">
+    <img src="example.png" width="30" height="30" class="d-inline-block align-top" alt="">
+    Brawlable
+  </a>    <button
       class="navbar-toggler"
       type="button"
       data-bs-toggle="collapse"
@@ -13,23 +14,70 @@
     >
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item">
-          <a
-            class="nav-link {% if request.endpoint == 'home' %}active{% endif %}"
-            href="{{ url_for('home') }}"
-            >Home</a
-          >
-        </li>
-        <li class="nav-item">
-          <a
-            class="nav-link {% if request.endpoint == 'contact' %}active{% endif %}"
-            href="{{ url_for('contact') }}"
-            >Contact</a
-          >
-        </li>
-      </ul>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <!-- BRAWLERS -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        Brawlers
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Rare</a></li>
+                        <li><a class="dropdown-item" href="#">Super Rare</a></li>
+                        <li><a class="dropdown-item" href="#">Epic</a></li>
+                        <li><a class="dropdown-item" href="#">Mythic</a></li>
+                        <li><a class="dropdown-item" href="#">Legendary</a></li>
+                        <li><a class="dropdown-item" href="#">Ultra Legendary</a></li>
+                    </ul>
+                </li>
+
+                <!-- GAMEMODES -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        Gamemodes
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Showdown</a></li>
+                        <li><a class="dropdown-item" href="#">Bounty</a></li>
+                        <li><a class="dropdown-item" href="#">Heist</a></li>
+                        <li><a class="dropdown-item" href="#">Brawl Ball</a></li>
+                        <li><a class="dropdown-item" href="#">Wipeout</a></li>
+                        <li><a class="dropdown-item" href="#">Hot Zone</a></li>
+                        <li><a class="dropdown-item" href="#">Knockout</a></li>
+                        <li><a class="dropdown-item" href="#">Gem Grab</a></li>
+                        <li>
+                            <a class="dropdown-item" href="#">Limited Time Gamemodes</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <!-- RESOURCES -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        Resources
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Tutorials</a></li>
+                        <li><a class="dropdown-item" href="#">Guides</a></li>
+                        <li><a class="dropdown-item" href="#">Tips & Tricks</a></li>
+                    </ul>
+                </li>
+
+                <!-- MECHANICS -->
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Mechanics</a>
+                </li>
+            </ul>
+
+            <!-- Search Form on the right -->
+            <form class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+                <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+        </div>
     </div>
   </div>
 </nav>
