@@ -39,8 +39,10 @@ command to run if program contains helper info
 
 Contributors names and contact info
 
-ex. Mr Jones
-ex. [@benpaddlejones](https://github.com/benpaddlejones)
+Mr Jones
+[@benpaddlejones](https://github.com/benpaddlejones).
+Callen Lin
+[@CallenLin](https://github.com/callenlin)
 
 ## Version History
 
@@ -52,7 +54,7 @@ ex. [@benpaddlejones](https://github.com/benpaddlejones)
 
 ## License
 
-This project is licensed under the [NAME HERE] License - see the LICENSE.md file for details
+This project is licensed under the GPLv3 License - see the LICENSE.md file for details
 
 ## Acknowledgments
 
@@ -60,3 +62,9 @@ Inspiration, code snippets, etc.
 
 - [Github md syntax](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
 - [TempeHS Python Flask template](https://github.com/TempeHS/TempeHS_Python-Flask_DevContainer)
+
+## Older Repository Versions
+
+- [CallenLin Amazing Website Project](https://github.com/CallenLin/2027CT_amazingWebsiteProject_Callen.L)
+- [CallenLin My Website Task](https://github.com/CallenLin/2027CT_myWebsiteTask_Callen.L)
+- [CallenLin My Website Project](https://github.com/CallenLin/2027CT_myWebsiteProject_Callen.L)
