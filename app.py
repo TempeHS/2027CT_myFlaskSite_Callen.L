@@ -1,5 +1,5 @@
 import re
-from flask import Flask, render_template, url_for, request
+from flask import Flask, render_template, url_for, request, redirect
 
 app = Flask(__name__)
 
@@ -15,7 +15,7 @@ def contact():
     return render_template("contact.html")
 
 
-# Footer Pages Route
+# More Primary Pages Route
 @app.route("/about")
 def about():
     return render_template("pages/about.html")
@@ -41,7 +41,43 @@ def attribution():
     return render_template("pages/attribution.html")
 
 
-# Search Website
+# Brawler Pages
+@app.route("/brawlers")
+def brawlers():
+    return render_template("brawlers.html")
+
+
+@app.route("/brawlers/rare")
+def rare():
+    return render_template("brawlers/rare.html")
+
+
+@app.route("/brawlers/super-rare")
+def super_rare():
+    return render_template("brawlers/super-rare.html")
+
+
+@app.route("/brawlers/epic")
+def epic():
+    return render_template("brawlers/epic.html")
+
+
+@app.route("/brawlers/mythic")
+def mythic():
+    return render_template("brawlers/mythic.html")
+
+
+@app.route("/brawlers/legendary")
+def legendary():
+    return render_template("brawlers/legendary.html")
+
+
+@app.route("/brawlers/ultra-legendary")
+def ultra_legendary():
+    return render_template("brawlers/ultra-legendary.html")
+
+
+# Searching Website
 MAX_SEARCH_QUERY_LEN = 80
 DISALLOWED_SEARCH_CHARS = re.compile(r"[^a-zA-Z0-9\s_\-']")
 
@@ -54,25 +90,25 @@ def sanitize_search_query(raw_query: str) -> str:
 
 SEARCH_PAGES = [
     {
-        "title": "Home",
+        "title": "🏡 Home",
         "endpoint": "home",
-        "description": "Main landing page.",
+        "description": "The homepage of Brawlable!",
         "keywords": ["index", "main", "start"],
     },
     {
-        "title": "Contact",
+        "title": "📧 Contact",
         "endpoint": "contact",
         "description": "How to contact us.",
         "keywords": ["email", "message", "help"],
     },
     {
-        "title": "About",
+        "title": "💁 About",
         "endpoint": "about",
         "description": "About this website.",
         "keywords": ["info", "company", "team"],
     },
     {
-        "title": "Privacy",
+        "title": "🔒 Privacy",
         "endpoint": "privacy",
         "description": "Privacy policy details.",
         "keywords": ["policy", "data", "security"],
@@ -105,6 +141,10 @@ def search():
 
     if query:
         q = query.lower()
+        for page in SEARCH_PAGES:
+            if q == page["title"].lower() or q == page["endpoint"].lower():
+                return redirect(url_for(page["endpoint"]))
+
         for page in SEARCH_PAGES:
             searchable_text = " ".join(
                 [page["title"], page["description"], " ".join(page["keywords"])]
