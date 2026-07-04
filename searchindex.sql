@@ -1,0 +1,7 @@
+CREATE TABLE search_index (
+    id SERIAL PRIMARY KEY,
+    document_id INT NOT NULL,
+    content TEXT NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+)
