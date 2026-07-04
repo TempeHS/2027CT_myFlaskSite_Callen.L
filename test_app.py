@@ -22,7 +22,7 @@ def test_home_page_loads(client):
 def test_home_page_has_title(client):
     """Test that the home page contains our site title."""
     response = client.get("/")
-    assert b"My Flask Site" in response.data
+    assert b"Brawlable" in response.data
 
 
 def test_home_page_has_nav(client):
