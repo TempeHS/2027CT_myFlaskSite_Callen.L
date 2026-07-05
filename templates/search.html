@@ -18,29 +18,6 @@
           <button class="btn btn-primary" type="submit">Search</button>
         </div>
       </form>
-      <!--
-      <div class="card mb-3">
-        <div class="card-header">Quick Links</div>
-        <div class="list-group list-group-flush">
-          <a
-            href="{{ url_for('home') }}"
-            class="list-group-item list-group-item-action"
-            >🏠 Home</a
-          >
-          <a
-            href="{{ url_for('about') }}"
-            class="list-group-item list-group-item-action"
-            >ℹ️ About</a
-          >
-          <a
-            href="{{ url_for('contact') }}"
-            class="list-group-item list-group-item-action"
-            >📧 Contact</a
-          >
-        </div>
-      </div>
-      -->
-
       {% if query %} {% if results %}
       <div class="card">
         <div class="card-header">Search Results</div>
@@ -57,7 +34,30 @@
         </div>
       </div>
       {% else %}
-      <div class="alert alert-warning">No results found for "{{ query }}".</div>
+      <div class="alert alert-warning">
+        No results found for "{{ query }}". <br />
+      </div>
+      <div class="card mb-3">
+        <div class="card-header">🤔 Suggested Results?</div>
+        <div class="list-group list-group-flush">
+          <a
+            href="{{ url_for('home') }}"
+            class="list-group-item list-group-item-action"
+            >🏠 Homepage</a
+          >
+          <a
+            href="{{ url_for('about') }}"
+            class="list-group-item list-group-item-action"
+            >ℹ️ About Us</a
+          >
+          <a
+            href="{{ url_for('contact') }}"
+            class="list-group-item list-group-item-action"
+            >📧 Contact</a
+          >
+        </div>
+      </div>
+
       {% endif %} {% endif %}
     </div>
   </div>
