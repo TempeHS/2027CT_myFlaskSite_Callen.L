@@ -14,4 +14,28 @@ endblock %} {% block content %}
   </div>
 </div>
 
+<div class="container py-5">
+  <div class="mb-5">
+    <h5><b>Brawlable Site Attributions</b></h5>
+    <hr />
+  </div>
+
+  <div class="row g-5">
+    <div class="col-md-4">
+      <h5 class="fw-semibold mb-3">Working in Progress</h5>
+      <ul class="list-unstyled">
+        <li class="mb-2">
+          <a href="{{ url_for('home') }}">Working in Progress</a>
+        </li>
+        <li class="mb-2">
+          <a href="{{ url_for('about') }}">Working in Progress</a>
+        </li>
+        <li class="mb-2">
+          <a href="{{ url_for('contact') }}">Working in Progress</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
 {% endblock %}
