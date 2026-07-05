@@ -10,6 +10,150 @@ endblock %} {% block content %}
       <a href="/" class="btn btn-primary text-white text-decoration-none px-3">
         Let's head back to home
       </a>
+      <p>Or maybe take a look at the progress?</p>
+    </div>
+  </div>
+</div>
+
+<div class="container py-5">
+  <div class="mb-5">
+    <h5><b>Brawlable Site Map</b></h5>
+    <hr />
+  </div>
+
+  <div class="row g-5">
+    <div class="col-md-4">
+      <h5 class="fw-semibold mb-3">Main Pages</h5>
+      <ul class="list-unstyled">
+        <li class="mb-2">
+          <a href="{{ url_for('home') }}">Home</a>
+        </li>
+        <li class="mb-2">
+          <a href="{{ url_for('about') }}">About</a>
+        </li>
+        <li class="mb-2">
+          <a href="{{ url_for('contact') }}">Contact</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="col-md-4">
+      <h5 class="fw-semibold mb-3">Brawlers</h5>
+      <ul class="list-unstyled">
+        <li class="mb-2"><a href="#">Shelly</a></li>
+        <li class="mb-2"><a href="#">Nita</a></li>
+        <li class="mb-2"><a href="#">Colt</a></li>
+        <li class="mb-2"><a href="#">Bull</a></li>
+      </ul>
+    </div>
+
+    <div class="col-md-4">
+      <h5 class="fw-semibold mb-3">Resources</h5>
+      <ul class="list-unstyled">
+        <li class="mb-2"><a href="#">Guides</a></li>
+        <li class="mb-2"><a href="#">News</a></li>
+        <li class="mb-2"><a href="#">FAQ</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="container py-5">
+  <div class="mb-5">
+    <h4>Brawlers</h4>
+    <hr />
+  </div>
+
+  <div class="row g-5">
+    <div class="col-md-4">
+      <h5 class="fw-semibold mb-3">Brawler Rarity Categories</h5>
+      <ul class="list-unstyled">
+        <li class="mb-2">
+          <a
+            href="#"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-decoration-none text-primary"
+            >Starter Brawlers</a
+          >
+        </li>
+        <li class="mb-2">
+          <a
+            href="{{ url_for('rare') }}"
+            rel="noopener noreferrer"
+            class="text-decoration-none text-primary"
+            >Rare Brawlers</a
+          >
+        </li>
+        <li class="mb-2">
+          <a
+            href="{{ url_for('super_rare') }}"
+            rel="noopener noreferrer"
+            class="text-decoration-none text-primary"
+            >Super Rare Brawlers</a
+          >
+        </li>
+        <li class="mb-2">
+          <a
+            href="{{ url_for('epic') }}"
+            rel="noopener noreferrer"
+            class="text-decoration-none text-primary"
+            >Epic Brawler</a
+          >
+        </li>
+
+        <li class="mb-2">
+          <a
+            href="{{ url_for('mythic') }}"
+            rel="noopener noreferrer"
+            class="text-decoration-none text-primary"
+            >Mythic Brawlers</a
+          >
+        </li>
+        <li class="mb-2">
+          <a
+            href="{{ url_for('legendary') }}"
+            rel="noopener noreferrer"
+            class="text-decoration-none text-primary"
+            >Legendary Brawler</a
+          >
+        </li>
+        <li class="mb-2">
+          <a
+            href="{{ url_for('ultra_legendary') }}"
+            rel="noopener noreferrer"
+            class="text-decoration-none text-primary"
+            >Ultra Legendary Brawler</a
+          >
+        </li>
+        <li class="mb-2">
+          <a
+            href="#"
+            rel="noopener noreferrer"
+            class="text-decoration-none text-primary"
+            >Limited Time Brawler</a
+          >
+        </li>
+      </ul>
+    </div>
+
+    <div class="col-md-4">
+      <h5 class="fw-semibold mb-3">Brawlers</h5>
+      <ul class="list-unstyled">
+        <li class="mb-2"><a href="#">Shelly</a></li>
+        <li class="mb-2"><a href="#">Nita</a></li>
+        <li class="mb-2"><a href="#">Colt</a></li>
+        <li class="mb-2"><a href="#">Bull</a></li>
+      </ul>
+    </div>
+
+    <div class="col-md-4">
+      <h5 class="fw-semibold mb-3">Resources</h5>
+      <ul class="list-unstyled">
+        <li class="mb-2"><a href="#">Guides</a></li>
+        <li class="mb-2"><a href="#">News</a></li>
+        <li class="mb-2"><a href="#">FAQ</a></li>
+      </ul>
     </div>
   </div>
 </div>
