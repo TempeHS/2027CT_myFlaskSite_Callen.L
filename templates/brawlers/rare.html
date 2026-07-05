@@ -1,0 +1,224 @@
+{% extends 'base.html' %} {% block title %}Working in Progress - Brawlable{%
+endblock %} {% block content %}
+<!-- Rest of page content -->
+<div class="container mt-5 m-4">
+  <h1>What rare brawler would you like to learn today?</h1>
+  <ul class="scroll-wheel h-100">
+      <li class="card-scroll">
+          <a href="#">
+              <img src="{{ url_for('static', filename='images/feature1.jpg') }}" alt="">
+              <p>Barley</p>
+          </a>
+      </li>
+
+      <li class="card-scroll">
+          <a href="#">
+              <img src="{{ url_for('static', filename='images/feature1.jpg') }}" alt="">
+              <p>Brock</p>
+          </a>
+      </li>
+
+      <li class="card-scroll">
+          <a href="#">
+              <img src="{{ url_for('static', filename='images/feature1.jpg') }}" alt="">
+              <p>Bull</p>
+          </a>
+      </li>
+
+      <li class="card-scroll">
+          <a href="#">
+              <img src="{{ url_for('static', filename='images/feature1.jpg') }}" alt="">
+              <p>Colt</p>
+          </a>
+      </li>
+
+      <li class="card-scroll">
+          <a href="#">
+              <img src="{{ url_for('static', filename='images/feature1.jpg') }}" alt="">
+              <p>El Primo</p>
+          </a>
+      </li>
+
+      <li class="card-scroll">
+          <a href="#">
+              <img src="{{ url_for('static', filename='images/feature1.jpg') }}" alt="">
+              <p>Nita</p>
+          </a>
+      </li>
+
+      <li class="card-scroll">
+          <a href="#">
+              <img src="{{ url_for('static', filename='images/feature1.jpg') }}" alt="">
+              <p>Poco</p>
+          </a>
+      </li>
+  </ul>
+</div>
+
+<!-- Feature Cards Section -->
+<section class="py-5">
+  <div class="container">
+    <div class="row">
+      <!-- Card 1 -->
+      <div class="col-md-4 mb-4">
+        <div class="card h-100">
+          <img
+            src="{{ url_for('static', filename='rare-brawler-images/barley_portrait.png') }}"
+            class="card-img-top"
+            alt="Feature 1"
+          />
+          <div class="card-body">
+            <h5 class="card-title">Barley</h5>
+            <p class="card-text">
+              Our platform is optimized for speed and reliability, ensuring a
+              seamless experience.
+            </p>
+            <a href="#" class="btn btn-primary">Learn More</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="col-md-4 mb-4">
+        <div class="card h-100">
+          <img
+            src="{{ url_for('static', filename='rare-brawler-images/brock_portrait.png') }}"
+            class="card-img-top"
+            alt="Feature 2"
+          />
+          <div class="card-body">
+            <h5 class="card-title">Brock</h5>
+            <p class="card-text">
+              Simple and intuitive interface designed with users in mind.
+            </p>
+            <a href="#" class="btn btn-primary">Learn More</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="col-md-4 mb-4">
+        <div class="card h-100">
+          <img
+            src="{{ url_for('static', filename='rare-brawler-images/bull_portrait.png') }}"
+            class="card-img-top"
+            alt="Feature 3"
+          />
+          <div class="card-body">
+            <h5 class="card-title">Bull</h5>
+            <p class="card-text">
+              Our dedicated team is here to help you anytime you need
+              assistance.
+            </p>
+            <a href="{{ url_for('contact') }}" class="btn btn-primary"
+              >Contact Us</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <!-- Card 1 -->
+      <div class="col-md-4 mb-4">
+        <div class="card h-100">
+          <img
+            src="{{ url_for('static', filename='rare-brawler-images/colt_portrait.png') }}"
+            class="card-img-top"
+            alt="Feature 1"
+          />
+          <div class="card-body">
+            <h5 class="card-title">Colt</h5>
+            <p class="card-text">
+              Our platform is optimized for speed and reliability, ensuring a
+              seamless experience.
+            </p>
+            <a href="#" class="btn btn-primary">Learn More</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="col-md-4 mb-4">
+        <div class="card h-100">
+          <img
+            src="{{ url_for('static', filename='images/feature2.jpg') }}"
+            class="card-img-top"
+            alt="Feature 2"
+          />
+          <div class="card-body">
+            <h5 class="card-title">El Primo</h5>
+            <p class="card-text">
+              Simple and intuitive interface designed with users in mind.
+            </p>
+            <a href="#" class="btn btn-primary">Learn More</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="col-md-4 mb-4">
+        <div class="card h-100">
+          <img
+            src="{{ url_for('static', filename='images/feature3.jpg') }}"
+            class="card-img-top"
+            alt="Feature 3"
+          />
+          <div class="card-body">
+            <h5 class="card-title">Nita</h5>
+            <p class="card-text">
+              Our dedicated team is here to help you anytime you need
+              assistance.
+            </p>
+            <a href="{{ url_for('contact') }}" class="btn btn-primary"
+              >Contact Us</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+    <div class="container">
+    <div class="row">
+      <!-- Card 1 -->
+      <div class="col-md-4 mb-4">
+        <div class="card h-100">
+          <img
+            src="{{ url_for('static', filename='images/feature1.jpg') }}"
+            class="card-img-top"
+            alt="Feature 1"
+          />
+          <div class="card-body">
+            <h5 class="card-title">Nita</h5>
+            <p class="card-text">
+              Our platform is optimized for speed and reliability, ensuring a
+              seamless experience.
+            </p>
+            <a href="#" class="btn btn-primary">Learn More</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="col-md-4 mb-4">
+        <div class="card h-100">
+          <img
+            src="{{ url_for('static', filename='images/feature2.jpg') }}"
+            class="card-img-top"
+            alt="Feature 2"
+          />
+          <div class="card-body">
+            <h5 class="card-title">Poco</h5>
+            <p class="card-text">
+              Simple and intuitive interface designed with users in mind.
+            </p>
+            <a href="#" class="btn btn-primary">Learn More</a>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}
