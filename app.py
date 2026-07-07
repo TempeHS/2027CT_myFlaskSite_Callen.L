@@ -77,6 +77,47 @@ def ultra_legendary():
     return render_template("brawlers/ultra-legendary.html")
 
 
+# Gamemode Pages
+@app.route("/gamemodes/bounty")
+def bounty():
+    return render_template("gamemodes/bounty.html")
+
+
+@app.route("/gamemodes/brawl-ball")
+def brawl_ball():
+    return render_template("gamemodes/brawl-ball.html")
+
+
+@app.route("/gamemodes/gem-grab")
+def gem_grab():
+    return render_template("gamemodes/gem-grab.html")
+
+
+@app.route("/gamemodes/heist")
+def heist():
+    return render_template("gamemodes/heist.html")
+
+
+@app.route("/gamemodes/hot-zone")
+def hot_zone():
+    return render_template("gamemodes/hot-zone.html")
+
+
+@app.route("/gamemodes/showdown")
+def showdown():
+    return render_template("gamemodes/showdown.html")
+
+
+@app.route("/gamemodes/knockout")
+def knockout():
+    return render_template("gamemodes/knockout.html")
+
+
+@app.route("/gamemodes/wipeout")
+def wipeout():
+    return render_template("gamemodes/wipeout.html")
+
+
 # Searching Website
 MAX_SEARCH_QUERY_LEN = 80
 DISALLOWED_SEARCH_CHARS = re.compile(r"[^a-zA-Z0-9\s_\-']")
