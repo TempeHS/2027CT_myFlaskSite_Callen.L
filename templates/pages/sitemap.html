@@ -156,6 +156,106 @@ endblock %} {% block content %}
       </ul>
     </div>
   </div>
-</div>
 
-{% endblock %}
+  <div class="container py-5">
+    <div class="mb-5">
+      <h4>Brawl Stars Gamemodes</h4>
+      <hr />
+    </div>
+
+    <div class="row g-5">
+      <div class="col-md-4">
+        <h5 class="fw-semibold mb-3">Trophy Gamemodes</h5>
+        <ul class="list-unstyled">
+          <li class="mb-2">
+            <a
+              href="{{ url_for('showdown') }}"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-decoration-none text-primary"
+              >Showdown</a
+            >
+          </li>
+          <li class="mb-2">
+            <a
+              href="{{ url_for('brawl_ball') }}"
+              rel="noopener noreferrer"
+              class="text-decoration-none text-primary"
+              >Brawl Ball</a
+            >
+          </li>
+          <li class="mb-2">
+            <a
+              href="{{ url_for('knockout') }}"
+              rel="noopener noreferrer"
+              class="text-decoration-none text-primary"
+              >Knockout</a
+            >
+          </li>
+          <li class="mb-2">
+            <a
+              href="{{ url_for('gem_grab') }}"
+              rel="noopener noreferrer"
+              class="text-decoration-none text-primary"
+              >Gem Grab</a
+            >
+          </li>
+
+          <li class="mb-2">
+            <a
+              href="{{ url_for('hot_zone') }}"
+              rel="noopener noreferrer"
+              class="text-decoration-none text-primary"
+              >Hot Zone</a
+            >
+          </li>
+          <li class="mb-2">
+            <a
+              href="{{ url_for('wipeout') }}"
+              rel="noopener noreferrer"
+              class="text-decoration-none text-primary"
+              >Wipeout</a
+            >
+          </li>
+          <li class="mb-2">
+            <a
+              href="{{ url_for('heist') }}"
+              rel="noopener noreferrer"
+              class="text-decoration-none text-primary"
+              >Heist</a
+            >
+          </li>
+          <li class="mb-2">
+            <a
+              href="{{ url_for('bounty') }}"
+              rel="noopener noreferrer"
+              class="text-decoration-none text-primary"
+              >Bounty</a
+            >
+          </li>
+        </ul>
+      </div>
+
+      <div class="col-md-4">
+        <h5 class="fw-semibold mb-3">Brawlers</h5>
+        <ul class="list-unstyled">
+          <li class="mb-2"><a href="#">Shelly</a></li>
+          <li class="mb-2"><a href="#">Nita</a></li>
+          <li class="mb-2"><a href="#">Colt</a></li>
+          <li class="mb-2"><a href="#">Bull</a></li>
+        </ul>
+      </div>
+
+      <div class="col-md-4">
+        <h5 class="fw-semibold mb-3">Resources</h5>
+        <ul class="list-unstyled">
+          <li class="mb-2"><a href="#">Guides</a></li>
+          <li class="mb-2"><a href="#">News</a></li>
+          <li class="mb-2"><a href="#">FAQ</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  {% endblock %}
+</div>
