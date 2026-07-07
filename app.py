@@ -1,5 +1,5 @@
 import re
-from flask import Flask, render_template, url_for, request, redirect
+from flask import Flask, render_template, url_for, request, redirect, abort
 
 app = Flask(__name__)
 
@@ -114,22 +114,114 @@ SEARCH_PAGES = [
         "keywords": ["policy", "data", "security"],
     },
     {
-        "title": "Support",
+        "title": "📧 Support",
         "endpoint": "support",
         "description": "Support and assistance.",
         "keywords": ["help", "faq", "assist"],
     },
     {
-        "title": "Sitemap",
+        "title": "🗺️ Sitemap",
         "endpoint": "sitemap_page",
         "description": "Website page map.",
         "keywords": ["pages", "map", "navigation"],
     },
     {
-        "title": "Attribution",
+        "title": "✍️ Attribution",
         "endpoint": "attribution",
         "description": "Credits and attributions.",
         "keywords": ["credits", "sources", "license"],
+    },
+    # Brawler Pages
+    {
+        "title": "🥊 Brawlers",
+        "endpoint": "brawlers",
+        "description": "All brawlers in Brawl Stars.",
+        "keywords": ["characters", "heroes", "fighters"],
+    },
+    {
+        "title": "🟢 Rare Brawlers",
+        "endpoint": "rare",
+        "description": "Rare rarity brawlers.",
+        "keywords": ["brawlers", "rare", "rarity"],
+    },
+    {
+        "title": "🔵 Super Rare Brawlers",
+        "endpoint": "super_rare",
+        "description": "Super Rare rarity brawlers.",
+        "keywords": ["brawlers", "super rare", "rarity"],
+    },
+    {
+        "title": "🟣 Epic Brawlers",
+        "endpoint": "epic",
+        "description": "Epic rarity brawlers.",
+        "keywords": ["brawlers", "epic", "rarity"],
+    },
+    {
+        "title": "🔴 Mythic Brawlers",
+        "endpoint": "mythic",
+        "description": "Mythic rarity brawlers.",
+        "keywords": ["brawlers", "mythic", "rarity"],
+    },
+    {
+        "title": "🟡 Legendary Brawlers",
+        "endpoint": "legendary",
+        "description": "Legendary rarity brawlers.",
+        "keywords": ["brawlers", "legendary", "rarity"],
+    },
+    {
+        "title": "👑 Ultra Legendary Brawlers",
+        "endpoint": "ultra_legendary",
+        "description": "Ultra Legendary rarity brawlers.",
+        "keywords": ["brawlers", "ultra legendary", "rarity"],
+    },
+    # Gamemode Pages
+    {
+        "title": "⭐️ Bounty",
+        "endpoint": "bounty",
+        "description": "Bounty game mode.",
+        "keywords": ["gamemode", "stars", "kills"],
+    },
+    {
+        "title": "⚽️ Brawl Ball",
+        "endpoint": "brawl_ball",
+        "description": "Brawl Ball game mode.",
+        "keywords": ["gamemode", "3v3", "5v5", "ball"],
+    },
+    {
+        "title": "💎 Gem Grab",
+        "endpoint": "gem_grab",
+        "description": "Gem Grab game mode.",
+        "keywords": ["gamemode", "gems", "grab", "3v3"],
+    },
+    {
+        "title": "💰 Heist",
+        "endpoint": "heist",
+        "description": "Heist game mode.",
+        "keywords": ["gamemode", "safe", "3v3"],
+    },
+    {
+        "title": "⭕️ Hot Zone",
+        "endpoint": "hot_zone",
+        "description": "Hot Zone game mode.",
+        "keywords": ["gamemode", "zone", "3v3"],
+    },
+    {
+        "title": "🧙‍♂️ Showdown",
+        "endpoint": "showdown",
+        "description": "Showdown game mode.",
+        "keywords": ["gamemode", "solo", "duo", "trio"],
+    },
+    {
+        "title": "🔫 Knockout",
+        "endpoint": "knockout",
+        "description": "Knockout game mode.",
+        "keywords": ["gamemode", "3v3", "team", "5v5"],
+    },
+    {
+        "title": "👥 Wipeout",
+        "endpoint": "wipeout",
+        "description": "Wipeout game mode.",
+        "keywords": ["gamemode", "team", "5v5"],
     },
 ]
 
@@ -169,4 +261,4 @@ def page_not_found(error):
 
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5000, debug=False)
+    app.run(host="0.0.0.0", port=5000, debug=True)
