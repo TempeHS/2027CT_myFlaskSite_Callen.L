@@ -56,6 +56,10 @@ Callen Lin
 
 This project is licensed under the GPLv3 License - see the LICENSE.md file for details
 
+## Achievements
+
+This repository hit the 100th commit this commit :D
+
 ## Acknowledgments
 
 Inspiration, code snippets, etc.
