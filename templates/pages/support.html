@@ -1,14 +1,20 @@
 {% extends 'base.html' %} {% block title %}Working in Progress - Brawlable{%
 endblock %} {% block content %}
-
+<head>
+  <meta http-equiv="refresh" content="0; url={{ url_for('contact') }}" />
+  4
+</head>
 <!-- content -->
 <div class="container-fluid px-0">
   <div class="row justify-content-center mx-0">
     <div class="col-12 text-center p-4 bg-light">
-      <h1>🚧 Page is under construction</h1>
-      <p>This page is currently not available.</p>
-      <a href="/" class="btn btn-primary text-white text-decoration-none px-3">
-        Let's head back to home
+      <h1>Hmm. You shouldn't see this in a typical basis.</h1>
+      <p>Or maybe your special? ✨</p>
+      <a
+        href="{{ url_for('contact') }}"
+        class="btn btn-primary text-white text-decoration-none px-3"
+      >
+        Let's take you to the correct support page :)
       </a>
     </div>
   </div>
