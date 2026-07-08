@@ -31,13 +31,34 @@ block content %}
           <summary>
             <small style="user-select: none">Detailed Reason</small>
           </summary>
-          <p class="mt-2 pl-3">
-            {{ error_code }} occurring at
-            <time id="aest-time"></time>
-            <br />
-            <a href="{{ site_url }}" class="text-decoration-none"
-              >{{ site_url }}</a
+
+          <div
+            id="debug-info"
+            class="mt-2 p-3 bg-light rounded border position-relative"
+          >
+            <p>A unexpected problem has occured:</p>
+            <p class="m-0 mb-2">
+              ERROR_CODE_404
+              <br />
+              {{ error_code }} occurring at <time id="aest-time"></time>
+              <br />
+              <a href="{{ site_url }}" class="text-decoration-none"
+                >{{ site_url }}</a
+              >
+            </p>
+
+            <button
+              type="button"
+              class="btn btn-sm btn-outline-secondary"
+              onclick="copyDebugInfo(this)"
             >
+              Copy Report
+            </button>
+          </div>
+          <br />
+          <p>
+            You can provide this to staff members to get it fixed at
+            <a href="/support" class="text-decoration-none">Support</a>!
           </p>
         </details>
       </div>
@@ -62,6 +83,30 @@ block content %}
   const formatter = new Intl.DateTimeFormat("en-AU", options);
   document.getElementById("aest-time").textContent =
     formatter.format(loadTime) + " AEST";
+</script>
+
+<script>
+  function copyDebugInfo(button) {
+    const container = document.getElementById("debug-info");
+
+    const textToCopy = container.innerText.replace("Copy Report", "").trim();
+
+    navigator.clipboard
+      .writeText(textToCopy)
+      .then(() => {
+        const originalText = button.innerHTML;
+        button.innerHTML = "Copied!";
+        button.classList.replace("btn-outline-secondary", "btn-success");
+
+        setTimeout(() => {
+          button.innerHTML = originalText;
+          button.classList.replace("btn-success", "btn-outline-secondary");
+        }, 2000);
+      })
+      .catch((err) => {
+        console.error("Failed to copy text: ", err);
+      });
+  }
 </script>
 
 {% endblock %}
