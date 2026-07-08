@@ -22,7 +22,9 @@ block content %}
       <div class="container mt-2">
         <p>
           Or maybe visit our
-          <a href="/sitemap" class="text-decoration-none">Site Map!</a>
+          <a href="{{ url_for('sitemap_page') }}" class="text-decoration-none"
+            >Site Map!</a
+          >
         </p>
       </div>
 
@@ -36,7 +38,7 @@ block content %}
             id="debug-info"
             class="mt-2 p-3 bg-light rounded border position-relative"
           >
-            <p>A unexpected problem has occured:</p>
+            <p>A unexpected problem has occurred for:</p>
             <p class="m-0 mb-2">
               ERROR_CODE_404
               <br />
@@ -58,7 +60,9 @@ block content %}
           <br />
           <p>
             You can provide this to staff members to get it fixed at
-            <a href="/support" class="text-decoration-none">Support</a>!
+            <a href="{{ url_for('support') }}" class="text-decoration-none"
+              >Support</a
+            >!
           </p>
         </details>
       </div>
