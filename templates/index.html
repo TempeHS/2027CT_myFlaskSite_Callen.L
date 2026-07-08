@@ -88,6 +88,44 @@
   </div>
 </template>
 
+<section class="hero d-flex align-items-center">
+  <!-- Background Video -->
+  <video id="hero-video" class="hero-video" autoplay muted loop playsinline>
+    <source
+      src="{{ url_for('static', filename='videos/hero.mp4') }}"
+      type="video/mp4"
+    />
+    Your browser does not support the video tag.
+  </video>
+
+  <!-- Dark Overlay -->
+  <div class="overlay"></div>
+
+  <!-- Audio Toggle -->
+  <button
+    id="audio-toggle"
+    class="btn btn-dark rounded-circle position-absolute bottom-0 end-0 m-4"
+    aria-label="Toggle video audio"
+  >
+    <i class="bi bi-volume-mute-fill fs-5"></i>
+  </button>
+
+  <!-- Hero Content -->
+  <div class="container position-relative text-center text-white">
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <h1 class="display-2 fw-bold">Learn Brawl Stars One Step At A Time</h1>
+
+        <p class="lead mb-4">Now it's easier than ever to learn Brawl Stars!</p>
+
+        <a href="#" class="btn btn-primary btn-lg me-2"> Get Started </a>
+
+        <a href="#" class="btn btn-outline-light btn-lg"> Learn More </a>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- Rest of page content -->
 <div class="container mt-5">
   <h1>Welcome!</h1>
@@ -160,5 +198,30 @@
     </div>
   </div>
 </section>
+
+<script>
+  const bg = document.querySelector(".hero-bg");
+
+  window.addEventListener("scroll", () => {
+    const offset = window.pageYOffset;
+    bg.style.transform = `translateY(${offset * 0.4}px)`;
+  });
+</script>
+
+<script>
+  const video = document.getElementById("hero-video");
+  const audioToggle = document.getElementById("audio-toggle");
+  const icon = audioToggle.querySelector("i");
+
+  audioToggle.addEventListener("click", () => {
+    video.muted = !video.muted;
+
+    if (video.muted) {
+      icon.className = "bi bi-volume-mute-fill fs-5";
+    } else {
+      icon.className = "bi bi-volume-up-fill fs-5";
+    }
+  });
+</script>
 
 {% endblock %}
