@@ -1,5 +1,6 @@
 import re
 from flask import Flask, render_template, url_for, request, redirect, abort
+from werkzeug.exceptions import NotFound
 
 app = Flask(__name__)
 
@@ -295,10 +296,24 @@ def search():
     return render_template("search.html", query=query, results=results)
 
 
-# 404 Page Route
 @app.errorhandler(404)
-def page_not_found(error):
-    return render_template("404.html"), 404
+def handle_404(e):
+    error_reason = "PAGE_NOT_FOUND"
+    if e.description and not e.description.startswith("The requested URL"):
+        error_reason = e.description.upper().replace(" ", "_")
+    else:
+        try:
+            adapter = app.create_url_map().bind_to_environ(request.environ)
+            adapter.match()
+        except NotFound as routing_error:
+            if "not found" not in str(routing_error).lower():
+                error_reason = "INVALID_ROUTE_PARAMETER"
+        except Exception:
+            error_reason = "ROUTING_ENGINE_FAILED"
+        return (
+            render_template("404.html", error_code=error_reason, site_url=request.url),
+            404,
+        )
 
 
 if __name__ == "__main__":
