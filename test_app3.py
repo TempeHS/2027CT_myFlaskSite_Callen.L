@@ -127,3 +127,37 @@ def test_search_pages_endpoints_exist_in_app():
 def test_search_pages_have_unique_endpoints():
     endpoints = [page["endpoint"] for page in SEARCH_PAGES]
     assert len(endpoints) == len(set(endpoints))
+
+
+def test_search_exact_match_redirect_location(client):
+    response = client.get("/search?q=home", follow_redirects=False)
+    assert response.status_code in (301, 302, 307, 308)
+    assert response.headers["Location"].endswith("/")
+
+
+def test_search_unknown_query_returns_page(client):
+    response = client.get("/search?q=zzzz-no-match-12345")
+    assert response.status_code == 200
+
+
+def test_search_result_page_renders_query(client):
+    response = client.get("/search?q=brawl")
+    assert response.status_code == 200
+    assert b"brawl" in response.data.lower()
+
+
+def test_search_pages_have_required_fields():
+    for page in SEARCH_PAGES:
+        assert isinstance(page.get("endpoint"), str) and page["endpoint"].strip()
+        assert isinstance(page.get("title"), str) and page["title"].strip()
+        assert isinstance(page.get("description"), str) and page["description"].strip()
+        assert isinstance(page.get("keywords"), list)
+
+
+def test_search_page_endpoints_can_build_urls():
+    from flask import url_for
+
+    with app.test_request_context():
+        for page in SEARCH_PAGES:
+            built = url_for(page["endpoint"])
+            assert isinstance(built, str) and built.startswith("/")
