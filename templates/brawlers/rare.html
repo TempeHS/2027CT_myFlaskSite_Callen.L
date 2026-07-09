@@ -1,9 +1,21 @@
 {% extends 'base.html' %} {% block title %}Rare Brawlers - Brawlable{% endblock
 %} {% block content %}
-<!-- Rest of page content -->
+
+<!-- Brawlers ID -->
+{% set brawlers = [ { 'id': 'barley', 'name': 'Barley', 'description': 'Thrower
+control brawler with strong area denial.' }, { 'id': 'brock', 'name': 'Brock',
+'description': 'Long-range damage dealer with explosive rocket pressure.' }, {
+'id': 'bull', 'name': 'Bull', 'description': 'Tanky close-range brawler with
+explosive engage.' }, { 'id': 'colt', 'name': 'Colt', 'description': 'Sharp
+shooter with fast, precise projectile lanes.' }, { 'id': 'el-primo', 'name': 'El
+Primo', 'description': 'Aggressive melee tank with mobility super jump.' }, {
+'id': 'nita', 'name': 'Nita', 'description': 'Balanced fighter with summon
+pressure and control.' }, { 'id': 'poco', 'name': 'Poco', 'description':
+'Support brawler with healing utility for team fights.' }, { 'id': 'rosa',
+'name': 'Rosa', 'description': 'Durable fighter with strong close-range pressure
+and shielding.' } ] %}
 
 <style>
-  .rare-pinned-portrait,
   .rare-pinned-card .brawler-portrait {
     width: 100%;
     height: 170px;
@@ -17,20 +29,6 @@
     align-items: center;
     justify-content: flex-start;
     min-height: 170px;
-  }
-
-  .rare-pinned-card .col-4 {
-    display: flex;
-    align-items: center;
-  }
-
-  .rare-card-grid {
-    justify-content: center;
-  }
-
-  .rare-card-grid > [id] {
-    flex: 0 0 280px;
-    max-width: 280px;
   }
 
   .rare-pinned-card .card-body {
@@ -62,279 +60,49 @@
   </div>
 
   <ul class="scroll-wheel justify-content-center">
+    {% for brawler in brawlers %}
     <li class="card-scroll">
-      <a href="#barley">
+      <a href="#{{ brawler.id }}">
         <img
-          src="{{ url_for('static', filename='images/brawlers/rare/idle/barley.png') }}"
-          alt="Barley brawler art"
+          src="{{ url_for('static', filename='images/brawlers/rare/idle/' ~ brawler.id ~ '.png') }}"
+          alt="{{ brawler.name }} brawler art"
           loading="lazy"
         />
-        <p>Barley</p>
+        <p>{{ brawler.name }}</p>
       </a>
     </li>
-    <li class="card-scroll">
-      <a href="#brock">
-        <img
-          src="{{ url_for('static', filename='images/brawlers/rare/idle/brock.png') }}"
-          alt="Brock brawler art"
-          loading="lazy"
-        />
-        <p>Brock</p>
-      </a>
-    </li>
-    <li class="card-scroll">
-      <a href="#bull">
-        <img
-          src="{{ url_for('static', filename='images/brawlers/rare/idle/bull.png') }}"
-          alt="Bull brawler art"
-          loading="lazy"
-        />
-        <p>Bull</p>
-      </a>
-    </li>
-    <li class="card-scroll">
-      <a href="#colt">
-        <img
-          src="{{ url_for('static', filename='images/brawlers/rare/idle/colt.png') }}"
-          alt="Colt brawler art"
-          loading="lazy"
-        />
-        <p>Colt</p>
-      </a>
-    </li>
-    <li class="card-scroll">
-      <a href="#el-primo">
-        <img
-          src="{{ url_for('static', filename='images/brawlers/rare/idle/el-primo.png') }}"
-          alt="El Primo brawler art"
-          loading="lazy"
-        />
-        <p>El Primo</p>
-      </a>
-    </li>
-    <li class="card-scroll">
-      <a href="#nita">
-        <img
-          src="{{ url_for('static', filename='images/brawlers/rare/idle/nita.png') }}"
-          alt="Nita brawler art"
-          loading="lazy"
-        />
-        <p>Nita</p>
-      </a>
-    </li>
-    <li class="card-scroll">
-      <a href="#poco">
-        <img
-          src="{{ url_for('static', filename='images/brawlers/rare/idle/poco.png') }}"
-          alt="Poco brawler art"
-          loading="lazy"
-        />
-        <p>Poco</p>
-      </a>
-    </li>
-    <li class="card-scroll">
-      <a href="#poco">
-        <img
-          src="{{ url_for('static', filename='images/brawlers/rare/idle/rosa.png') }}"
-          alt="Rosa brawler art"
-          loading="lazy"
-        />
-        <p>Rosa</p>
-      </a>
-    </li>
+    {% endfor %}
   </ul>
 </div>
 
 <section class="py-4">
   <div class="container">
     <div class="row g-4">
-      <div id="barley" class="col-md-6 col-lg-4">
-        <article
-          class="card h-100 brawler-card rare-pinned-card"
-          style="--card-bg: url(&quot;#&quot;)"
-        >
+      {% for brawler in brawlers %}
+      <div id="{{ brawler.id }}" class="col-md-6 col-lg-4">
+        <article class="card h-100 brawler-card rare-pinned-card">
           <div class="row g-0 align-items-center">
             <div class="col-4">
               <img
-                src="{{ url_for('static', filename='images/brawlers/rare/portrait/barley_portrait.png') }}"
-                alt="Barley portrait"
+                src="{{ url_for('static', filename='images/brawlers/rare/portrait/' ~ brawler.id ~ '_portrait.png') }}"
+                alt="{{ brawler.name }} portrait"
                 class="brawler-portrait"
                 loading="lazy"
               />
             </div>
             <div class="col-8">
               <div class="card-body">
-                <h5 class="card-title">Barley</h5>
-                <p class="card-text">
-                  Thrower control brawler with strong area denial.
-                </p>
+                <h5 class="card-title">{{ brawler.name }}</h5>
+                <p class="card-text">{{ brawler.description }}</p>
                 <a href="#" class="btn btn-primary btn-sm">Learn More</a>
               </div>
             </div>
           </div>
         </article>
       </div>
-
-      <div id="brock" class="col-md-6 col-lg-4">
-        <article
-          class="card h-100 brawler-card rare-pinned-card"
-          style="--card-bg: url(&quot;#&quot;)"
-        >
-          <div class="row g-0 align-items-center">
-            <div class="col-4">
-              <img
-                src="{{ url_for('static', filename='images/brawlers/rare/portrait/brock_portrait.png') }}"
-                alt="Brock portrait"
-                class="brawler-portrait"
-                loading="lazy"
-              />
-            </div>
-            <div class="col-8">
-              <div class="card-body">
-                <h5 class="card-title">Brock</h5>
-                <p class="card-text">text</p>
-                <a href="#" class="btn btn-primary btn-sm">Learn More</a>
-              </div>
-            </div>
-          </div>
-        </article>
-      </div>
-
-      <div id="bull" class="col-md-6 col-lg-4">
-        <article
-          class="card h-100 brawler-card rare-pinned-card"
-          style="--card-bg: url(&quot;#&quot;)"
-        >
-          <div class="row g-0 align-items-center">
-            <div class="col-4">
-              <img
-                src="{{ url_for('static', filename='images/brawlers/rare/portrait/bull_portrait.png') }}"
-                alt="Bull portrait"
-                class="brawler-portrait"
-                loading="lazy"
-              />
-            </div>
-            <div class="col-8">
-              <div class="card-body">
-                <h5 class="card-title">Bull</h5>
-                <p class="card-text">
-                  Tanky close-range brawler with explosive engage.
-                </p>
-                <a href="#" class="btn btn-primary btn-sm">Learn More</a>
-              </div>
-            </div>
-          </div>
-        </article>
-      </div>
-
-      <div id="colt" class="col-md-6 col-lg-4">
-        <article
-          class="card h-100 brawler-card rare-pinned-card"
-          style="--card-bg: url(&quot;#&quot;)"
-        >
-          <div class="row g-0 align-items-center">
-            <div class="col-4">
-              <img
-                src="{{ url_for('static', filename='images/brawlers/rare/portrait/colt_portrait.png') }}"
-                alt="Colt portrait"
-                class="brawler-portrait"
-                loading="lazy"
-              />
-            </div>
-            <div class="col-8">
-              <div class="card-body">
-                <h5 class="card-title">Colt</h5>
-                <p class="card-text">
-                  Sharp shooter with fast, precise projectile lanes.
-                </p>
-                <a href="#" class="btn btn-primary btn-sm">Learn More</a>
-              </div>
-            </div>
-          </div>
-        </article>
-      </div>
-
-      <div id="el-primo" class="col-md-6 col-lg-4">
-        <article
-          class="card h-100 brawler-card rare-pinned-card"
-          style="--card-bg: url(&quot;#&quot;)"
-        >
-          <div class="row g-0 align-items-center">
-            <div class="col-4">
-              <img
-                src="{{ url_for('static', filename='images/brawlers/rare/portrait/el-primo_portrait.png') }}"
-                alt="El Primo portrait"
-                class="brawler-portrait"
-                loading="lazy"
-              />
-            </div>
-            <div class="col-8">
-              <div class="card-body">
-                <h5 class="card-title">El Primo</h5>
-                <p class="card-text">
-                  Aggressive melee tank with mobility super jump.
-                </p>
-                <a href="#" class="btn btn-primary btn-sm">Learn More</a>
-              </div>
-            </div>
-          </div>
-        </article>
-      </div>
-
-      <div id="nita" class="col-md-6 col-lg-4">
-        <article
-          class="card h-100 brawler-card rare-pinned-card"
-          style="--card-bg: url(&quot;#&quot;)"
-        >
-          <div class="row g-0 align-items-center">
-            <div class="col-4">
-              <img
-                src="{{ url_for('static', filename='images/brawlers/rare/portrait/nita_portrait.png') }}"
-                alt="Nita portrait"
-                class="brawler-portrait"
-                loading="lazy"
-              />
-            </div>
-            <div class="col-8">
-              <div class="card-body">
-                <h5 class="card-title">Nita</h5>
-                <p class="card-text">
-                  Balanced fighter with summon pressure and control.
-                </p>
-                <a href="#" class="btn btn-primary btn-sm">Learn More</a>
-              </div>
-            </div>
-          </div>
-        </article>
-      </div>
-
-      <div id="poco" class="col-md-6 col-lg-4">
-        <article
-          class="card h-100 brawler-card rare-pinned-card"
-          style="--card-bg: url(&quot;#&quot;)"
-        >
-          <div class="row g-0 align-items-center">
-            <div class="col-4">
-              <img
-                src="{{ url_for('static', filename='images/brawlers/rare/portrait/poco_portrait.png') }}"
-                alt="Poco portrait"
-                class="brawler-portrait"
-                loading="lazy"
-              />
-            </div>
-            <div class="col-8">
-              <div class="card-body">
-                <h5 class="card-title">Poco</h5>
-                <p class="card-text">
-                  Support brawler with healing utility for team fights.
-                </p>
-                <a href="#" class="btn btn-primary btn-sm">Learn More</a>
-              </div>
-            </div>
-          </div>
-        </article>
-      </div>
+      {% endfor %}
     </div>
   </div>
 </section>
+
 {% endblock %}
