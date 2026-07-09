@@ -199,3 +199,21 @@ def test_home_route_is_stable(client):
     response = client.get("/")
     assert response.status_code == 200
     assert b"<html" in response.data.lower()
+
+
+def test_list_pages_under_construction(client):
+    under_construction = []
+
+    for route in get_testable_routes():
+        response = client.get(route, follow_redirects=True)
+        if response.status_code != 200:
+            continue
+
+        body = response.data.decode("utf-8", errors="ignore").lower()
+        if "page is under construction" in body:
+            under_construction.append(route)
+
+    if under_construction:
+        pytest.fail(
+            "Pages under construction:\n- " + "\n- ".join(sorted(under_construction))
+        )
