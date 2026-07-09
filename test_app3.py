@@ -11,6 +11,14 @@ def client():
         yield test_client
 
 
+def endpoint_to_path(endpoint: str) -> str:
+    """Resolve an endpoint to a concrete URL path without pushing request context."""
+    for rule in app.url_map.iter_rules(endpoint):
+        if not rule.arguments:
+            return rule.rule
+    raise AssertionError(f"No concrete route found for endpoint: {endpoint}")
+
+
 def get_testable_routes():
     routes = []
     for rule in app.url_map.iter_rules():
@@ -155,9 +163,39 @@ def test_search_pages_have_required_fields():
 
 
 def test_search_page_endpoints_can_build_urls():
-    from flask import url_for
+    for page in SEARCH_PAGES:
+        path = endpoint_to_path(page["endpoint"])
+        assert isinstance(path, str) and path.startswith("/")
 
-    with app.test_request_context():
-        for page in SEARCH_PAGES:
-            built = url_for(page["endpoint"])
-            assert isinstance(built, str) and built.startswith("/")
+
+# Search safety
+
+
+def test_get_routes_do_not_accept_post():
+    """Safety Test: GET pages should not silently accept POST."""
+    for rule in app.url_map.iter_rules():
+        if rule.endpoint == "static" or rule.arguments:
+            continue
+        if "GET" in rule.methods:
+            assert "POST" not in rule.methods
+
+
+def test_every_search_page_endpoint_returns_success(client):
+    """Each SEARCH_PAGES endpoint should render successfully."""
+    for page in SEARCH_PAGES:
+        url = endpoint_to_path(page["endpoint"])
+        response = client.get(url)
+        if response.status_code in (301, 302, 307, 308):
+            response = client.get(url, follow_redirects=True)
+        assert response.status_code == 200
+
+
+def test_search_handles_very_long_query(client):
+    response = client.get("/search?q=" + ("x" * 5000))
+    assert response.status_code == 200
+
+
+def test_home_route_is_stable(client):
+    response = client.get("/")
+    assert response.status_code == 200
+    assert b"<html" in response.data.lower()
