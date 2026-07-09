@@ -13,9 +13,6 @@ app.register_blueprint(brawlers_bp)
 app.register_blueprint(gamemodes_bp)
 
 
-app = Flask(__name__)
-
-
 # Primary Pages Route
 @app.route("/")
 def home():
@@ -174,4 +171,4 @@ def handle_404(e):
 
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5000, debug=True)
+    app.run(host="0.0.0.0", port=5000, debug=False)
