@@ -1,10 +1,17 @@
 from flask import Flask, render_template, url_for, request, redirect
 from werkzeug.exceptions import NotFound
-from search_service import (  # For search engine files in search_service
+from search_service import (
     sanitize_search_query,
     find_exact_match_endpoint,
     find_partial_matches,
 )
+from routes.brawlers import brawlers_bp
+from routes.gamemodes import gamemodes_bp
+
+app = Flask(__name__)
+app.register_blueprint(brawlers_bp)
+app.register_blueprint(gamemodes_bp)
+
 
 app = Flask(__name__)
 
