@@ -1,6 +1,6 @@
 from flask import Flask, render_template, url_for, request, redirect
 from werkzeug.exceptions import NotFound
-from search_service import (
+from search_service import (  # For search engine files in search_service
     sanitize_search_query,
     find_exact_match_endpoint,
     find_partial_matches,
