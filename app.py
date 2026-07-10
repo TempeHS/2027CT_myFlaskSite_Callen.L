@@ -7,10 +7,12 @@ from search_service import (
 )
 from routes.brawlers import brawlers_bp
 from routes.gamemodes import gamemodes_bp
+from routes.error_handling import errors_bp
 
 app = Flask(__name__)
 app.register_blueprint(brawlers_bp)
 app.register_blueprint(gamemodes_bp)
+app.register_blueprint(errors_bp)
 
 
 # Primary Pages Route
@@ -22,6 +24,11 @@ def home():
 @app.route("/contact")
 def contact():
     return render_template("contact.html")
+
+
+@app.route("/onboarding")
+def onboarding():
+    return render_template("onboarding.html")
 
 
 # More Primary Pages Route
@@ -148,26 +155,6 @@ def search():
             )
 
     return render_template("search.html", query=query, results=results)
-
-
-@app.errorhandler(404)
-def handle_404(e):
-    error_reason = "PAGE_NOT_FOUND"
-    if e.description and not e.description.startswith("The requested URL"):
-        error_reason = e.description.upper().replace(" ", "_")
-    else:
-        try:
-            adapter = app.create_url_map().bind_to_environ(request.environ)
-            adapter.match()
-        except NotFound as routing_error:
-            if "not found" not in str(routing_error).lower():
-                error_reason = "INVALID_ROUTE_PARAMETER"
-        except Exception:
-            error_reason = "ROUTING_ENGINE_FAILED"
-        return (
-            render_template("404.html", error_code=error_reason, site_url=request.url),
-            404,
-        )
 
 
 if __name__ == "__main__":
