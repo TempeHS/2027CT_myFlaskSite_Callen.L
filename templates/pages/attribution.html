@@ -1,38 +1,203 @@
 {% extends 'base.html' %} {% block title %}Attributions - Brawlable{% endblock
 %} {% block content %}
 
-<!-- content -->
-<div class="container-fluid px-0">
-  <div class="row justify-content-center mx-0">
-    <div class="col-12 text-center p-4 bg-light">
-      <h1>🚧 Page is under construction</h1>
-      <p>This page is currently not available.</p>
-      <a href="/" class="btn btn-primary text-white text-decoration-none px-3">
-        Let's head back to home
-      </a>
-    </div>
-  </div>
-</div>
-
 <div class="container py-5">
+  <!-- Page Header Text -->
   <div class="mb-5">
     <h5><b>Brawlable Site Attributions</b></h5>
     <hr />
   </div>
 
+  <!-- Introduction to Attributions Page -->
+  <div class="mb-4 col-lg-6">
+    <h5 class="fw-semibold">
+      Here are the acknowledgements for tutorials, images, fonts, icons and
+      libraries used in the creation of Brawlable
+    </h5>
+  </div>
+
+  <br />
+
+  <!-- The Legendary Content Section Layout  -->
   <div class="row g-5">
-    <div class="col-md-4">
-      <h5 class="fw-semibold mb-3">Working in Progress</h5>
-      <ul class="list-unstyled">
+    <div class="col-lg-6">
+      <ul class="list-unstyled mb-0">
         <li class="mb-2">
-          <a href="{{ url_for('home') }}">Working in Progress</a>
+          <!-- Blinker Attribution -->
+          <a
+            href="https://blinker.readthedocs.io/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-decoration-none text-primary"
+            ><b>Blinker (Version: 1.9.0)</b></a
+          >
+          <br />
+          <small class="text-muted">
+            Licence: MIT License. View the
+            <a href="/static/licenses/blinker.txt" target="_blank"
+              >Full License and Copyright Notice</a
+            >.
+          </small>
+          <br />
+          Used for fast, generic object-to-object signal broadcasting.
+          <br />
         </li>
+        <br />
+
+        <!-- Bootstrap CSS and JS Attribution -->
         <li class="mb-2">
-          <a href="{{ url_for('about') }}">Working in Progress</a>
+          <a
+            href="https://getbootstrap.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-decoration-none text-primary"
+            ><b>Bootstrap (Via Content Delivery Network)</b></a
+          >
+          <br />
+          <small class="text-muted">
+            Licensed under the MIT License. View the
+            <a href="/static/licenses/bootstrap.txt" target="_blank"
+              >Full License and Copyright Notice</a
+            >.
+          </small>
+          <br />
+          Used for the website layouts and javascript.
+          <br />
         </li>
+        <br />
+
+        <!-- Bootstrap Icons Attribution -->
         <li class="mb-2">
-          <a href="{{ url_for('contact') }}">Working in Progress</a>
+          <a
+            href="https://icons.getbootstrap.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-decoration-none text-primary"
+            ><b>Bootstrap Icons (Via Content Delivery Network)</b></a
+          >
+          <br />
+          <small class="text-muted">
+            Licensed under the MIT License. View the
+            <a href="/static/licenses/bootstrap-icons.txt" target="_blank"
+              >Full License and Copyright Notice</a
+            >.
+          </small>
+          <br />
+          Used for icons found around the website.
+          <br />
         </li>
+        <br />
+
+        <!-- Click Attribution -->
+        <li class="mb-2">
+          <a
+            href="https://click.palletsprojects.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-decoration-none text-primary"
+            ><b>Click (Version: 8.4.2)</b></a
+          >
+          <br />
+          <small class="text-muted">
+            Licence: BSD-3-Clause. View the
+            <a href="/static/licenses/click.txt" target="_blank"
+              >Full License and Copyright Notice</a
+            >.
+          </small>
+          <br />
+          Used for creating command-line management operations.
+          <br />
+        </li>
+        <br />
+
+        <!-- Flask Attribution -->
+        <li class="mb-2">
+          <a
+            href="https://flask.palletsprojects.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-decoration-none text-primary"
+            ><b>Flask (Version 3.1.3)</b></a
+          >
+          <br />
+          <small class="text-muted">
+            Licensed under the BSD-3-Clause license. View the
+            <a href="/static/licenses/flask.txt" target="_blank"
+              >Full License and Copyright Notice</a
+            >.
+          </small>
+          <br />
+          Used for building the web application and HTTP requests.
+          <br />
+        </li>
+        <br />
+
+        <!-- Iniconfig Attribution -->
+        <li class="mb-2">
+          <a
+            href="https://github.com/dmiro/iniconfig"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-decoration-none text-primary"
+            ><b>Iniconfig (Version: 2.3.0)</b></a
+          >
+          <br />
+          <small class="text-muted">
+            Licence: MIT. View the
+            <a href="/static/licenses/iniconfig.txt" target="_blank"
+              >Full License and Copyright Notice</a
+            >.
+          </small>
+          <br />
+          Used for parsing ini-style development configuration setups.
+          <br />
+        </li>
+        <br />
+
+        <!-- Itsdangerous Attribution -->
+        <li class="mb-2">
+          <a
+            href="https://itsdangerous.palletsprojects.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-decoration-none text-primary"
+            ><b>Itsdangerous (Version: 2.2.0)</b></a
+          >
+          <br />
+          <small class="text-muted">
+            Licence: BSD License. View the
+            <a href="/static/licenses/itsdangerous.txt" target="_blank"
+              >Full License and Copyright Notice</a
+            >.
+          </small>
+          <br />
+          Used for cryptographically signing security session tokens.
+          <br />
+        </li>
+        <br />
+
+        <!-- Jinja2 Attribution -->
+        <li class="mb-2">
+          <a
+            href="https://jinja.palletsprojects.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-decoration-none text-primary"
+            ><b>Jinja (Version 3.1.6)</b></a
+          >
+          <br />
+          <small class="text-muted">
+            Licensed under the BSD-3-Clause license. View the
+            <a href="/static/licenses/jinja.txt" target="_blank"
+              >Full License and Copyright Notice</a
+            >.
+          </small>
+          <br />
+          Used for website template engines.
+        </li>
+        <br />
+
+        <!-- Others-->
       </ul>
     </div>
   </div>
