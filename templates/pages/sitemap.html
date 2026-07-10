@@ -12,31 +12,73 @@ block content %}
       <h5 class="fw-semibold mb-3">Main Pages</h5>
       <ul class="list-unstyled">
         <li class="mb-2">
-          <a href="{{ url_for('home') }}">Home</a>
+          <a
+            href="{{ url_for('home') }}"
+            rel="noopener noreferrer"
+            class="text-decoration-none text-primary"
+            >Home</a
+          >
         </li>
         <li class="mb-2">
-          <a href="{{ url_for('about') }}">About</a>
+          <a
+            href="{{ url_for('about') }}"
+            rel="noopener noreferrer"
+            class="text-decoration-none text-primary"
+            >About</a
+          >
         </li>
         <li class="mb-2">
-          <a href="{{ url_for('contact') }}">Contact</a>
+          <a
+            href="{{ url_for('contact') }}"
+            rel="noopener noreferrer"
+            class="text-decoration-none text-primary"
+            >Support</a
+          >
         </li>
       </ul>
     </div>
 
     <div class="col-md-4">
-      <h5 class="fw-semibold mb-3">Brawlers</h5>
+      <h5 class="fw-semibold mb-3">Secondary Pages</h5>
       <ul class="list-unstyled">
-        <li class="mb-2"><a href="#">Shelly</a></li>
-        <li class="mb-2"><a href="#">Nita</a></li>
-        <li class="mb-2"><a href="#">Colt</a></li>
-        <li class="mb-2"><a href="#">Bull</a></li>
+        <li class="mb-2">
+          <a
+            href="{{ url_for('about') }}"
+            rel="noopener noreferrer"
+            class="text-decoration-none text-primary"
+            >About Us</a
+          >
+        </li>
+        <li class="mb-2">
+          <a
+            href="{{ url_for('attribution') }}"
+            rel="noopener noreferrer"
+            class="text-decoration-none text-primary"
+            >Attribution</a
+          >
+        </li>
+        <li class="mb-2">
+          <a
+            href="{{ url_for('search') }}"
+            rel="noopener noreferrer"
+            class="text-decoration-none text-primary"
+            >Search</a
+          >
+        </li>
       </ul>
     </div>
 
     <div class="col-md-4">
-      <h5 class="fw-semibold mb-3">Resources</h5>
+      <h5 class="fw-semibold mb-3">Important Resources</h5>
       <ul class="list-unstyled">
-        <li class="mb-2"><a href="#">Guides</a></li>
+        <li class="mb-2">
+          <a
+            href="{{ url_for('privacy') }}"
+            rel="noopener noreferrer"
+            class="text-decoration-none text-primary"
+            >Privacy Policy</a
+          >
+        </li>
         <li class="mb-2"><a href="#">News</a></li>
         <li class="mb-2"><a href="#">FAQ</a></li>
       </ul>
@@ -57,7 +99,6 @@ block content %}
         <li class="mb-2">
           <a
             href="#"
-            target="_blank"
             rel="noopener noreferrer"
             class="text-decoration-none text-primary"
             >Starter Brawlers</a
@@ -87,7 +128,6 @@ block content %}
             >Epic Brawler</a
           >
         </li>
-
         <li class="mb-2">
           <a
             href="{{ url_for('mythic') }}"
@@ -156,7 +196,6 @@ block content %}
           <li class="mb-2">
             <a
               href="{{ url_for('showdown') }}"
-              target="_blank"
               rel="noopener noreferrer"
               class="text-decoration-none text-primary"
               >Showdown</a
@@ -219,25 +258,6 @@ block content %}
               >Bounty</a
             >
           </li>
-        </ul>
-      </div>
-
-      <div class="col-md-4">
-        <h5 class="fw-semibold mb-3">Brawlers</h5>
-        <ul class="list-unstyled">
-          <li class="mb-2"><a href="#">Shelly</a></li>
-          <li class="mb-2"><a href="#">Nita</a></li>
-          <li class="mb-2"><a href="#">Colt</a></li>
-          <li class="mb-2"><a href="#">Bull</a></li>
-        </ul>
-      </div>
-
-      <div class="col-md-4">
-        <h5 class="fw-semibold mb-3">Resources</h5>
-        <ul class="list-unstyled">
-          <li class="mb-2"><a href="#">Guides</a></li>
-          <li class="mb-2"><a href="#">News</a></li>
-          <li class="mb-2"><a href="#">FAQ</a></li>
         </ul>
       </div>
     </div>
