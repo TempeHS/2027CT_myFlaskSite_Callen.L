@@ -6,7 +6,7 @@ errors_bp = Blueprint("errors", __name__)
 
 @errors_bp.app_errorhandler(404)
 def handle_404(e):
-    error_reason = "HTTPStatus.NOT_FOUND"
+    error_reason = "page_not_found"
 
     if e.description and not str(e.description).startswith("The requested URL"):
         error_reason = str(e.description).upper().replace(" ", "_")
@@ -32,7 +32,7 @@ def handle_404(e):
 
 @errors_bp.app_errorhandler(403)
 def handle_403(e):
-    error_reason = "HTTPStatus.FORBIDDEN"
+    error_reason = "permission_denied"
 
     if e.description and not str(e.description).startswith("The requested URL"):
         error_reason = str(e.description).upper().replace(" ", "_")
