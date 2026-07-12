@@ -1,13 +1,13 @@
 # Brawlable
 
-| Field                          | Detail |
-| ------------------------------ | ------ |
-| **Website Title**              |        |
-| **Student Name(s)**            |        |
-| **Class / Course**             |        |
-| **Repository**                 |        |
-| **Live Site / Codespaces URL** |        |
-| **Date**                       |        |
+| Field                          | Detail                                                 |
+| ------------------------------ | ------------------------------------------------------ |
+| **Website Title**              | Brawlable                                              |
+| **Student Name(s)**            | Callen Lin                                             |
+| **Class / Course**             | Year 9 Computer Technology                             |
+| **Repository**                 | https://github.com/TempeHS/2027CT_myFlaskSite_Callen.L |
+| **Live Site / Codespaces URL** | N/A                                                    |
+| **Date**                       | N/A                                                    |
 
 > Your website is the main piece of work. This README is short on purpose — it
 > points a reader to your **2-minute walkthrough** and gives an honest
@@ -62,10 +62,25 @@ planning. Be honest and use evidence — point to a page, a feature or a test.
 
 ### 3.2 What You Delivered
 
-| Page    | Route      | What it delivers |
-| ------- | ---------- | ---------------- |
-| Home    | `/`        |                  |
-| Contact | `/contact` |                  |
+#### Primary Pages of Brawlable
+
+| Page           | Route          | What it delivers                                                                                                                                       |
+| -------------- | -------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Home           | `/`            |                                                                                                                                                        |
+| Contact        | `/contact`     | Provides a page that allows you to provide feedback, receive assistance and report bugs.                                                               |
+| Sitemap        | `/sitemap`     | A site map that shows all the pages across the site with catagories for accessibility                                                                  |
+| Privacy Policy | `/privacy`     | Provides information how the site handles data in the website                                                                                          |
+| Attributions   | `/attribution` | Provides attribution to all the dependencies and repositories used in the project with a direct link and the LICENSE file accessible in a static link. |
+| Search         | `/search`      | Offers a search that can be found on the header where it will show search results and instantly redirect you for exact matches.                        |
+
+#### Backend Features of Brawlable
+
+| Page                  | Route     | File Location                                      | What it delivers                                                                                                                                                                                                                                                |
+| --------------------- | --------- | -------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 404 Page Not Found    | `/404`    | `templates/error_handler/404.html`, `test_app3.py` | When you visit a page that is not found by the website, it results in a 404 page, and provides options to go to the homepage or visit the sitemap. It also provides a detailed report that can be immediately copied into support with a hyperlink to the page. |
+| Search Configurations | `/search` | `templates/search.html`, `search_config.py`        | The search configurations allows you search the exact names to get immediately redirected handled by search_services, and keywords show recommended results. This also filters disallowed text.                                                                 |
+| Search Services       | `/search` | `templates/search.html`, `search_services.py`      | This sanitizes the input of the text being input into the search bar. Handling blank text, script injection, limiting the length of requests, and allows the requests to be handled and sent to the user as a query in the format of `/search?q=asd`            |
+| Search No Results     | `/search` | `templates/search.html`, `~/search_services.py`    | When a query does not receive a `{% if results %}` for any any query that includes a value, it will provide a notice telling the user that there were no results found for the content, and show suggested results that the user can try.                       |
 
 ### 3.3 Evaluation Against Your Intent (2–3 paragraphs)
 
