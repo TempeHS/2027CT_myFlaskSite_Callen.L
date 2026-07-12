@@ -19,3 +19,9 @@ Git LFS migration for hero vid
 ```
 git lfs migrate import --everything --include="/static/videos/hero.mp4"
 ```
+
+Git force to remove old lfs and replace with pointer via git LFS.
+
+```
+git push origin main --force
+```
