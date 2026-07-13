@@ -186,3 +186,18 @@ section h2 {
   object-fit: contain;
   transition: transform 0.35s ease;
 }
+
+/* id tools */
+:root {
+  --header-height: 60px;
+}
+
+:target {
+  scroll-margin-top: var(--header-height);
+}
+
+section[id],
+div[id],
+article[id] {
+  scroll-margin-top: var(--header-height);
+}
