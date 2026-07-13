@@ -50,6 +50,10 @@ body {
   z-index: 0;
 }
 
+.hero-bg {
+  color: black;
+}
+
 .overlay {
   position: absolute;
   inset: 0;
@@ -189,7 +193,7 @@ section h2 {
 
 /* id tools */
 :root {
-  --header-height: 60px;
+  --header-height: 65px;
 }
 
 :target {
