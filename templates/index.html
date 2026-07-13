@@ -317,7 +317,9 @@
 </script>
 
 <script>
+  const bg = document.querySelector(".hero-video");
   let ticking = false;
+
   window.addEventListener(
     "scroll",
     () => {
@@ -325,7 +327,7 @@
       ticking = true;
       requestAnimationFrame(() => {
         const offset = window.pageYOffset || 0;
-        bg.style.transform = `translateY(${offset * 0.2}px)`;
+        bg.style.transform = `translateY(${offset * 0.35}px)`;
         ticking = false;
       });
     },
