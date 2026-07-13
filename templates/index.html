@@ -287,4 +287,22 @@
   })();
 </script>
 
+<script>
+  // Audio toggle
+  if (video && audioToggle && icon) {
+    audioToggle.addEventListener("click", () => {
+      video.muted = !video.muted;
+      const muted = video.muted;
+      icon.className = muted
+        ? "bi bi-volume-mute-fill fs-5"
+        : "bi bi-volume-up-fill fs-5";
+      audioToggle.setAttribute("aria-pressed", String(!muted));
+      audioToggle.setAttribute(
+        "aria-label",
+        muted ? "Unmute video audio" : "Mute video audio",
+      );
+    });
+  }
+</script>
+
 {% endblock %}
