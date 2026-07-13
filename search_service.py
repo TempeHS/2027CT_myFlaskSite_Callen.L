@@ -29,3 +29,6 @@ def find_partial_matches(query: str) -> list[dict]:
         if q in searchable_text:
             matches.append(page)
     return matches
+
+
+# search rankings?
