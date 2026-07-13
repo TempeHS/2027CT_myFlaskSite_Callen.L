@@ -1,3 +1,4 @@
+import os
 from flask import Flask, render_template, url_for, request, redirect
 from werkzeug.exceptions import NotFound
 from search_service import (
@@ -158,4 +159,7 @@ def search():
 
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5000, debug=False)
+    host = os.getenv("FLASK_RUN_HOST", "127.0.0.1")
+    port = int(os.getenv("FLASK_RUN_PORT", "5000"))
+    debug = os.getenv("FLASK_DEBUG", "0") == "1"
+    app.run(host=host, port=port, debug=debug)
