@@ -37,7 +37,7 @@ jobs:
           python-version: "3.x"
 
       - name: Bandit Scan
-        uses: PyCQA/bandit@1.9.4
+        uses: PyCQA/bandit-action@v1
         with:
           path: "."
           level: "HIGH"
