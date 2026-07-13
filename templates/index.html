@@ -173,6 +173,35 @@
       });
     }
 
+    if (video && audioToggle && icon) {
+      audioToggle.setAttribute("aria-pressed", String(!video.muted));
+      audioToggle.setAttribute(
+        "aria-label",
+        video.muted ? "Unmute video audio" : "Mute video audio",
+      );
+      icon.className = video.muted
+        ? "bi bi-volume-mute-fill fs-5"
+        : "bi bi-volume-up-fill fs-5";
+
+      const handleAudioToggle = () => {
+        video.muted = !video.muted;
+        const isMuted = video.muted;
+
+        icon.className = isMuted
+          ? "bi bi-volume-mute-fill fs-5"
+          : "bi bi-volume-up-fill fs-5";
+
+        audioToggle.setAttribute("aria-pressed", String(!isMuted));
+        audioToggle.setAttribute(
+          "aria-label",
+          isMuted ? "Unmute video audio" : "Mute video audio",
+        );
+      };
+
+      audioToggle.removeEventListener("click", handleAudioToggle);
+      audioToggle.addEventListener("click", handleAudioToggle);
+    }
+
     const DB_NAME = "HeroVideoCacheDB";
     const STORE_NAME = "videos";
     const VIDEO_KEY = "hero-video-file";
@@ -285,24 +314,6 @@
       if (objectUrl) URL.revokeObjectURL(objectUrl);
     });
   })();
-</script>
-
-<script>
-  // Audio toggle
-  if (video && audioToggle && icon) {
-    audioToggle.addEventListener("click", () => {
-      video.muted = !video.muted;
-      const muted = video.muted;
-      icon.className = muted
-        ? "bi bi-volume-mute-fill fs-5"
-        : "bi bi-volume-up-fill fs-5";
-      audioToggle.setAttribute("aria-pressed", String(!muted));
-      audioToggle.setAttribute(
-        "aria-label",
-        muted ? "Unmute video audio" : "Mute video audio",
-      );
-    });
-  }
 </script>
 
 <script>
