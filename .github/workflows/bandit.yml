@@ -14,7 +14,6 @@ on:
   push:
     branches: [ "main" ]
   pull_request:
-    # The branches below must be a subset of the branches above
     branches: [ "main" ]
   schedule:
     - cron: '31 11 * * 3'
@@ -39,13 +38,14 @@ jobs:
       - name: Bandit Scan
         uses: PyCQA/bandit-action@v1
         with:
-          path: "."
-          level: "HIGH"
-          confidence: "HIGH"
-          excluded_paths: "test_*.py,.svn,CVS,.bzr,.hg,.git,__pycache__,.tox,.eggs,*.egg"
-          exit_zero: true
+          targets: "."
+          severity: "high"
+          confidence: "high"
+          exclude: "test_*.py,.svn,CVS,.bzr,.hg,.git,__pycache__,.tox,.eggs,*.egg"
+          args: "-f sarif -o bandit.sarif --exit-zero"
 
       - name: Upload SARIF
         uses: github/codeql-action/upload-sarif@v3
+        if: always()
         with:
           sarif_file: bandit.sarif
