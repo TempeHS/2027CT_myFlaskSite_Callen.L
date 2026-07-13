@@ -1,6 +1,267 @@
-{% extends 'base.html' %} {% block title %}Contact - My Flask Site{% endblock %}
-{% block content %}
+{% extends 'base.html' %} {% block title %}Site Map - Brawlable{% endblock %} {%
+block content %}
 
-<!-- content -->
+<div class="container py-5">
+  <div class="mb-5">
+    <h5 class="text-center"><b>Brawlable Site Map</b></h5>
+    <hr />
+  </div>
 
-{% endblock %}
+  <div class="row g-5">
+    <div class="col-md-4">
+      <h5 class="fw-semibold mb-3">Main Pages</h5>
+      <ul class="list-unstyled">
+        <li class="mb-2">
+          <a
+            href="{{ url_for('home') }}"
+            rel="noopener noreferrer"
+            class="text-decoration-none text-primary"
+            >Home</a
+          >
+        </li>
+        <li class="mb-2">
+          <a
+            href="{{ url_for('about') }}"
+            rel="noopener noreferrer"
+            class="text-decoration-none text-primary"
+            >About</a
+          >
+        </li>
+        <li class="mb-2">
+          <a
+            href="{{ url_for('contact') }}"
+            rel="noopener noreferrer"
+            class="text-decoration-none text-primary"
+            >Support</a
+          >
+        </li>
+      </ul>
+    </div>
+
+    <div class="col-md-4">
+      <h5 class="fw-semibold mb-3">Secondary Pages</h5>
+      <ul class="list-unstyled">
+        <li class="mb-2">
+          <a
+            href="{{ url_for('about') }}"
+            rel="noopener noreferrer"
+            class="text-decoration-none text-primary"
+            >About Us</a
+          >
+        </li>
+        <li class="mb-2">
+          <a
+            href="{{ url_for('attribution') }}"
+            rel="noopener noreferrer"
+            class="text-decoration-none text-primary"
+            >Attribution</a
+          >
+        </li>
+        <li class="mb-2">
+          <a
+            href="{{ url_for('search') }}"
+            rel="noopener noreferrer"
+            class="text-decoration-none text-primary"
+            >Search</a
+          >
+        </li>
+      </ul>
+    </div>
+
+    <div class="col-md-4">
+      <h5 class="fw-semibold mb-3">Important Resources</h5>
+      <ul class="list-unstyled">
+        <li class="mb-2">
+          <a
+            href="{{ url_for('privacy') }}"
+            rel="noopener noreferrer"
+            class="text-decoration-none text-primary"
+            >Privacy Policy</a
+          >
+        </li>
+        <li class="mb-2"><a href="#">News*</a></li>
+        <li class="mb-2"><a href="#">FAQ*</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="container py-5">
+  <div class="mb-5">
+    <h4>Brawlers</h4>
+    <hr />
+  </div>
+
+  <div class="row g-5">
+    <div class="col-md-4">
+      <h5 class="fw-semibold mb-3">Brawler Rarity Categories</h5>
+      <ul class="list-unstyled">
+        <li class="mb-2">
+          <a
+            href="#"
+            rel="noopener noreferrer"
+            class="text-decoration-none text-primary"
+            >Starter Brawlers*</a
+          >
+        </li>
+        <li class="mb-2">
+          <a
+            href="{{ url_for('rare') }}"
+            rel="noopener noreferrer"
+            class="text-decoration-none text-primary"
+            >Rare Brawlers</a
+          >
+        </li>
+        <li class="mb-2">
+          <a
+            href="{{ url_for('super_rare') }}"
+            rel="noopener noreferrer"
+            class="text-decoration-none text-primary"
+            >Super Rare Brawlers</a
+          >
+        </li>
+        <li class="mb-2">
+          <a
+            href="{{ url_for('epic') }}"
+            rel="noopener noreferrer"
+            class="text-decoration-none text-primary"
+            >Epic Brawler</a
+          >
+        </li>
+        <li class="mb-2">
+          <a
+            href="{{ url_for('mythic') }}"
+            rel="noopener noreferrer"
+            class="text-decoration-none text-primary"
+            >Mythic Brawlers</a
+          >
+        </li>
+        <li class="mb-2">
+          <a
+            href="{{ url_for('legendary') }}"
+            rel="noopener noreferrer"
+            class="text-decoration-none text-primary"
+            >Legendary Brawler</a
+          >
+        </li>
+        <li class="mb-2">
+          <a
+            href="{{ url_for('ultra_legendary') }}"
+            rel="noopener noreferrer"
+            class="text-decoration-none text-primary"
+            >Ultra Legendary Brawler</a
+          >
+        </li>
+        <li class="mb-2">
+          <a
+            href="#"
+            rel="noopener noreferrer"
+            class="text-decoration-none text-primary"
+            >Limited Time Brawler*</a
+          >
+        </li>
+      </ul>
+    </div>
+
+    <div class="col-md-4">
+      <h5 class="fw-semibold mb-3">Brawlers</h5>
+      <ul class="list-unstyled">
+        <li class="mb-2"><a href="#">Shelly</a></li>
+        <li class="mb-2"><a href="#">Nita</a></li>
+        <li class="mb-2"><a href="#">Colt</a></li>
+        <li class="mb-2"><a href="#">Bull</a></li>
+      </ul>
+    </div>
+
+    <div class="col-md-4">
+      <h5 class="fw-semibold mb-3">Resources</h5>
+      <ul class="list-unstyled">
+        <li class="mb-2"><a href="#">Guides</a></li>
+        <li class="mb-2"><a href="#">News</a></li>
+        <li class="mb-2"><a href="#">FAQ</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="container py-5">
+    <div class="mb-5">
+      <h4>Brawl Stars Gamemodes</h4>
+      <hr />
+    </div>
+
+    <div class="row g-5">
+      <div class="col-md-4">
+        <h5 class="fw-semibold mb-3">Trophy Gamemodes</h5>
+        <ul class="list-unstyled">
+          <li class="mb-2">
+            <a
+              href="{{ url_for('showdown') }}"
+              rel="noopener noreferrer"
+              class="text-decoration-none text-primary"
+              >Showdown</a
+            >
+          </li>
+          <li class="mb-2">
+            <a
+              href="{{ url_for('brawl_ball') }}"
+              rel="noopener noreferrer"
+              class="text-decoration-none text-primary"
+              >Brawl Ball</a
+            >
+          </li>
+          <li class="mb-2">
+            <a
+              href="{{ url_for('knockout') }}"
+              rel="noopener noreferrer"
+              class="text-decoration-none text-primary"
+              >Knockout</a
+            >
+          </li>
+          <li class="mb-2">
+            <a
+              href="{{ url_for('gem_grab') }}"
+              rel="noopener noreferrer"
+              class="text-decoration-none text-primary"
+              >Gem Grab</a
+            >
+          </li>
+
+          <li class="mb-2">
+            <a
+              href="{{ url_for('hot_zone') }}"
+              rel="noopener noreferrer"
+              class="text-decoration-none text-primary"
+              >Hot Zone</a
+            >
+          </li>
+          <li class="mb-2">
+            <a
+              href="{{ url_for('wipeout') }}"
+              rel="noopener noreferrer"
+              class="text-decoration-none text-primary"
+              >Wipeout</a
+            >
+          </li>
+          <li class="mb-2">
+            <a
+              href="{{ url_for('heist') }}"
+              rel="noopener noreferrer"
+              class="text-decoration-none text-primary"
+              >Heist</a
+            >
+          </li>
+          <li class="mb-2">
+            <a
+              href="{{ url_for('bounty') }}"
+              rel="noopener noreferrer"
+              class="text-decoration-none text-primary"
+              >Bounty</a
+            >
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <br />
+  *The page is not completed. {% endblock %}
+</div>

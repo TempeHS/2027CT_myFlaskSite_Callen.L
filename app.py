@@ -1,7 +1,19 @@
-import re
-from flask import Flask, render_template, url_for, request
+import os
+from flask import Flask, render_template, url_for, request, redirect
+from werkzeug.exceptions import NotFound
+from search_service import (
+    sanitize_search_query,
+    find_exact_match_endpoint,
+    find_partial_matches,
+)
+from routes.brawlers import brawlers_bp
+from routes.gamemodes import gamemodes_bp
+from routes.error_handling import errors_bp
 
 app = Flask(__name__)
+app.register_blueprint(brawlers_bp)
+app.register_blueprint(gamemodes_bp)
+app.register_blueprint(errors_bp)
 
 
 # Primary Pages Route
@@ -15,7 +27,12 @@ def contact():
     return render_template("contact.html")
 
 
-# Footer Pages Route
+@app.route("/onboarding")
+def onboarding():
+    return render_template("onboarding.html")
+
+
+# More Primary Pages Route
 @app.route("/about")
 def about():
     return render_template("pages/about.html")
@@ -41,92 +58,108 @@ def attribution():
     return render_template("pages/attribution.html")
 
 
-# Search Website
-MAX_SEARCH_QUERY_LEN = 80
-DISALLOWED_SEARCH_CHARS = re.compile(r"[^a-zA-Z0-9\s_\-']")
+# Brawler Pages
+@app.route("/brawlers")
+def brawlers():
+    return render_template("brawlers.html")
 
 
-def sanitize_search_query(raw_query: str) -> str:
-    query = (raw_query or "").strip()[:MAX_SEARCH_QUERY_LEN]
-    query = DISALLOWED_SEARCH_CHARS.sub("", query)
-    return " ".join(query.split())
+@app.route("/brawlers/rare")
+def rare():
+    return render_template("brawlers/rare.html")
 
 
-SEARCH_PAGES = [
-    {
-        "title": "Home",
-        "endpoint": "home",
-        "description": "Main landing page.",
-        "keywords": ["index", "main", "start"],
-    },
-    {
-        "title": "Contact",
-        "endpoint": "contact",
-        "description": "How to contact us.",
-        "keywords": ["email", "message", "help"],
-    },
-    {
-        "title": "About",
-        "endpoint": "about",
-        "description": "About this website.",
-        "keywords": ["info", "company", "team"],
-    },
-    {
-        "title": "Privacy",
-        "endpoint": "privacy",
-        "description": "Privacy policy details.",
-        "keywords": ["policy", "data", "security"],
-    },
-    {
-        "title": "Support",
-        "endpoint": "support",
-        "description": "Support and assistance.",
-        "keywords": ["help", "faq", "assist"],
-    },
-    {
-        "title": "Sitemap",
-        "endpoint": "sitemap_page",
-        "description": "Website page map.",
-        "keywords": ["pages", "map", "navigation"],
-    },
-    {
-        "title": "Attribution",
-        "endpoint": "attribution",
-        "description": "Credits and attributions.",
-        "keywords": ["credits", "sources", "license"],
-    },
-]
+@app.route("/brawlers/super-rare")
+def super_rare():
+    return render_template("brawlers/super-rare.html")
 
 
+@app.route("/brawlers/epic")
+def epic():
+    return render_template("brawlers/epic.html")
+
+
+@app.route("/brawlers/mythic")
+def mythic():
+    return render_template("brawlers/mythic.html")
+
+
+@app.route("/brawlers/legendary")
+def legendary():
+    return render_template("brawlers/legendary.html")
+
+
+@app.route("/brawlers/ultra-legendary")
+def ultra_legendary():
+    return render_template("brawlers/ultra-legendary.html")
+
+
+# Gamemode Pages
+@app.route("/gamemodes/bounty")
+def bounty():
+    return render_template("gamemodes/bounty.html")
+
+
+@app.route("/gamemodes/brawl-ball")
+def brawl_ball():
+    return render_template("gamemodes/brawl-ball.html")
+
+
+@app.route("/gamemodes/gem-grab")
+def gem_grab():
+    return render_template("gamemodes/gem-grab.html")
+
+
+@app.route("/gamemodes/heist")
+def heist():
+    return render_template("gamemodes/heist.html")
+
+
+@app.route("/gamemodes/hot-zone")
+def hot_zone():
+    return render_template("gamemodes/hot-zone.html")
+
+
+@app.route("/gamemodes/showdown")
+def showdown():
+    return render_template("gamemodes/showdown.html")
+
+
+@app.route("/gamemodes/knockout")
+def knockout():
+    return render_template("gamemodes/knockout.html")
+
+
+@app.route("/gamemodes/wipeout")
+def wipeout():
+    return render_template("gamemodes/wipeout.html")
+
+
+# Searching Website
 @app.route("/search")
 def search():
     query = sanitize_search_query(request.args.get("q", "", type=str))
     results = []
 
     if query:
-        q = query.lower()
-        for page in SEARCH_PAGES:
-            searchable_text = " ".join(
-                [page["title"], page["description"], " ".join(page["keywords"])]
-            ).lower()
+        endpoint = find_exact_match_endpoint(query)
+        if endpoint:
+            return redirect(url_for(endpoint))
 
-            if q in searchable_text:
-                results.append(
-                    {
-                        "title": page["title"],
-                        "description": page["description"],
-                        "url": url_for(page["endpoint"]),
-                    }
-                )
+        for page in find_partial_matches(query):
+            results.append(
+                {
+                    "title": page["title"],
+                    "description": page["description"],
+                    "url": url_for(page["endpoint"]),
+                }
+            )
 
     return render_template("search.html", query=query, results=results)
 
 
-# 404 Page Route
-@app.errorhandler(404)
-def page_not_found(error):
-    return render_template("404.html"), 404
-
-
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5000, debug=True)
+    host = os.getenv("FLASK_RUN_HOST", "127.0.0.1")
+    port = int(os.getenv("FLASK_RUN_PORT", "5000"))
+    debug = os.getenv("FLASK_DEBUG", "0") == "1"
+    app.run(host=host, port=port, debug=debug)
