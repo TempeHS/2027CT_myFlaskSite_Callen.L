@@ -44,20 +44,35 @@
 
     <!-- Warning Script for Console -->
     <script>
-      console.log(
-        "%cSTOP!",
-        "color: red; font-size: 55px; font-weight: bold; -webkit-text-stroke: 2px black;",
-      );
-      console.log(
-        "%cUsing this console may allow attackers to impersonate you and steal your information using an attack called Self-XSS. ",
-        "color: white; font-size:25px; font-weight:bold;",
-      );
-      console.log(
-        "%cDo not enter or paste code that you do not understand.",
-        "color:tomato; font-size:20px; font-weight:bold;",
-      );
-      i++;
+      // 1. Define the timing helper
+      const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
+      console.log("Loading console session...");
+
+      async function runWarning() {
+        await sleep(2000);
+
+        console.clear();
+
+        console.log(
+          "%cSTOP!",
+          "color: red; font-size: 55px; font-weight: bold; -webkit-text-stroke: 2px black;",
+        );
+
+        console.log(
+          "%cUsing this console may allow attackers to impersonate you and steal your information using an attack called Self-XSS.",
+          "color: #D3D3D3; font-size: 22px; font-weight: bold;",
+        );
+
+        console.log(
+          "%cDo not enter or paste code that you do not understand.",
+          "color: tomato; font-size: 20px; font-weight: bold; line-height: 2;",
+        );
+      }
+
+      runWarning();
     </script>
+
     {% block extra_js %}{% endblock %}
   </body>
 </html>
