@@ -1,9 +1,15 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
   <div class="container">
-  <a class="navbar-brand" href="/">
-    <img src="static/images/brawlable.svg" width="30" height="30" class="d-inline-block align-top" alt="">
-    Brawlable
-  </a>
+<a class="navbar-brand" href="/">
+  <img
+    src="{{ url_for('static', filename='images/brawlable.svg') }}"
+    width="30"
+    height="30"
+    class="d-inline-block align-top"
+    alt="Brawlable logo"
+  >
+  Brawlable
+</a>
   <button
       class="navbar-toggler"
       type="button"
@@ -24,12 +30,12 @@
                         Brawlers
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Rare</a></li>
-                        <li><a class="dropdown-item" href="#">Super Rare</a></li>
-                        <li><a class="dropdown-item" href="#">Epic</a></li>
-                        <li><a class="dropdown-item" href="#">Mythic</a></li>
-                        <li><a class="dropdown-item" href="#">Legendary</a></li>
-                        <li><a class="dropdown-item" href="#">Ultra Legendary</a></li>
+                        <li><a class="dropdown-item" href="{{ url_for('rare') }}">Rare</a></li>
+                        <li><a class="dropdown-item" href="{{ url_for('super_rare') }}">Super Rare</a></li>
+                        <li><a class="dropdown-item" href="{{ url_for('epic') }}">Epic</a></li>
+                        <li><a class="dropdown-item" href="{{ url_for('mythic') }}">Mythic</a></li>
+                        <li><a class="dropdown-item" href="{{ url_for('legendary') }}">Legendary</a></li>
+                        <li><a class="dropdown-item" href="{{ url_for('ultra_legendary') }}">Ultra Legendary</a></li>
                     </ul>
                 </li>
 
@@ -40,14 +46,14 @@
                         Gamemodes
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Showdown</a></li>
-                        <li><a class="dropdown-item" href="#">Bounty</a></li>
-                        <li><a class="dropdown-item" href="#">Heist</a></li>
-                        <li><a class="dropdown-item" href="#">Brawl Ball</a></li>
-                        <li><a class="dropdown-item" href="#">Wipeout</a></li>
-                        <li><a class="dropdown-item" href="#">Hot Zone</a></li>
-                        <li><a class="dropdown-item" href="#">Knockout</a></li>
-                        <li><a class="dropdown-item" href="#">Gem Grab</a></li>
+                        <li><a class="dropdown-item" href="{{ url_for('showdown') }}">Showdown</a></li>
+                        <li><a class="dropdown-item" href="{{ url_for('bounty') }}">Bounty</a></li>
+                        <li><a class="dropdown-item" href="{{ url_for('heist') }}">Heist</a></li>
+                        <li><a class="dropdown-item" href="{{ url_for('brawl_ball') }}">Brawl Ball</a></li>
+                        <li><a class="dropdown-item" href="{{ url_for('wipeout') }}">Wipeout</a></li>
+                        <li><a class="dropdown-item" href="{{ url_for('hot_zone') }}">Hot Zone</a></li>
+                        <li><a class="dropdown-item" href="{{ url_for('knockout') }}">Knockout</a></li>
+                        <li><a class="dropdown-item" href="{{ url_for('gem_grab') }}">Gem Grab</a></li>
                         <li>
                             <a class="dropdown-item" href="#">Limited Time Gamemodes</a>
                         </li>
@@ -84,8 +90,7 @@
                     value="{{ request.args.get('q', '') }}"
                 />
                 <button class="btn btn-outline-success" type="submit">Search</button>
-                </form>
-            <!--<form class="d-flex" role="search"> <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" /> <button class="btn btn-outline-success" type="submit">Search</button> </form>-->
+            </form>
         </div>
     </div>
   </div>
