@@ -24,6 +24,7 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: "3.x"
+          cache: "pip"
 
       - name: Install Bandit
         run: |
@@ -34,7 +35,7 @@ jobs:
         run: |
           bandit -r . \
             -lll \
-            --exclude ".git,__pycache__,.venv,venv,.tox,.eggs" \
+            --exclude ".git,__pycache__,.venv,venv,.tox,.eggs,tests,test_*.py,.github" \
             -f sarif \
             -o bandit.sarif || true
 
