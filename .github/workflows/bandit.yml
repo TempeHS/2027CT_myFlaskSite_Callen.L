@@ -35,7 +35,11 @@ jobs:
         run: |
           bandit -r . \
             -lll \
+<<<<<<< HEAD
             --exclude ".git,__pycache__,.venv,venv,.tox,.eggs,tests,test_*.py,.github" \
+=======
+            --exclude ".git,__pycache__,.venv,venv,.tox,.eggs" \
+>>>>>>> 2a54b3d (fix(bandit): CodeQL v4, fix arg  and post scan)
             -f sarif \
             -o bandit.sarif || true
 
