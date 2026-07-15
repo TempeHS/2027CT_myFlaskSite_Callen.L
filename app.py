@@ -1,11 +1,12 @@
 import os
 from flask import Flask, render_template, url_for, request, redirect
 from werkzeug.exceptions import NotFound
-from search_service import (
+from routes.search.search_service import (
     sanitize_search_query,
     find_exact_match_endpoint,
     find_partial_matches,
 )
+
 from routes.brawlers import brawlers_bp
 from routes.gamemodes import gamemodes_bp
 from routes.error_handling import errors_bp

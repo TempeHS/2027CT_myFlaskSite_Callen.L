@@ -1,4 +1,4 @@
-from search_config import (
+from routes.search.search_config import (
     DISALLOWED_SEARCH_CHARS,
     MAX_SEARCH_QUERY_LEN,
     SEARCH_PAGES,
