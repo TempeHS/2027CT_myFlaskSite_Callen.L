@@ -1,10 +1,10 @@
 import pytest
 from app import app
+from urllib.parse import quote
+from routes.search.search_config import MAX_SEARCH_QUERY_LEN
 from routes.search.search_service import (
     sanitize_search_query,
     SEARCH_PAGES,
-    find_exact_match_endpoint,
-    find_partial_matches,
 )
 
 
@@ -59,7 +59,8 @@ def test_all_get_routes_return_success(client, route):
     ],
 )
 def test_search_redirect_immediate(client, query):
-    response = client.get(f"/search?q={query}", follow_redirects=True)
+    encoded_query = quote(query, safe="")
+    response = client.get(f"/search?q={encoded_query}", follow_redirects=True)
     assert response.status_code == 200
 
 
@@ -78,10 +79,14 @@ def test_sanitizing_special_characters():
 
 def test_sanitize_limits_length():
     query = "a" * 200
-    assert len(sanitize_search_query(query)) == 80
+    assert len(sanitize_search_query(query)) == MAX_SEARCH_QUERY_LEN
 
 
 def all_search_terms():
+    """
+    This tests all the non-empty unique search terms from SEARCH_PAGES.
+    Using the terms found in endpoint, title, and keywords in order.
+    """
     seen = set()
 
     for page in SEARCH_PAGES:
@@ -105,7 +110,8 @@ def all_search_terms():
 
 @pytest.mark.parametrize("term", list(all_search_terms()))
 def test_every_search_term(client, term):
-    response = client.get(f"/search?q={term}", follow_redirects=True)
+    encoded_term = quote(str(term), safe="")
+    response = client.get(f"/search?q={encoded_term}", follow_redirects=True)
     assert response.status_code == 200
 
 
