@@ -31,4 +31,18 @@ def find_partial_matches(query: str) -> list[dict]:
     return matches
 
 
+def resolve_endpoint_name(endpoint: str) -> str | None:
+    from flask import current_app
+
+    if endpoint in current_app.view_functions:
+        return endpoint
+    suffix = f".{endpoint}"
+    matches = [
+        name for name in current_app.view_functions.keys() if name.endswith(suffix)
+    ]
+    if not matches:
+        return None
+    return sorted(matches)[0]
+
+
 # search rankings?
