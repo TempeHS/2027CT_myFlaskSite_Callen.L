@@ -92,9 +92,13 @@ and shielding.' } ] %}
             </div>
             <div class="col-8">
               <div class="card-body">
-                <h5 class="card-title">{{ brawler.name }}</h5>
+                <span>{{ brawler.name }}</span>
                 <p class="card-text">{{ brawler.description }}</p>
-                <a href="#" class="btn btn-primary btn-sm">Learn More</a>
+                <a
+                  href="/brawlers/rare/{{ brawler.id }}"
+                  class="btn btn-primary btn-sm"
+                  >Learn More</a
+                >
               </div>
             </div>
           </div>
