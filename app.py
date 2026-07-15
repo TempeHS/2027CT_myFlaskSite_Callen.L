@@ -1,6 +1,5 @@
 import os
 from flask import Flask, render_template, url_for, request, redirect
-from werkzeug.exceptions import NotFound
 from routes.search.search_service import (
     sanitize_search_query,
     find_exact_match_endpoint,
