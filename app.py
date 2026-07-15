@@ -9,53 +9,19 @@ from search_service import (
 from routes.brawlers import brawlers_bp
 from routes.gamemodes import gamemodes_bp
 from routes.error_handling import errors_bp
+from routes.main_pages import main_bp
 
 app = Flask(__name__)
 app.register_blueprint(brawlers_bp)
 app.register_blueprint(gamemodes_bp)
 app.register_blueprint(errors_bp)
+app.register_blueprint(main_bp)
 
 
 # Primary Pages Route
 @app.route("/")
 def home():
     return render_template("index.html")
-
-
-@app.route("/contact")
-def contact():
-    return render_template("contact.html")
-
-
-@app.route("/onboarding")
-def onboarding():
-    return render_template("onboarding.html")
-
-
-# More Primary Pages Route
-@app.route("/about")
-def about():
-    return render_template("pages/about.html")
-
-
-@app.route("/privacy")
-def privacy():
-    return render_template("pages/privacy.html")
-
-
-@app.route("/support")
-def support():
-    return render_template("pages/support.html")
-
-
-@app.route("/sitemap")
-def sitemap_page():
-    return render_template("pages/sitemap.html")
-
-
-@app.route("/attribution")
-def attribution():
-    return render_template("pages/attribution.html")
 
 
 # Searching Website
