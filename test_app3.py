@@ -1,6 +1,11 @@
 import pytest
 from app import app
-from search_service import sanitize_search_query, SEARCH_PAGES
+from routes.search.search_service import (
+    sanitize_search_query,
+    SEARCH_PAGES,
+    find_exact_match_endpoint,
+    find_partial_matches,
+)
 
 
 @pytest.fixture
