@@ -1,8 +1,12 @@
 html[data-bs-theme="light"] {
+  --bs-body-bg: #ffffff;
   --bs-body-color: #000000;
+  --bs-secondary-bg: #f2f2f2;
+  --bs-tertiary-bg: #e6e6e6;
 }
 
 html[data-bs-theme="dark"] {
+  --bs-body-bg: #1c1919;
   --bs-body-color: #ffffff;
 }
 
