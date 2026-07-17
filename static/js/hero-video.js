@@ -70,8 +70,7 @@
   const DB_NAME = "HeroVideoCacheDB";
   const STORE_NAME = "videos";
   const VIDEO_KEY = "hero-video-file";
-  // Read the URL from the data attribute set by the template
-  const VIDEO_URL = video?.dataset.src || "";
+  const VIDEO_URL = "{{ url_for('static', filename='videos/hero.mp4') }}";
 
   let objectUrl = null;
 
@@ -84,8 +83,8 @@
   }
 
   function startVideoLoad() {
-    if (!video || !VIDEO_URL || !("indexedDB" in window)) {
-      if (video && VIDEO_URL) video.src = VIDEO_URL;
+    if (!video || !("indexedDB" in window)) {
+      if (video) video.src = VIDEO_URL;
       return;
     }
 
@@ -180,21 +179,19 @@
   });
 })();
 
-(() => {
-  const bg = document.querySelector(".hero-video");
-  let ticking = false;
+const bg = document.querySelector(".hero-video");
+let ticking = false;
 
-  window.addEventListener(
-    "scroll",
-    () => {
-      if (!bg || ticking) return;
-      ticking = true;
-      requestAnimationFrame(() => {
-        const offset = window.pageYOffset || 0;
-        bg.style.transform = `translateY(${offset * 0.35}px)`;
-        ticking = false;
-      });
-    },
-    { passive: true },
-  );
-})();
+window.addEventListener(
+  "scroll",
+  () => {
+    if (!bg || ticking) return;
+    ticking = true;
+    requestAnimationFrame(() => {
+      const offset = window.pageYOffset || 0;
+      bg.style.transform = `translateY(${offset * 0.35}px)`;
+      ticking = false;
+    });
+  },
+  { passive: true },
+);
