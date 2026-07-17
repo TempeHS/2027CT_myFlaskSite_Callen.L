@@ -11,6 +11,7 @@
     playsinline
     autoplay
     preload="none"
+    data-src="{{ url_for('static', filename='videos/hero.mp4') }}"
   >
     <p
       id="video-loading-text"
@@ -335,4 +336,6 @@
   );
 </script>
 
-{% endblock %}
+{% block extra_js %}
+<script src="{{ url_for('static', filename='js/hero-video.js') }}"></script>
+{% endblock %} {% endblock %}
