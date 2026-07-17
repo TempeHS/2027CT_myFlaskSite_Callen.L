@@ -136,5 +136,8 @@
 </section>
 
 {% block extra_js %}
-<script src="{{ url_for('static', filename='js/hero-video.js') }}"></script>
+<script
+  src="{{ url_for('static', filename='js/hero-video.js') }}"
+  defer
+></script>
 {% endblock %} {% endblock %}
