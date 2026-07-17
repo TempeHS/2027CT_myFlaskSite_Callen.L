@@ -1,17 +1,24 @@
-/* Custom styles for My Flask Site */
-
-body {
-  padding-top: 70px; /* Space for fixed navbar */
+html[data-bs-theme="light"] {
+  --bs-body-color: #000000;
 }
 
-/* Hero Carousel Styles */
+html[data-bs-theme="dark"] {
+  --bs-body-color: #ffffff;
+}
+
+body {
+  padding-top: 70px;
+  background-color: var(--bs-body-bg);
+  color: var(--bs-body-color);
+}
+
 .carousel-item img {
   height: 500px;
-  object-fit: cover; /* Crop images to fit */
+  object-fit: cover;
 }
 
 .carousel-caption {
-  background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  background: rgba(0, 0, 0, 0.5);
   padding: 20px;
   border-radius: 10px;
 }
@@ -32,7 +39,7 @@ body {
   }
 }
 
-/* Hero WIP Section */
+/* Hero Section */
 .hero {
   position: relative;
   min-height: 80vh;
@@ -50,7 +57,7 @@ body {
   z-index: 0;
 }
 
-.hero-bg {
+.hero-bg .bg {
   color: black;
 }
 
@@ -103,7 +110,7 @@ body {
 
 /* Section Styles */
 section {
-  background-color: #f8f9fa;
+  background-color: var(--bs-body-bg);
 }
 
 section h2 {
@@ -123,7 +130,6 @@ section h2 {
 
 .contact-info {
   padding: 20px;
-  background-color: #fff;
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
