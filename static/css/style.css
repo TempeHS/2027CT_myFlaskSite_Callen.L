@@ -215,3 +215,17 @@ div[id],
 article[id] {
   scroll-margin-top: var(--header-height);
 }
+
+.fade-in-fx {
+  opacity: 0;
+  transform: translateY(10px);
+  transition:
+    opacity 2s cubic-bezier(0.25, 1, 0.5, 1),
+    transform 2s cubic-bezier(0.25, 1, 0.5, 1);
+  will-change: opacity, transform;
+}
+
+.fade-in-fx.active {
+  opacity: 1;
+  transform: translateY(0);
+}

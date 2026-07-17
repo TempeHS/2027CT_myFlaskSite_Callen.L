@@ -35,7 +35,7 @@
   </button>
 
   <!-- Hero Content -->
-  <div class="container position-relative text-center text-white">
+  <div class="container position-relative text-center text-white fade-in-fx">
     <div class="row justify-content-center">
       <div class="col-lg-8">
         <h1 class="display-2 fw-bold">Learn Brawl Stars One Step At A Time</h1>
@@ -70,8 +70,12 @@
 <!-- Feature Cards Section -->
 <section class="py-5">
   <div class="container">
-    <h2 class="text-center">Are you ready to learn Brawl Stars?</h2>
-    <p class="text-center mb-4">Pick any of the topics below to get started!</p>
+    <div>
+      <h2 class="text-center">Are you ready to learn Brawl Stars?</h2>
+      <p class="text-center mb-4">
+        Pick any of the topics below to get started!
+      </p>
+    </div>
 
     <div class="row">
       <!-- Card 1 -->
@@ -144,6 +148,10 @@
 {% block extra_js %}
 <script
   src="{{ url_for('static', filename='js/hero-video.js') }}"
+  defer
+></script>
+<script
+  src="{{ url_for('static', filename='js/fade-in-fx.js') }}"
   defer
 ></script>
 {% endblock %} {% endblock %}
