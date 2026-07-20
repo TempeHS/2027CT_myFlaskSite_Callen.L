@@ -70,8 +70,7 @@
   const DB_NAME = "HeroVideoCacheDB";
   const STORE_NAME = "videos";
   const VIDEO_KEY = "hero-video-file";
-  const VIDEO_URL = "{{ url_for('static', filename='videos/hero.mp4') }}";
-
+  const VIDEO_URL = video?.dataset.src;
   let objectUrl = null;
 
   function setVideoSrcFromBlob(blob) {
