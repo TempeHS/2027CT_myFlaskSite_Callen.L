@@ -2,6 +2,14 @@
   --header-height: 65px;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+:target {
+  scroll-margin-top: var(--header-height);
+}
+
 :target {
   scroll-margin-top: var(--header-height);
 }
@@ -9,5 +17,6 @@
 section[id],
 div[id],
 article[id] {
+  display: block;
   scroll-margin-top: var(--header-height);
 }
