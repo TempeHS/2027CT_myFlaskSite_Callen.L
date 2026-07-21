@@ -19,12 +19,12 @@ html[data-bs-theme="dark"] {
 }
 
 body {
-  padding-top: 70px;
+  padding-top: 56px;
   background-color: var(--bs-body-bg);
   color: var(--bs-body-color);
 }
 
-/* On smaller screens */
+/* On smaller screens
 @media (max-width: 768px) {
   .carousel-item img {
     height: 300px;
@@ -34,6 +34,7 @@ body {
     font-size: 1.5rem;
   }
 }
+  */
 
 /* Feature Cards */
 .card {
