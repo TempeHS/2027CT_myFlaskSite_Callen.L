@@ -3,33 +3,25 @@ html[data-bs-theme="light"] {
   --bs-body-color: #000000;
   --bs-secondary-bg: #f2f2f2;
   --bs-tertiary-bg: #e6e6e6;
+  --bg-navbar: #ffffff;
 }
 
 html[data-bs-theme="dark"] {
   --bs-body-bg: #1c1919;
   --bs-body-color: #ffffff;
+  --bg-navbar: #1a1a1a;
+}
+
+.navbar {
+  transition:
+    background-color 0.4s ease,
+    backdrop-filter 0.4s ease;
 }
 
 body {
   padding-top: 70px;
   background-color: var(--bs-body-bg);
   color: var(--bs-body-color);
-}
-
-.carousel-item img {
-  height: 500px;
-  object-fit: cover;
-}
-
-.carousel-caption {
-  background: rgba(0, 0, 0, 0.5);
-  padding: 20px;
-  border-radius: 10px;
-}
-
-.carousel-caption h2 {
-  font-size: 2.5rem;
-  margin-bottom: 10px;
 }
 
 /* On smaller screens */
@@ -128,4 +120,22 @@ section h2 {
   height: 100px;
   object-fit: contain;
   transition: transform 0.35s ease;
+}
+
+.scroll-wheel {
+  display: flex;
+  overflow-x: auto;
+  gap: 2rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  scroll-snap-type: x proximity;
+  scroll-behavior: smooth;
+
+  scrollbar-width: none;
+}
+
+.scroll-wheel::-webkit-scrollbar {
+  display: none;
 }
