@@ -12,6 +12,18 @@ html[data-bs-theme="dark"] {
   --bg-navbar: #1a1a1a;
 }
 
+html[data-bs-theme="light"] .navbar.scrolled {
+  background-color: rgba(var(--bs-body-bg-rgb), 0.3) !important;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+html[data-bs-theme="dark"] .navbar.scrolled {
+  background-color: rgba(var(--bs-body-bg-rgb), 0.3) !important;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
 .navbar {
   transition:
     background-color 0.4s ease,
