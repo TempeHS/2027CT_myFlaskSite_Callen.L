@@ -1,5 +1,10 @@
 {% extends 'base.html' %} {% block title %}Home - Brawlable{% endblock %}
-{%block content %}
+{%block content %} {% block extra_css %}
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', filename='css/section-css/hero-section.css') }}"
+/>
+{% endblock %}
 
 <section class="hero d-flex align-items-center">
   <!-- Background Video -->

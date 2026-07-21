@@ -1,0 +1,13 @@
+:root {
+  --header-height: 65px;
+}
+
+:target {
+  scroll-margin-top: var(--header-height);
+}
+
+section[id],
+div[id],
+article[id] {
+  scroll-margin-top: var(--header-height);
+}
