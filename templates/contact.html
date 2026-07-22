@@ -1,5 +1,9 @@
 {% extends 'base.html' %} {% block title %}Contact - My Flask Site{% endblock %}
 {% block content %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/section-css/contact-page.css') }}" />{% endblock %}
+
 <div class="container py-5">
   <h1 class="text-center mb-5">Contact Us</h1>
 
@@ -9,12 +13,7 @@
       <div class="map-container">
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3310.8072113701674!2d151.1609197987081!3d-33.92036107954311!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b12b08afb16153d%3A0xbd21d225e980c8aa!2sTempe%20High%20School!5e0!3m2!1sen!2sau!4v1783439731916!5m2!1sen!2sau"
-          width="100%"
-          height="400"
-          style="border: 0"
-          allowfullscreen=""
-          loading="lazy"
-        >
+          width="100%" height="400" style="border: 0" allowfullscreen="" loading="lazy">
         </iframe>
       </div>
 
@@ -28,9 +27,7 @@
           <li class="mb-2"><strong>📞</strong> (02) 1234 5678</li>
           <li>
             <strong>✉️</strong>
-            <a href="mailto:info@thisemailisnotintendedtobeemailed.com"
-              >info@brawlable.com</a
-            >
+            <a href="mailto:info@thisemailisnotintendedtobeemailed.com">info@brawlable.com</a>
           </li>
         </ul>
       </div>
@@ -45,27 +42,13 @@
           <!-- Name Field -->
           <div class="mb-3">
             <label for="name" class="form-label">Your Name *</label>
-            <input
-              type="text"
-              class="form-control"
-              id="name"
-              name="name"
-              placeholder="John Smith"
-              required
-            />
+            <input type="text" class="form-control" id="name" name="name" placeholder="John Smith" required />
           </div>
 
           <!-- Email Field -->
           <div class="mb-3">
             <label for="email" class="form-label">Email Address *</label>
-            <input
-              type="email"
-              class="form-control"
-              id="email"
-              name="email"
-              placeholder="john@example.com"
-              required
-            />
+            <input type="email" class="form-control" id="email" name="email" placeholder="john@example.com" required />
           </div>
 
           <!-- Subject Field -->
@@ -84,14 +67,8 @@
           <!-- Message Field -->
           <div class="mb-3">
             <label for="message" class="form-label">Message *</label>
-            <textarea
-              class="form-control"
-              id="message"
-              name="message"
-              rows="5"
-              placeholder="How can we help you?"
-              required
-            ></textarea>
+            <textarea class="form-control" id="message" name="message" rows="5" placeholder="How can we help you?"
+              required></textarea>
           </div>
 
           <!-- Submit Button -->
