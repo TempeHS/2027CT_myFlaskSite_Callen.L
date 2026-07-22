@@ -1,59 +1,34 @@
-document.addEventListener("DOMContentLoaded", function () {
-  const observerOptions = {
-    root: null,
-    threshold: 1.0,
-  };
+function setupFadeObserver(selector, threshold) {
+  const elements = document.querySelectorAll(selector);
 
-  const observer = new IntersectionObserver((entries, observer) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
+  if (elements.length === 0) {
+    return;
+  }
+
+  const observer = new IntersectionObserver(
+    (entries, currentObserver) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) {
+          return;
+        }
+
         entry.target.classList.add("active");
-        observer.unobserve(entry.target);
-      }
-    });
-  }, observerOptions);
+        currentObserver.unobserve(entry.target);
+      });
+    },
+    {
+      root: null,
+      threshold,
+    },
+  );
 
-  document.querySelectorAll(".fade-in-fx").forEach((section) => {
-    observer.observe(section);
+  elements.forEach((element) => {
+    observer.observe(element);
   });
-});
+}
 
-document.addEventListener("DOMContentLoaded", function () {
-  const observerOptions = {
-    root: null,
-    threshold: 0.6,
-  };
-
-  const observer = new IntersectionObserver((entries, observer) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("active");
-        observer.unobserve(entry.target);
-      }
-    });
-  }, observerOptions);
-
-  document.querySelectorAll(".fade-in-fx-higher").forEach((section) => {
-    observer.observe(section);
-  });
-});
-
-document.addEventListener("DOMContentLoaded", function () {
-  const observerOptions = {
-    root: null,
-    threshold: 0.3,
-  };
-
-  const observer = new IntersectionObserver((entries, observer) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("active");
-        observer.unobserve(entry.target);
-      }
-    });
-  }, observerOptions);
-
-  document.querySelectorAll(".fade-in-fx-even-higher").forEach((section) => {
-    observer.observe(section);
-  });
+document.addEventListener("DOMContentLoaded", () => {
+  setupFadeObserver(".fade-in-fx", 1);
+  setupFadeObserver(".fade-in-fx-higher", 0.6);
+  setupFadeObserver(".fade-in-fx-even-higher", 0.3);
 });
