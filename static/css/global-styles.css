@@ -81,7 +81,11 @@ article[id] {
   scroll-margin-top: var(--header-height);
 }
 
-/**/
+/* -----------------------------------------------------------------------
+5. Scrolling back to top
+This places a button on the bottom right and take you to the top.
+-------------------------------------------------------------------------- */
+
 #back-to-top {
   position: fixed;
   right: 20px;
@@ -103,8 +107,8 @@ article[id] {
   pointer-events: none;
 
   transition:
-    opacity 0.3s ease,
-    transform 0.3s ease;
+    opacity 0.5s ease-out,
+    transform 0.5s ease-out;
 }
 
 #back-to-top.show {
