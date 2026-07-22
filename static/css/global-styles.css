@@ -14,7 +14,7 @@ html[data-bs-theme="light"] {
 html[data-bs-theme="dark"] {
   --bs-body-bg: #1c1919;
   --bs-body-color: #ffffff;
-  --bg-navbar: #1a1a1a;
+  --bg-navbar: #111111;
 }
 
 /* -----------------------------------------------------------------------
@@ -45,6 +45,7 @@ This gives the navigation bar a ease effect when scrolled and a blur.
   transition:
     background-color 0.4s ease,
     backdrop-filter 0.4s ease;
+  background-color: var(--bg-navbar);
 }
 
 .navbar.scrolled {
