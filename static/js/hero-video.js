@@ -14,19 +14,32 @@
   let loadingTimer = null;
   let loadingIndex = 0;
 
+  let delayTimer = null;
+
   function startLoadingText() {
     if (!loadingText) return;
-    loadingText.style.display = "";
-    loadingText.textContent = loadingFrames[0];
-    loadingTimer = setInterval(() => {
-      loadingIndex = (loadingIndex + 1) % loadingFrames.length;
-      loadingText.textContent = loadingFrames[loadingIndex];
-    }, 450);
+
+    if (delayTimer) clearTimeout(delayTimer);
+
+    delayTimer = setTimeout(() => {
+      loadingText.style.display = "";
+      loadingText.textContent = loadingFrames[0];
+
+      loadingTimer = setInterval(() => {
+        loadingIndex = (loadingIndex + 1) % loadingFrames.length;
+        loadingText.textContent = loadingFrames[loadingIndex];
+      }, 450);
+    }, 2000);
   }
 
   function stopLoadingText() {
+    // Clear the delay timer if it hasn't fired yet
+    if (delayTimer) clearTimeout(delayTimer);
+    delayTimer = null;
+
     if (loadingTimer) clearInterval(loadingTimer);
     loadingTimer = null;
+
     if (loadingText) loadingText.style.display = "none";
   }
 
