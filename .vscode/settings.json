@@ -22,5 +22,12 @@
     "SQL": false
   },
   "chat.agent.enabled": false,
-  "cSpell.words": ["Brawlable", "gamemode", "Gamemodes"]
+  "cSpell.words": [
+    "Brawlable",
+    "gamemode",
+    "Gamemodes"
+  ],
+  "[html]": {
+    "editor.defaultFormatter": "vscode.html-language-features"
+  }
 }
