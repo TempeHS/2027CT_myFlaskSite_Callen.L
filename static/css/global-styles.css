@@ -48,8 +48,14 @@ This gives the navigation bar a ease effect when scrolled and a blur.
   background-color: var(--bg-navbar);
 }
 
-.navbar.scrolled {
+html[data-bs-theme="dark"] .navbar.scrolled {
   background-color: rgba(var(--bs-body-bg-rgb), 0.3) !important;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+html[data-bs-theme="light"] .navbar.scrolled {
+  background-color: rgba(var(--bs-body-bg-rgb), 0.5) !important;
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
 }
