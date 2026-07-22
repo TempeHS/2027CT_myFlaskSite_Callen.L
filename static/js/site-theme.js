@@ -31,6 +31,7 @@ const updateTheme = () => {
     isDark ? "dark" : "light",
   );
 };
+
 updateTheme();
 window
   .matchMedia("(prefers-color-scheme: dark)")

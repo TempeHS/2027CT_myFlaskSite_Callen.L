@@ -16,7 +16,7 @@
 }
 
 .hero-bg .bg {
-  color: black;
+  background-color: var(--bg-navbar);
 }
 
 .overlay {
