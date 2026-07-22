@@ -43,6 +43,3 @@ def resolve_endpoint_name(endpoint: str) -> str | None:
     if not matches:
         return None
     return sorted(matches)[0]
-
-
-# search rankings?
