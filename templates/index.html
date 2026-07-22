@@ -1,20 +1,16 @@
 {% extends "base.html" %}
-
 {% block title %}Home - Brawlable{% endblock %}
-
 {% block extra_css %}
-<link rel="stylesheet" href="{{ url_for('static', filename='css/section-css/hero-section.css') }}" />
-{% endblock %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/section-css/hero-section.css') }}" />{% endblock %}
 
 {% block content %}
 
-<section class="hero d-flex align-items-center">
+<section class="hero d-flex align-items-center bg-black">
   <video id="hero-video" class="hero-video" muted loop playsinline autoplay preload="none"
     data-src="{{ url_for('static', filename='videos/hero.mp4') }}"></video>
 
   <p id="video-loading-text" class="position-absolute bottom-0 start-50 translate-middle-x text-white fw-semibold m-0"
     aria-live="polite"></p>
-
 
   <div class="overlay"></div>
 
