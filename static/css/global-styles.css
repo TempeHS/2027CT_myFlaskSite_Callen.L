@@ -1,0 +1,54 @@
+/* -----------------------------------------------------------------------
+1. Global Site Theme Colors
+This allows the site to show a predefined set of colors in user theme.
+-------------------------------------------------------------------------- */
+
+html[data-bs-theme="light"] {
+  --bs-body-bg: #ffffff;
+  --bs-body-color: #000000;
+  --bs-secondary-bg: #f2f2f2;
+  --bs-tertiary-bg: #e6e6e6;
+  --bg-navbar: #ffffff;
+}
+
+html[data-bs-theme="dark"] {
+  --bs-body-bg: #1c1919;
+  --bs-body-color: #ffffff;
+  --bg-navbar: #1a1a1a;
+}
+
+/* -----------------------------------------------------------------------
+2. Global Page Styles
+This gives the navbar spacing and sections a pre-defined color and size.
+-------------------------------------------------------------------------- */
+
+body {
+  padding-top: 56px;
+  background-color: var(--bs-body-bg);
+  color: var(--bs-body-color);
+}
+
+section {
+  background-color: var(--bs-body-bg);
+}
+
+section h2 {
+  font-weight: bold;
+}
+
+/* -----------------------------------------------------------------------
+3. Navigation Bars
+This gives the navigation bar a ease effect when scrolled and a blur.
+-------------------------------------------------------------------------- */
+
+.navbar {
+  transition:
+    background-color 0.4s ease,
+    backdrop-filter 0.4s ease;
+}
+
+.navbar.scrolled {
+  background-color: rgba(var(--bs-body-bg-rgb), 0.3) !important;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
