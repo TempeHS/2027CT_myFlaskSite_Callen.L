@@ -32,7 +32,7 @@
             Get Started
           </a>
 
-          <a href="#" class="btn btn-outline-light btn-lg"> Learn More </a>
+          <a href="{{ url_for('main.about') }}" class="btn btn-outline-light btn-lg"> Learn More </a>
         </div>
       </div>
     </div>
@@ -41,7 +41,7 @@
 
 <!-- Rest of page content -->
 <div class="container mt-5 fade-in-fx">
-  <h1>Welcome to Brawlable!</h1>
+  <h1>👋 Welcome to Brawlable!</h1>
   <p class="lead">
     Your all in one personal guild to Brawl Stars. Now let's get started.
   </p>
@@ -111,6 +111,145 @@
     </div>
   </div>
 </section>
+
+<section class="container my-5 py-1" aria-labelledby="learning-heading">
+  <div class="row justify-content-center text-center mb-5">
+    <div class="col-lg-8 fade-in-fx">
+      <h2 id="learning-heading" class="fw-bold mb-3">What Else Can You Learn?</h2>
+      <p class="lead">Go beyond basic brawler guides. Master the deep micro and macro strategies that separate casual
+        players from Masters.</p>
+    </div>
+  </div>
+
+  <div class="row g-4 fade-in-fx-even-higher">
+    <div class="col-md-6 col-lg-4">
+      <div class="card h-100">
+        <div class="card-body p-4">
+          <i class="bi bi-diagram-3 fs-2 mb-3 d-block" aria-hidden="true"></i>
+          <h3 class="h5 card-title fw-bold mb-3">Drafting & Creating Teams</h3>
+          <ul class="list-unstyled mb-0">
+            <li class="mb-2"><i class="bi bi-check2 text-primary me-2"></i> How to counter-pick meta brawlers</li>
+            <li class="mb-2"><i class="bi bi-check2 text-primary me-2"></i> Building perfect 3v3 team</li>
+            <li><i class="bi bi-check2 text-primary me-2"></i> Rules and perks of different brawlers</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6 col-lg-4">
+      <div class="card h-100">
+        <div class="card-body p-4">
+          <i class="bi bi-crosshair fs-2 mb-3 d-block" aria-hidden="true"></i>
+          <h3 class="h5 card-title fw-bold mb-3">Laning & Positioning</h3>
+          <ul class="list-unstyled mb-0">
+            <li class="mb-2"><i class="bi bi-check2 text-primary me-2"></i> Winning in middle and side lanes</li>
+            <li class="mb-2"><i class="bi bi-check2 text-primary me-2"></i> Holding positions under pressure</li>
+            <li><i class="bi bi-check2 text-primary me-2"></i> Finding opportunities to switch lanes</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6 col-lg-4">
+      <div class="card h-100">
+        <div class="card-body p-4">
+          <i class="bi bi-hourglass-split fs-2 mb-3 d-block" aria-hidden="true"></i>
+          <h3 class="h5 card-title fw-bold mb-3">Resource Management</h3>
+          <ul class="list-unstyled mb-0">
+            <li class="mb-2"><i class="bi bi-check2 text-primary me-2"></i> Counting enemy ammo and Supers</li>
+            <li class="mb-2"><i class="bi bi-check2 text-primary me-2"></i> Gadget timing for maximum value</li>
+            <li><i class="bi bi-check2 text-primary me-2"></i> Maximising hypercharge optimizations</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6 col-lg-4">
+      <div class="card h-100">
+        <div class="card-body p-4">
+          <i class="bi bi-trophy fs-2 mb-3 d-block" aria-hidden="true"></i>
+          <h3 class="h5 card-title fw-bold mb-3">Game Mode Mastery</h3>
+          <ul class="list-unstyled mb-0">
+            <li class="mb-2"><i class="bi bi-check2 text-primary me-2"></i> Brawl Ball ball passing</li>
+            <li class="mb-2"><i class="bi bi-check2 text-primary me-2"></i> Gem Grab countdown tricks</li>
+            <li><i class="bi bi-check2 text-primary me-2"></i> Heist damage rush opportunities</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6 col-lg-4">
+      <div class="card h-100">
+        <div class="card-body p-4">
+          <i class="bi bi-lightning-charge fs-2 mb-3 d-block" aria-hidden="true"></i>
+          <h3 class="h5 card-title fw-bold mb-3">Advanced Mechanics</h3>
+          <ul class="list-unstyled mb-0">
+            <li class="mb-2"><i class="bi bi-check2 text-primary me-2"></i> Appearing when enemies least expect</li>
+            <li class="mb-2"><i class="bi bi-check2 text-primary me-2"></i> Reading dodging patterns</li>
+            <li><i class="bi bi-check2 text-primary me-2"></i> Chaining supers and hypercharges</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6 col-lg-4">
+      <div class="card h-100">
+        <div class="card-body p-4">
+          <i class="bi bi-shield-check fs-2 mb-3 d-block" aria-hidden="true"></i>
+          <h3 class="h5 card-title fw-bold mb-3">Ranked & Competitive</h3>
+          <ul class="list-unstyled mb-0">
+            <li class="mb-2"><i class="bi bi-check2 text-primary me-2"></i> Adapting to Ranked rules</li>
+            <li class="mb-2"><i class="bi bi-check2 text-primary me-2"></i> Communicating with your team</li>
+            <li><i class="bi bi-check2 text-primary me-2"></i> Countering opponent's brawlers</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="py-5">
+  <div class="container">
+    <div class="fade-in-fx">
+      <h2 class="text-center">So what are you waiting for.</h2>
+      <p class="text-center mb-4 lead">
+        Get started with mastering Brawl Stars different gamemodes now.
+      </p>
+    </div>
+
+    <div class="row fade-in-fx-higher">
+      <div class="col-md-6 mb-4">
+        <div class="card h-100">
+          <img src="{{ url_for('static', filename='images/index-feature2.jpg') }}" class="card-img-top" alt="Feature 2"
+            loading="lazy" decoding="async" />
+          <div class="card-body">
+            <h5 class="card-title">Trophy Road</h5>
+            <p class="card-text">
+              Learn the different gamemodes you can gain trophies on, and how you can dominate in each one.
+            </p>
+            <a href="#" class="btn btn-primary">Learn More</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 mb-4">
+        <div class="card h-100">
+          <img src="{{ url_for('static', filename='images/index-feature3.jpg') }}" class="card-img-top" alt="Feature 3"
+            loading="lazy" decoding="async" />
+          <div class="card-body">
+            <h5 class="card-title">Ranked & Limited Time Gamemodes</h5>
+            <p class="card-text">
+              Find out what makes Ranked and Limited Time Gamemodes different and how you can adapt to the changes.
+            </p>
+            <a href="{{ url_for('main.contact') }}" class="btn btn-primary">Learn more</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 
 {% block extra_js %}
 <script src="{{ url_for('static', filename='js/hero-video.js') }}" defer></script>
