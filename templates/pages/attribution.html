@@ -39,32 +39,17 @@ This section is for updating the site to be easier!
     <h5><b>Quick shortcuts on this page</b></h5>
     <ul>
       <li>
-        <a
-          href="#python-dependencies-acknowledgements"
-          class="text-decoration-none text-primary"
-          >Python Dependencies</a
-        >
+        <a href="#python-dependencies-acknowledgements" class="text-decoration-none text-primary">Python
+          Dependencies</a>
       </li>
       <li>
-        <a
-          href="#repositories-acknowledgements"
-          class="text-decoration-none text-primary"
-          >Repositories</a
-        >
+        <a href="#repositories-acknowledgements" class="text-decoration-none text-primary">Repositories</a>
       </li>
       <li>
-        <a
-          href="#content-acknowledgements"
-          class="text-decoration-none text-primary"
-          >Content Acknowledgement</a
-        >
+        <a href="#content-acknowledgements" class="text-decoration-none text-primary">Content Acknowledgement</a>
       </li>
       <li>
-        <a
-          href="#contributors-acknowledgements"
-          class="text-decoration-none text-primary"
-          >Contributors</a
-        >
+        <a href="#contributors-acknowledgements" class="text-decoration-none text-primary">Contributors</a>
       </li>
     </ul>
   </div>
@@ -73,10 +58,8 @@ This section is for updating the site to be easier!
 <!-- SECTION2: Python Dependencies Acknowledgements -->
 <div class="container mb-5" id="python-dependencies-acknowledgements">
   <h5><b>The Python Dependencies Acknowledgements</b></h5>
-  <small
-    >This includes the LICENSES and Dependencies Versions used in the making of
-    the website.</small
-  >
+  <small>This includes the LICENSES and Dependencies Versions used in the making of
+    the website.</small>
   <hr />
   <div class="row g-5">
     <div class="col-12 col-lg-12">
@@ -86,20 +69,15 @@ This section is for updating the site to be easier!
           <ul class="list-unstyled mb-0">
             <!-- Blinker Attribution -->
             <li class="mb-4">
-              <a
-                href="https://blinker.readthedocs.io/"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="text-decoration-none text-primary"
-              >
+              <a href="https://blinker.readthedocs.io/" target="_blank" rel="noopener noreferrer"
+                class="text-decoration-none text-primary">
                 <b>Blinker (Version: 1.9.0)</b>
               </a>
               <br />
               <small class="text-muted">
                 Licensed under the MIT License. View the
-                <a href="/static/licenses/blinker.txt" target="_blank">
-                  Full License and Copyright Notice </a
-                >.
+                <a href="{{ url_for('static', filename='licenses/blinker.txt') }}" target="_blank">
+                  Full License and Copyright Notice </a>.
               </small>
               <br />
               Used for fast, generic object-to-object signal broadcasting.
@@ -107,20 +85,15 @@ This section is for updating the site to be easier!
 
             <!-- Bootstrap -->
             <li class="mb-4">
-              <a
-                href="https://getbootstrap.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="text-decoration-none text-primary"
-              >
+              <a href="https://getbootstrap.com" target="_blank" rel="noopener noreferrer"
+                class="text-decoration-none text-primary">
                 <b>Bootstrap (Via Content Delivery Network)</b>
               </a>
               <br />
               <small class="text-muted">
                 Licensed under the MIT License. View the
-                <a href="/static/licenses/bootstrap.txt" target="_blank">
-                  Full License and Copyright Notice </a
-                >.
+                <a href="{{ url_for('static', filename='licenses/bootstrap.txt') }}" target="_blank">
+                  Full License and Copyright Notice </a>.
               </small>
               <br />
               Used for the website layouts and JavaScript.
@@ -128,20 +101,15 @@ This section is for updating the site to be easier!
 
             <!-- Bootstrap Icons -->
             <li class="mb-4">
-              <a
-                href="https://icons.getbootstrap.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="text-decoration-none text-primary"
-              >
+              <a href="https://icons.getbootstrap.com" target="_blank" rel="noopener noreferrer"
+                class="text-decoration-none text-primary">
                 <b>Bootstrap Icons (Via Content Delivery Network)</b>
               </a>
               <br />
               <small class="text-muted">
                 Licensed under the MIT License. View the
-                <a href="/static/licenses/bootstrap-icons.txt" target="_blank">
-                  Full License and Copyright Notice </a
-                >.
+                <a href="{{ url_for('static', filename='licenses/bootstrap-icons.txt') }}" target="_blank">
+                  Full License and Copyright Notice </a>.
               </small>
               <br />
               Used for icons found around the website.
@@ -149,20 +117,15 @@ This section is for updating the site to be easier!
 
             <!-- Click -->
             <li class="mb-4">
-              <a
-                href="https://click.palletsprojects.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="text-decoration-none text-primary"
-              >
+              <a href="https://click.palletsprojects.com/" target="_blank" rel="noopener noreferrer"
+                class="text-decoration-none text-primary">
                 <b>Click (Version: 8.4.2)</b>
               </a>
               <br />
               <small class="text-muted">
                 Licensed under the BSD-3-Clause License. View the
-                <a href="/static/licenses/click.txt" target="_blank">
-                  Full License and Copyright Notice </a
-                >.
+                <a href="{{ url_for('static', filename='licenses/click.txt') }}" target="_blank">
+                  Full License and Copyright Notice </a>.
               </small>
               <br />
               Installed as part of the Flask ecosystem.
@@ -170,20 +133,15 @@ This section is for updating the site to be easier!
 
             <!-- Flask -->
             <li class="mb-4">
-              <a
-                href="https://flask.palletsprojects.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="text-decoration-none text-primary"
-              >
+              <a href="https://flask.palletsprojects.com" target="_blank" rel="noopener noreferrer"
+                class="text-decoration-none text-primary">
                 <b>Flask (Version: 3.1.3)</b>
               </a>
               <br />
               <small class="text-muted">
                 Licensed under the BSD-3-Clause License. View the
-                <a href="/static/licenses/flask.txt" target="_blank">
-                  Full License and Copyright Notice </a
-                >.
+                <a href="{{ url_for('static', filename='licenses/flask.txt') }}" target="_blank">
+                  Full License and Copyright Notice </a>.
               </small>
               <br />
               Used for building the web application and HTTP requests.
@@ -191,20 +149,15 @@ This section is for updating the site to be easier!
 
             <!-- Iniconfig -->
             <li class="mb-4">
-              <a
-                href="https://github.com/dmiro/iniconfig"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="text-decoration-none text-primary"
-              >
+              <a href="https://github.com/dmiro/iniconfig" target="_blank" rel="noopener noreferrer"
+                class="text-decoration-none text-primary">
                 <b>Iniconfig (Version: 2.3.0)</b>
               </a>
               <br />
               <small class="text-muted">
                 Licensed under the MIT License. View the
-                <a href="/static/licenses/iniconfig.txt" target="_blank">
-                  Full License and Copyright Notice </a
-                >.
+                <a href="{{ url_for('static', filename='licenses/flask.txt') }}" target="_blank">
+                  Full License and Copyright Notice </a>.
               </small>
               <br />
               Installed as part of the Flask ecosystem.
@@ -212,20 +165,15 @@ This section is for updating the site to be easier!
 
             <!-- Itsdangerous -->
             <li class="mb-4">
-              <a
-                href="https://itsdangerous.palletsprojects.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="text-decoration-none text-primary"
-              >
+              <a href="https://itsdangerous.palletsprojects.com/" target="_blank" rel="noopener noreferrer"
+                class="text-decoration-none text-primary">
                 <b>Itsdangerous (Version: 2.2.0)</b>
               </a>
               <br />
               <small class="text-muted">
                 Licensed under the BSD-3-Clause License. View the
-                <a href="/static/licenses/itsdangerous.txt" target="_blank">
-                  Full License and Copyright Notice </a
-                >.
+                <a href="{{ url_for('static', filename='licenses/itsdangerous.txt') }}" target="_blank">
+                  Full License and Copyright Notice </a>.
               </small>
               <br />
               Installed as part of the Flask ecosystem.
@@ -233,20 +181,15 @@ This section is for updating the site to be easier!
 
             <!-- Jinja -->
             <li class="mb-4">
-              <a
-                href="https://jinja.palletsprojects.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="text-decoration-none text-primary"
-              >
+              <a href="https://jinja.palletsprojects.com/" target="_blank" rel="noopener noreferrer"
+                class="text-decoration-none text-primary">
                 <b>Jinja (Version: 3.1.6)</b>
               </a>
               <br />
               <small class="text-muted">
                 Licensed under the BSD-3-Clause License. View the
-                <a href="/static/licenses/jinja.txt" target="_blank">
-                  Full License and Copyright Notice </a
-                >.
+                <a href="{{ url_for('static', filename='licenses/jinja.txt') }}" target="_blank">
+                  Full License and Copyright Notice </a>.
               </small>
               <br />
               Used for website template engines.
@@ -259,20 +202,15 @@ This section is for updating the site to be easier!
           <ul class="list-unstyled mb-0">
             <!-- MarkupSafe -->
             <li class="mb-4">
-              <a
-                href="https://markupsafe.palletsprojects.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="text-decoration-none text-primary"
-              >
+              <a href="https://markupsafe.palletsprojects.com/" target="_blank" rel="noopener noreferrer"
+                class="text-decoration-none text-primary">
                 <b>MarkupSafe (Version: 3.0.3)</b>
               </a>
               <br />
               <small class="text-muted">
                 Licensed under the BSD-3-Clause License. View the
-                <a href="/static/licenses/markupsafe.txt" target="_blank">
-                  Full License and Copyright Notice </a
-                >.
+                <a href="{{ url_for('static', filename='licenses/markupsafe.txt') }}" target="_blank">
+                  Full License and Copyright Notice </a>.
               </small>
               <br />
               Escapes characters so text is safe to use in HTML and XML.
@@ -280,20 +218,15 @@ This section is for updating the site to be easier!
 
             <!-- Packaging -->
             <li class="mb-4">
-              <a
-                href="https://github.com/pypa/packaging"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="text-decoration-none text-primary"
-              >
+              <a href="https://github.com/pypa/packaging" target="_blank" rel="noopener noreferrer"
+                class="text-decoration-none text-primary">
                 <b>Packaging (Version: 26.2)</b>
               </a>
               <br />
               <small class="text-muted">
                 Licensed under the Apache License 2.0. View the
-                <a href="/static/licenses/packaging.txt" target="_blank"
-                  >Full License and Copyright Notice</a
-                >.
+                <a href="{{ url_for('static', filename='licenses/packaging.txt') }}" target="_blank">Full License and
+                  Copyright Notice</a>.
               </small>
               <br />
               Used for core utilities in Python package management. Installed as
@@ -302,20 +235,15 @@ This section is for updating the site to be easier!
 
             <!-- Pluggy -->
             <li class="mb-4">
-              <a
-                href="https://github.com/pytest-dev/pluggy"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="text-decoration-none text-primary"
-              >
+              <a href="https://github.com/pytest-dev/pluggy" target="_blank" rel="noopener noreferrer"
+                class="text-decoration-none text-primary">
                 <b>Pluggy (Version: 1.6.0)</b>
               </a>
               <br />
               <small class="text-muted">
                 Licensed under the MIT License. View the
-                <a href="/static/licenses/pluggy.txt" target="_blank"
-                  >Full License and Copyright Notice</a
-                >.
+                <a href="{{ url_for('static', filename='licenses/pluggy.txt') }}" target="_blank">Full License and
+                  Copyright Notice</a>.
               </small>
               <br />
               Used for plugin management and hook calling mechanisms as part of
@@ -324,20 +252,15 @@ This section is for updating the site to be easier!
 
             <!-- Psycopg -->
             <li class="mb-4">
-              <a
-                href="https://psycopg.org"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="text-decoration-none text-primary"
-              >
+              <a href="https://psycopg.org" target="_blank" rel="noopener noreferrer"
+                class="text-decoration-none text-primary">
                 <b>Psycopg (Version: 3.3.4)</b>
               </a>
               <br />
               <small class="text-muted">
                 Licensed under the LGPL-3.0-only License. View the
-                <a href="/static/licenses/psycopg.txt" target="_blank"
-                  >Full License and Copyright Notice</a
-                >.
+                <a href="{{ url_for('static', filename='licenses/psycopg.txt') }}" target="_blank">Full License and
+                  Copyright Notice</a>.
               </small>
               <br />
               Used for connecting Python to PostgreSQL databases.
@@ -345,20 +268,15 @@ This section is for updating the site to be easier!
 
             <!-- Pygments -->
             <li class="mb-4">
-              <a
-                href="https://pygments.org/"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="text-decoration-none text-primary"
-              >
+              <a href="https://pygments.org/" target="_blank" rel="noopener noreferrer"
+                class="text-decoration-none text-primary">
                 <b>Pygments (Version: 2.20.0)</b>
               </a>
               <br />
               <small class="text-muted">
                 Licensed under the BSD-2-Clause License. View the
-                <a href="/static/licenses/pygments.txt" target="_blank"
-                  >Full License and Copyright Notice</a
-                >.
+                <a href="{{ url_for('static', filename='licenses/pygments.txt') }}" target="_blank">Full License and
+                  Copyright Notice</a>.
               </small>
               <br />
               Used for syntax highlighting across multiple source code formats.
@@ -366,20 +284,15 @@ This section is for updating the site to be easier!
 
             <!-- Pytest -->
             <li class="mb-4">
-              <a
-                href="https://pytest.org"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="text-decoration-none text-primary"
-              >
+              <a href="https://pytest.org" target="_blank" rel="noopener noreferrer"
+                class="text-decoration-none text-primary">
                 <b>Pytest (Version: 9.1.1)</b>
               </a>
               <br />
               <small class="text-muted">
                 Licensed under the MIT License. View the
-                <a href="/static/licenses/pytest.txt" target="_blank"
-                  >Full License and Copyright Notice</a
-                >.
+                <a href="{{ url_for('static', filename='licenses/pytest.txt') }}" target="_blank">Full License and
+                  Copyright Notice</a>.
               </small>
               <br />
               Used for writing and running test suites cleanly.
@@ -387,20 +300,15 @@ This section is for updating the site to be easier!
 
             <!-- Werkzeug -->
             <li class="mb-4">
-              <a
-                href="https://werkzeug.palletsprojects.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="text-decoration-none text-primary"
-              >
+              <a href="https://werkzeug.palletsprojects.com/" target="_blank" rel="noopener noreferrer"
+                class="text-decoration-none text-primary">
                 <b>Werkzeug (Version: 3.1.8)</b>
               </a>
               <br />
               <small class="text-muted">
                 Licensed under the BSD-3-Clause License. View the
-                <a href="/static/licenses/werkzeug.txt" target="_blank"
-                  >Full License and Copyright Notice</a
-                >.
+                <a href="{{ url_for('static', filename='licenses/werkzeug.txt') }}" target="_blank">Full License and
+                  Copyright Notice</a>.
               </small>
               <br />
               Used for WSGI web application libraries and request/response
@@ -416,9 +324,7 @@ This section is for updating the site to be easier!
 <!-- SECTION3: Repository Acknowledgements -->
 <div class="container mb-5" id="repositories-acknowledgements">
   <h5><b>Repository Acknowledgements</b></h5>
-  <small
-    >This includes content from different repositories used in this site.</small
-  >
+  <small>This includes content from different repositories used in this site.</small>
   <hr />
 
   <!-- SECTION3a: Left Column for Repository Attributions -->
@@ -426,42 +332,29 @@ This section is for updating the site to be easier!
     <div class="col-12 col-lg-6">
       <ul class="list-unstyled mb-0">
         <li class="mb-4">
-          <a
-            href="https://github.com/CallenLin/Amazing-FlaskDevContainer-Template"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="text-decoration-none text-primary"
-            ><b>CallenLin Python Flask DevContainer</b></a
-          >
+          <a href="https://github.com/CallenLin/Amazing-FlaskDevContainer-Template" target="_blank"
+            rel="noopener noreferrer" class="text-decoration-none text-primary"><b>CallenLin Python Flask
+              DevContainer</b></a>
           <br />
           <small class="text-muted">
             Licensed under the MIT license. View the
-            <a
-              href="/static/licenses/callenlin-devcontainer-license.txt"
-              target="_blank"
-              >Full License and Copyright Notice</a
-            >.
+            <a href="{{ url_for('static', filename='licenses/callenlin-devcontainer-license.txt') }}"
+              target="_blank">Full License and Copyright
+              Notice</a>.
           </small>
           <br />
           Used for tweaking the existing GitHub Codespace DevContainer.
         </li>
 
         <li class="mb-4">
-          <a
-            href="https://github.com/CallenLin/2027CT_myWebsiteTask_Callen.L"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="text-decoration-none text-primary"
-            ><b>CallenLin Website Task Project</b></a
-          >
+          <a href="https://github.com/CallenLin/2027CT_myWebsiteTask_Callen.L" target="_blank" rel="noopener noreferrer"
+            class="text-decoration-none text-primary"><b>CallenLin Website Task Project</b></a>
           <br />
           <small class="text-muted">
             Licensed under the Apache License 2.0 license. View the
-            <a
-              href="/static/licenses/callenlin-website-task-license.txt"
-              target="_blank"
-              >Full License and Copyright Notice</a
-            >.
+            <a href="{{ url_for('static', filename='licenses/callenlin-website-task-license.txt') }}"
+              target="_blank">Full License and Copyright
+              Notice</a>.
           </small>
           <br />
           Used for footer derived from this site's previous repository.
@@ -473,22 +366,16 @@ This section is for updating the site to be easier!
     <div class="col-12 col-lg-6">
       <ul class="list-unstyled mb-0">
         <li class="mb-4">
-          <a
-            href="https://github.com/TempeHS/TempeHS_Python-Flask_DevContainer/"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="text-decoration-none text-primary"
-            ><b>TempeHS Python Flask DevContainer</b></a
-          >
+          <a href="https://github.com/TempeHS/TempeHS_Python-Flask_DevContainer/" target="_blank"
+            rel="noopener noreferrer" class="text-decoration-none text-primary"><b>TempeHS Python Flask
+              DevContainer</b></a>
           <br />
           <small class="text-muted">
             Licensed under the GNU General Public License Version 3 license.
             View the
-            <a
-              href="/static/licenses/tempehs-devcontainer-license.txt"
-              target="_blank"
-              >Full License and Copyright Notice</a
-            >.
+            <a href="{{ url_for('static', filename='licenses/tempehs-devcontainer-license.txt') }}" target="_blank">Full
+              License and Copyright
+              Notice</a>.
           </small>
           <br />
           Used for the preconfigured GitHub Codespace DevContainer.
@@ -501,30 +388,20 @@ This section is for updating the site to be easier!
 <!-- SECTION4: Content Acknowledgements -->
 <div class="container mb-5" id="content-acknowledgements">
   <h5><b>Content Acknowledgements</b></h5>
-  <small
-    >This includes content from different sites used in this site.</small
-  >
+  <small>This includes content from different sites used in this site.</small>
   <hr />
 
   <div class="row g-5">
     <div class="col-12 col-lg-6">
       <ul class="list-unstyled mb-0">
         <li class="mb-4">
-          <a
-            href="https://fankit.supercell.com/d/YvtsWV4pUQVm/game-assets"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="text-decoration-none text-primary"
-            ><b>Supercell Fankit Assets</b></a
-          >
+          <a href="https://fankit.supercell.com/d/YvtsWV4pUQVm/game-assets" target="_blank" rel="noopener noreferrer"
+            class="text-decoration-none text-primary"><b>Supercell Fankit Assets</b></a>
           <br />
           <small class="text-muted">
             Licensed under a limited closed, proprietary license. View the
-            <a
-              href="https://supercell.com/en/fan-content-policy/"
-              target="_blank"
-              >Full License and Copyright Notice</a
-            >.
+            <a href="https://supercell.com/en/fan-content-policy/" target="_blank">Full License and Copyright
+              Notice</a>.
           </small>
           <p>Used for site assets such as images, GIFs, etc.</p>
         </li>
@@ -534,21 +411,13 @@ This section is for updating the site to be easier!
     <div class="col-12 col-lg-6">
       <ul class="list-unstyled mb-0">
         <li class="mb-4">
-          <a
-            href="https://fankit.supercell.com/d/YvtsWV4pUQVm/game-assets"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="text-decoration-none text-primary"
-            ><b>Brawl Stars Gameplay</b></a
-          >
+          <a href="https://fankit.supercell.com/d/YvtsWV4pUQVm/game-assets" target="_blank" rel="noopener noreferrer"
+            class="text-decoration-none text-primary"><b>Brawl Stars Gameplay</b></a>
           <br />
           <small class="text-muted">
             Licensed under a limited closed, proprietary license. View the
-            <a
-              href="https://supercell.com/en/fan-content-policy/"
-              target="_blank"
-              >Full License and Copyright Notice</a
-            >.
+            <a href="https://supercell.com/en/fan-content-policy/" target="_blank">Full License and Copyright
+              Notice</a>.
           </small>
           <p>Used for site assets such as gameplay, videos, etc.</p>
         </li>
@@ -567,13 +436,8 @@ This section is for updating the site to be easier!
       <div class="col-12 col-lg-6">
         <ul class="list-unstyled mb-0">
           <li>
-            <a
-              href="https://github.com/CallenLin/"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="text-decoration-none text-primary"
-              ><b>@CallenLin</b></a
-            >
+            <a href="https://github.com/CallenLin/" target="_blank" rel="noopener noreferrer"
+              class="text-decoration-none text-primary"><b>@CallenLin</b></a>
             <br />
             Planning and creating the components of the website.
           </li>
@@ -583,13 +447,8 @@ This section is for updating the site to be easier!
       <div class="col-12 col-lg-6">
         <ul class="list-unstyled mb-0">
           <li>
-            <a
-              href="https://github.com/benpaddlejones/"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="text-decoration-none text-primary"
-              ><b>@benpaddlejones</b></a
-            >
+            <a href="https://github.com/benpaddlejones/" target="_blank" rel="noopener noreferrer"
+              class="text-decoration-none text-primary"><b>@benpaddlejones</b></a>
             <br />
             Creating the devcontainer, homepage original design and contacts
             page.
@@ -600,19 +459,12 @@ This section is for updating the site to be easier!
 
     <small class="d-block mt-3">
       The repository link:
-      <a
-        href="https://github.com/TempeHS/2027CT_myFlaskSite_Callen.L"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="text-decoration-none text-primary"
-        ><b>https://github.com/TempeHS/2027CT_myFlaskSite_Callen.L</b></a
-      >
+      <a href="https://github.com/TempeHS/2027CT_myFlaskSite_Callen.L" target="_blank" rel="noopener noreferrer"
+        class="text-decoration-none text-primary"><b>https://github.com/TempeHS/2027CT_myFlaskSite_Callen.L</b></a>
     </small>
     <hr />
 
-    <small
-      >🍿 Fun fact! You might find a potato somewhere in the website :D</small
-    >
+    <small>🍿 Fun fact! You might find a potato somewhere in the website :D</small>
   </div>
 </div>
 {% endblock %}
