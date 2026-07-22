@@ -1,60 +1,44 @@
-{% extends 'base.html' %} {% block title %}Home - Brawlable{% endblock %}
-{%block content %} {% block extra_css %}
-<link
-  rel="stylesheet"
-  href="{{ url_for('static', filename='css/section-css/hero-section.css') }}"
-/>
+{% extends "base.html" %}
+
+{% block title %}Home - Brawlable{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/section-css/hero-section.css') }}" />
 {% endblock %}
 
-<section class="hero d-flex align-items-center">
-  <!-- Background Video -->
-  <video
-    id="hero-video"
-    class="hero-video"
-    muted
-    loop
-    playsinline
-    autoplay
-    preload="none"
-    data-src="{{ url_for('static', filename='videos/hero.mp4') }}"
-  >
-    <p
-      id="video-loading-text"
-      class="position-absolute top-50 start-50 translate-middle text-white fw-semibold m-0"
-      aria-live="polite"
-    >
-      Waiting for video to load.
-    </p>
-  </video>
+{% block content %}
 
-  <!-- Dark Overlay -->
+<section class="hero d-flex align-items-center">
+  <video id="hero-video" class="hero-video" muted loop playsinline autoplay preload="none"
+    data-src="{{ url_for('static', filename='videos/hero.mp4') }}"></video>
+
+  <p id="video-loading-text" class="position-absolute top-50 start-50 translate-middle text-white fw-semibold m-0"
+    aria-live="polite">
+    Waiting for video to load.
+  </p>
+
   <div class="overlay"></div>
 
-  <!-- Audio Toggle -->
-  <button
-    id="audio-toggle"
-    class="btn btn-dark rounded-circle position-absolute bottom-0 end-0 m-4"
-    aria-label="Toggle video audio"
-  >
-    <i class="bi bi-volume-mute-fill fs-5"></i>
+  <button id="audio-toggle" type="button" class="btn btn-dark rounded-circle position-absolute bottom-0 end-0 m-4"
+    aria-label="Unmute video" aria-pressed="false">
+    <i class="bi bi-volume-mute-fill fs-5" aria-hidden="true"></i>
   </button>
 
-  <!-- Hero Content -->
   <div class="container position-relative text-center text-white fade-in-fx">
-    <div class="row justify-content-center">
-      <div class="col-lg-8">
-        <h1 class="display-2 fw-bold">Learn Brawl Stars One Step At A Time</h1>
+    <!-- Hero content -->
+    <div class="container position-relative text-center text-white fade-in-fx">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <h1 class="display-2 fw-bold">Learn Brawl Stars One Step At A Time</h1>
 
-        <p class="lead mb-4">Now it's easier than ever to learn Brawl Stars!</p>
+          <p class="lead mb-4">Now it's easier than ever to learn Brawl Stars!</p>
 
-        <a
-          href="{{ url_for('main.onboarding') }}"
-          class="btn btn-primary btn-lg me-2"
-        >
-          Get Started
-        </a>
+          <a href="{{ url_for('main.onboarding') }}" class="btn btn-primary btn-lg me-2">
+            Get Started
+          </a>
 
-        <a href="#" class="btn btn-outline-light btn-lg"> Learn More </a>
+          <a href="#" class="btn btn-outline-light btn-lg"> Learn More </a>
+        </div>
       </div>
     </div>
   </div>
@@ -86,13 +70,8 @@
       <!-- Card 1 -->
       <div class="col-md-4 mb-4">
         <div class="card h-100">
-          <img
-            src="{{ url_for('static', filename='images/index-feature1.jpg') }}"
-            class="card-img-top"
-            alt="Feature 1"
-            loading="lazy"
-            decoding="async"
-          />
+          <img src="{{ url_for('static', filename='images/index-feature1.jpg') }}" class="card-img-top" alt="Feature 1"
+            loading="lazy" decoding="async" />
           <div class="card-body">
             <h5 class="card-title">Brawlers</h5>
             <p class="card-text">
@@ -107,13 +86,8 @@
       <!-- Card 2 -->
       <div class="col-md-4 mb-4">
         <div class="card h-100">
-          <img
-            src="{{ url_for('static', filename='images/index-feature2.jpg') }}"
-            class="card-img-top"
-            alt="Feature 2"
-            loading="lazy"
-            decoding="async"
-          />
+          <img src="{{ url_for('static', filename='images/index-feature2.jpg') }}" class="card-img-top" alt="Feature 2"
+            loading="lazy" decoding="async" />
           <div class="card-body">
             <h5 class="card-title">Gamemodes</h5>
             <p class="card-text">
@@ -128,21 +102,14 @@
       <!-- Card 3 -->
       <div class="col-md-4 mb-4">
         <div class="card h-100">
-          <img
-            src="{{ url_for('static', filename='images/index-feature3f.jpg') }}"
-            class="card-img-top"
-            alt="Feature 3"
-            loading="lazy"
-            decoding="async"
-          />
+          <img src="{{ url_for('static', filename='images/index-feature3f.jpg') }}" class="card-img-top" alt="Feature 3"
+            loading="lazy" decoding="async" />
           <div class="card-body">
             <h5 class="card-title">Mechanics</h5>
             <p class="card-text">
               Get help breaking down some oh the most difficult content!
             </p>
-            <a href="{{ url_for('main.contact') }}" class="btn btn-primary"
-              >Learn more</a
-            >
+            <a href="{{ url_for('main.contact') }}" class="btn btn-primary">Learn more</a>
           </div>
         </div>
       </div>
@@ -151,12 +118,6 @@
 </section>
 
 {% block extra_js %}
-<script
-  src="{{ url_for('static', filename='js/hero-video.js') }}"
-  defer
-></script>
-<script
-  src="{{ url_for('static', filename='js/fade-in-fx.js') }}"
-  defer
-></script>
+<script src="{{ url_for('static', filename='js/hero-video.js') }}" defer></script>
+<script src="{{ url_for('static', filename='js/fade-in-fx.js') }}" defer></script>
 {% endblock %} {% endblock %}
