@@ -23,41 +23,63 @@
   --nav-pill-active-text: #ffffff;
 
   --stat-track-bg: rgba(15, 23, 42, 0.13);
+  --stat-gradient-start: #1565c0;
+  --stat-gradient-middle: #42a5f5;
+  --stat-gradient-end: #90caf9;
+
+  --base-vitals-gradient-start: #1565c0;
+  --base-vitals-gradient-middle: #42a5f5;
+  --base-vitals-gradient-end: #90caf9;
+  --base-vitals-blue-glow: rgba(21, 101, 192, 0.16);
+  --base-vitals-yellow-glow: transparent;
 
   --build-badge-bg: rgba(var(--brawler-primary-rgb), 0.1);
   --build-badge-border: rgba(var(--brawler-primary-rgb), 0.24);
 }
 
-.container {
+/* =========================================================
+   GUIDE WRAPPER
+   ========================================================= */
+
+.brawler-guide {
   color: var(--guide-text);
 }
 
-.container > .text-white,
-.container > h1.text-white,
-.container > h2.text-white,
-.container > h3.text-white,
-.container > h4.text-white,
-.container > h5.text-white,
-.container > h6.text-white {
+.brawler-guide > .text-white,
+.brawler-guide > h1.text-white,
+.brawler-guide > h2.text-white,
+.brawler-guide > h3.text-white,
+.brawler-guide > h4.text-white,
+.brawler-guide > h5.text-white,
+.brawler-guide > h6.text-white {
   color: var(--guide-heading) !important;
 }
-.breadcrumb .text-muted {
+
+/* =========================================================
+   BREADCRUMB
+   ========================================================= */
+
+.brawler-guide .breadcrumb .text-muted {
   color: var(--guide-muted) !important;
 }
 
-.breadcrumb a {
+.brawler-guide .breadcrumb a {
   font-weight: 500;
 }
 
-.breadcrumb a:hover,
-.breadcrumb a:focus-visible {
+.brawler-guide .breadcrumb a:hover,
+.brawler-guide .breadcrumb a:focus-visible {
   color: var(--brawler-primary) !important;
 }
 
-.breadcrumb-item.active {
+.brawler-guide .breadcrumb-item.active {
   color: var(--brawler-primary) !important;
   font-weight: 600;
 }
+
+/* =========================================================
+   BRAWLER HERO
+   ========================================================= */
 
 .brawler-hero {
   position: relative;
@@ -118,6 +140,10 @@
   color: #006a80 !important;
 }
 
+/* =========================================================
+   CONTENT CARDS
+   ========================================================= */
+
 .content-card {
   color: var(--guide-text);
   background: var(--content-card-bg);
@@ -169,6 +195,10 @@
   line-height: 1.3;
 }
 
+/* =========================================================
+   NAVIGATION PILLS
+   ========================================================= */
+
 .nav-pills .nav-link {
   color: var(--nav-pill-text);
   border-radius: 12px;
@@ -199,6 +229,10 @@
   box-shadow: 0 4px 12px rgba(var(--brawler-primary-rgb), 0.3);
 }
 
+/* =========================================================
+   STAT BARS
+   ========================================================= */
+
 .stat-bar-track {
   height: 9px;
   overflow: hidden;
@@ -209,8 +243,59 @@
 .stat-bar-fill {
   height: 100%;
   border-radius: inherit;
-  background: linear-gradient(90deg, var(--brawler-primary), #00a8d6);
+  background: linear-gradient(
+    90deg,
+    var(--stat-gradient-start) 0%,
+    var(--stat-gradient-middle) 52%,
+    var(--stat-gradient-end) 100%
+  );
 }
+
+/* =========================================================
+   BASE VITALS CARD
+   ========================================================= */
+
+.base-vitals-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.base-vitals-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at top right,
+    rgba(var(--brawler-primary-rgb), 0.08),
+    transparent 46%
+  );
+  pointer-events: none;
+}
+
+.base-vitals-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+.base-vitals-card .stat-bar-track {
+  height: 10px;
+}
+
+.base-vitals-card .stat-bar-fill {
+  background: linear-gradient(
+    90deg,
+    var(--base-vitals-gradient-start) 0%,
+    var(--base-vitals-gradient-middle) 52%,
+    var(--base-vitals-gradient-end) 100%
+  );
+  box-shadow:
+    0 0 8px var(--base-vitals-blue-glow),
+    0 0 14px var(--base-vitals-yellow-glow);
+}
+
+/* =========================================================
+   BUILD BADGES
+   ========================================================= */
 
 .build-badge {
   color: var(--brawler-primary);
@@ -219,6 +304,10 @@
   font-weight: 700;
   padding: 0.5rem 0.75rem;
 }
+
+/* =========================================================
+   PORTRAIT AND UTILITIES
+   ========================================================= */
 
 .brawler-portrait {
   animation: floatImage 4s ease-in-out infinite;
@@ -243,6 +332,10 @@
 .tracking-wide {
   letter-spacing: 0.1em;
 }
+
+/* =========================================================
+   EXPLICIT DARK THEME
+   ========================================================= */
 
 [data-bs-theme="dark"] {
   --brawler-primary: #2196f3;
@@ -269,9 +362,29 @@
   --nav-pill-active-text: #ffffff;
 
   --stat-track-bg: rgba(255, 255, 255, 0.1);
+  --stat-gradient-start: #0d47a1;
+  --stat-gradient-middle: #2196f3;
+  --stat-gradient-end: #00d2ff;
+
+  --base-vitals-gradient-start: #071d3d;
+  --base-vitals-gradient-middle: #1976d2;
+  --base-vitals-gradient-end: #fff176;
+  --base-vitals-blue-glow: rgba(25, 118, 210, 0.25);
+  --base-vitals-yellow-glow: rgba(255, 241, 118, 0.2);
 
   --build-badge-bg: rgba(var(--brawler-primary-rgb), 0.1);
   --build-badge-border: rgba(var(--brawler-primary-rgb), 0.2);
+}
+
+[data-bs-theme="dark"] .base-vitals-card .stat-bar-fill {
+  background: linear-gradient(
+    90deg,
+    #071d3d 0%,
+    #0d47a1 28%,
+    #1976d2 45%,
+    #ffca28 80%,
+    #fff176 100%
+  );
 }
 
 [data-bs-theme="dark"] .brawler-hero .text-warning {
@@ -282,10 +395,15 @@
   color: var(--bs-info) !important;
 }
 
+/* =========================================================
+   SYSTEM DARK-MODE FALLBACK
+   ========================================================= */
+
 @media (prefers-color-scheme: dark) {
   :root:not([data-bs-theme="light"]) {
     --brawler-primary: #2196f3;
     --brawler-primary-rgb: 33, 150, 243;
+    --brawler-accent: #ff4757;
 
     --brawler-dark: #0d1b2a;
     --brawler-hero-secondary: #1b263b;
@@ -304,13 +422,38 @@
 
     --nav-pill-text: rgba(255, 255, 255, 0.82);
     --nav-pill-hover-bg: rgba(var(--brawler-primary-rgb), 0.12);
+    --nav-pill-active-text: #ffffff;
 
     --stat-track-bg: rgba(255, 255, 255, 0.1);
+    --stat-gradient-start: #0d47a1;
+    --stat-gradient-middle: #2196f3;
+    --stat-gradient-end: #00d2ff;
+
+    --base-vitals-gradient-start: #071d3d;
+    --base-vitals-gradient-middle: #1976d2;
+    --base-vitals-gradient-end: #fff176;
+    --base-vitals-blue-glow: rgba(25, 118, 210, 0.25);
+    --base-vitals-yellow-glow: rgba(255, 241, 118, 0.2);
 
     --build-badge-bg: rgba(var(--brawler-primary-rgb), 0.1);
     --build-badge-border: rgba(var(--brawler-primary-rgb), 0.2);
   }
+
+  :root:not([data-bs-theme="light"]) .base-vitals-card .stat-bar-fill {
+    background: linear-gradient(
+      90deg,
+      #071d3d 0%,
+      #0d47a1 28%,
+      #1976d2 45%,
+      #ffca28 80%,
+      #fff176 100%
+    );
+  }
 }
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
 
 @media (max-width: 575.98px) {
   .brawler-hero {
@@ -335,6 +478,10 @@
     padding: 1.25rem !important;
   }
 }
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
 
 @media (prefers-reduced-motion: reduce) {
   .brawler-portrait {
