@@ -1,103 +1,118 @@
-# Brawlable!
-Brawlable is a beginner-friendly tutorial website for Brawl Stars players.
+# Brawlable
 
-## Description
+| Field                          | Detail                                                 |
+| ------------------------------ | ------------------------------------------------------ |
+| **Website Title**              | Brawlable                                              |
+| **Student Name(s)**            | Callen Lin                                             |
+| **Class / Course**             | Year 9 Computer Technology                             |
+| **Repository**                 | https://github.com/TempeHS/2027CT_myFlaskSite_Callen.L |
+| **Live Site / Codespaces URL** | v0.2 Alpha: https://github.com/TempeHS/2027CT_myFlaskSite_Callen.L/releases/tag/v0.2-a                                                    |
+| **Date**                       | Last Edited on the 23rd of July 2026 :D                                                    |
 
-An in-depth paragraph about your project and overview of use.
+> Your website is the main piece of work. This README is short on purpose — it
+> points a reader to your **2-minute walkthrough** and gives an honest
+> **evaluation of what you delivered**.
 
-## Getting Started
+---
 
-### Minimum Requirements
-- Windows 10 for x86_64
-- Windows 11 for ARM64
-- macOS 10.15+ (Catalina)
-- Linux Kernel 3.2+
-- Python 3.10.x (Recommended for Python 3.13.x)
+## 1. Overview
 
+**Purpose:** <!-- One or two sentences: what the site is and why it exists (from your Statement of Intent). -->
 
-### Installing
+**Target audience:** <!-- One sentence: who the site is for (from your personas). -->
 
-You can download this project via GitHub through clicking:
-1. Green Code Button
-2. Local Section
-3. Download as zip
-4. Unzip the file by doubling clicking on it.
+**Technology stack:** Python Flask · Jinja2 templates · Bootstrap (CDN) · custom CSS · pytest
 
-### Executing program
+---
 
-**1. First, you will need to enter your directory.**
-- On macOS, you open Terminal.app via Spotlight then find the folder in Finder. Once you located it, type "cd " and drag the file in
-- On Windows, you copy the file and type "cd " then paste it into Command Prompt
-- On Linux, you will find the file through using ls and cd till you found the path.
-You can skip this step if you are using GitHub Codespaces.
+## 2. Walkthrough Video (2 minutes)
 
-**2. Then you can immediately set it up and run it using.**
+This is the most important part of your documentation — it shows your website running.
 
-For Windows Users (includes codespaces)
-```
-python -m venv venv
-venv\Scripts\activate.bat
-pip install -r requirements.txt
-python app.py
-```
+<!--
+  Embed a ~2 minute walkthrough. Replace VIDEO_ID with your YouTube video ID:
+  [![Website Walkthrough](https://img.youtube.com/vi/VIDEO_ID/0.jpg)](https://www.youtube.com/watch?v=VIDEO_ID)
 
-For macOS and Linux Users (includes codespaces)
-```
-python3 -m venv venv
-source venv/bin/activate
-pip install -r requirements.txt
-python3 app.py
-```
+  OR link a screen recording stored in the repository:
+  [Watch the Walkthrough](./docs/walkthrough.mp4)
+-->
 
-This should immediately launch in your default browser.
+| Field            | Detail |
+| ---------------- | ------ |
+| **Link / Embed** |        |
+| **Duration**     |        |
 
-## Help
+**Your walkthrough should show:**
 
-Q: **Successfully ran but doesn't show webpage?**
-A: Go to your browser and use the website
-```
-https://localhost:5000
-```
-For Codespaces, you will click Ports on the bottom menu and find 5000 and find the globe system and click on it.
+- A tour of each page (Home and Contact)
+- Your key Bootstrap components working (navbar, carousel, cards, map, form)
+- The layout responding when the window is resized (navbar collapsing to a hamburger)
 
-Q: **Port 5000 is already in use?**
-A: Open app.py in the final line replace the number in ports with any number between 1024-65,535 (DO NOT use 1-1023 as those require root permissions)
+---
 
-## Authors
+## 3. Evaluation — Did You Deliver Your Statement of Intent?
 
-Contributors names and contact info
+This is the most important written part of your documentation. Evaluate the
+website you **delivered** against the **Statement of Intent** you wrote during
+planning. Be honest and use evidence — point to a page, a feature or a test.
 
-Mr Jones
-[@benpaddlejones](https://github.com/benpaddlejones).
-Callen Lin
-[@CallenLin](https://github.com/callenlin)
+### 3.1 Your Statement of Intent
 
-## Version History
+<!-- Paste the Statement of Intent you wrote during planning so the reader can judge your site against it. -->
 
-- 0.2
-  - Various bug fixes and optimizations
-  - See [commit change]() or See [release history]() or see [branch]()
-- 0.1
-  - Initial Release
+### 3.2 What You Delivered
 
-## License
+#### Primary Pages of Brawlable
 
-This project is licensed under the GPLv3 License - see the LICENSE.md file for details
+| Page           | Route          | What it delivers                                                                                                                                       |
+| -------------- | -------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Home           | `/`            |                                                                                                                                                        |
+| Contact        | `/contact`     | Provides a page that allows you to provide feedback, receive assistance and report bugs.                                                               |
+| Sitemap        | `/sitemap`     | A site map that shows all the pages across the site with categories for accessibility                                                                  |
+| Privacy Policy | `/privacy`     | Provides information how the site handles data in the website                                                                                          |
+| Attributions   | `/attribution` | Provides attribution to all the dependencies and repositories used in the project with a direct link and the LICENSE file accessible in a static link. |
+| Search         | `/search`      | Offers a search that can be found on the header where it will show search results and instantly redirect you for exact matches.                        |
 
-## Achievements
+#### Backend Features of Brawlable
 
-This repository hit the 100th commit this commit :D
-The 200th commit on 16th of Jul 2026!!!
+| Page                  | Route     | File Location                                      | What it delivers                                                                                                                                                                                                                                                |
+| --------------------- | --------- | -------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 404 Page Not Found    | `/404`    | `templates/error_handler/404.html`, `test_app3.py` | When you visit a page that is not found by the website, it results in a 404 page, and provides options to go to the homepage or visit the sitemap. It also provides a detailed report that can be immediately copied into support with a hyperlink to the page. |
+| Search Configurations | `/search` | `templates/search.html`, `search_config.py`        | The search configurations allows you search the exact names to get immediately redirected handled by search_services, and keywords show recommended results. This also filters disallowed text.                                                                 |
+| Search Services       | `/search` | `templates/search.html`, `search_services.py`      | This sanitizes the input of the text being input into the search bar. Handling blank text, script injection, limiting the length of requests, and allows the requests to be handled and sent to the user as a query in the format of `/search?q=asd`            |
+| Search No Results     | `/search` | `templates/search.html`, `~/search_services.py`    | When a query does not return any results for a query that includes a value, it provides a notice telling the user that no results were found for the content and shows suggested results the user can try.                                                      |
 
-## Acknowledgments
+### 3.3 Evaluation Against Your Intent (2–3 paragraphs)
 
-Inspiration, code snippets, etc.
+> Take each aim in your Statement of Intent and evaluate **how well the
+> delivered site meets it**. Where did you meet your intent? Where did you fall
+> short, and why? Support every judgement with evidence from your site.
 
-- [Github md syntax](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
-- [TempeHS Python Flask template](https://github.com/TempeHS/TempeHS_Python-Flask_DevContainer)
+<!-- Write 2–3 paragraphs. -->
 
-## Older Repository Versions
+### 3.4 Overall Effectiveness (1–2 paragraphs)
 
-- [CallenLin Amazing Website Project](https://github.com/CallenLin/2027CT_amazingWebsiteProject_Callen.L)
-- [CallenLin My Website Task](https://github.com/CallenLin/2027CT_myWebsiteTask_Callen.L)
-- [CallenLin My Website Project](https://github.com/CallenLin/2027CT_myWebsiteProject_Callen.L)
+> Step back from the detail. Overall, **how effective** is the website at
+> achieving its purpose for its target audience? Weigh what works against what
+> falls short, and state what you would improve to better meet your intent.
+
+<!-- Write 1–2 paragraphs. -->
+
+---
+
+## 4. Acknowledgements
+
+> List anything you did not make yourself — tutorials, images, fonts, icons and
+> libraries. Using content without acknowledgement may constitute academic
+> misconduct.
+
+| What you used | Source / Creator | Licence | What you used it for   |
+| ------------- | ---------------- | ------- | ---------------------- |
+| Bootstrap     | Bootstrap team   | MIT     | Layout and components  |
+| Flask         | Pallets Projects | BSD     | Web server and routing |
+|               |                  |         |                        |
+|               |                  |         |                        |
+
+---
+
+> **Student Declaration:** All work submitted is my own except where explicitly acknowledged above.
