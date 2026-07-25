@@ -29,7 +29,7 @@ and shielding.' } ] %}
   <ul class="scroll-wheel justify-content-center fade-in-fx">
     {% for brawler in brawlers %}
     <li class="card-scroll">
-      <a href="#{{ brawler.id }}">
+      <a href="/brawlers/rare/{{ brawler.id }}">
         <img src="{{ url_for('static', filename='images/brawlers/rare/idle/' ~ brawler.id ~ '.png') }}"
           alt="{{ brawler.name }} brawler art" loading="lazy" />
         <p>{{ brawler.name }}</p>
@@ -43,7 +43,7 @@ and shielding.' } ] %}
   <div class="container">
     <div class="row g-4">
       {% for brawler in brawlers %}
-      <div id="{{ brawler.id }}" class="col-md-6 col-lg-4">
+      <div id="{{ brawler.id }}" class="col-md-6 col-lg-4 align">
         <article class="card h-100 brawler-card a-pinned-card">
           <div class="row g-0 align-items-center">
             <div class="col-4">
