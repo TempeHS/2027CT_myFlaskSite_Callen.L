@@ -3,7 +3,6 @@
   const audioToggle = document.getElementById("audio-toggle");
   const icon = audioToggle?.querySelector("i");
   const loadingText = document.getElementById("video-loading-text");
-  const bg = document.querySelector(".hero-video");
 
   const loadingFrames = [
     "Waiting for video to load",
