@@ -6,12 +6,14 @@ from routes.search.search_service import (
     find_partial_matches,
 )
 
-from routes.brawlers import brawlers_bp
+from routes.main_pages import main_bp
+from routes.guides.brawlers import brawlers_bp
+from routes.guides.guidesbrawlers import guides_bp
 from routes.gamemodes import gamemodes_bp
 from routes.error_handling import errors_bp
-from routes.main_pages import main_bp
 
 app = Flask(__name__)
+app.register_blueprint(guides_bp)
 app.register_blueprint(brawlers_bp)
 app.register_blueprint(gamemodes_bp)
 app.register_blueprint(errors_bp)
