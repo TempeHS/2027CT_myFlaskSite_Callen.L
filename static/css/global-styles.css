@@ -92,30 +92,72 @@ article[id] {
 5. Scrolling back to top
 This places a button on the bottom right and take you to the top.
 -------------------------------------------------------------------------- */
+:root {
+  --btt-bg-light: #ffffff;
+  --btt-text-light: #1f2937;
+  --btt-border-light: #e5e7eb;
+  --btt-shadow-light: rgba(0, 0, 0, 0.08);
+
+  --btt-bg-dark: #1f2937;
+  --btt-text-dark: #f3f4f6;
+  --btt-border-dark: #374151;
+  --btt-shadow-dark: rgba(0, 0, 0, 0.3);
+}
 
 #back-to-top {
   position: fixed;
-  right: 20px;
-  bottom: 20px;
-
-  width: 42px;
-  height: 42px;
-
-  border: 1px solid #333;
-  border-radius: 6px;
-  background: white;
-  color: #333;
-  font-size: 22px;
+  right: 24px;
+  bottom: 24px;
+  width: 44px;
+  height: 44px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  font-size: 20px;
   cursor: pointer;
   z-index: 1000;
-
   opacity: 0;
-  transform: translateY(10px);
+  transform: translateY(12px);
   pointer-events: none;
-
+  display: flex;
+  align-items: center;
+  justify-content: center;
   transition:
-    opacity 0.5s ease-out,
-    transform 0.5s ease-out;
+    opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+    background-color 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+#back-to-top.show {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+[data-bs-theme="light"] #back-to-top {
+  background-color: var(--btt-bg-light);
+  color: var(--btt-text-light);
+  border-color: var(--btt-border-light);
+}
+
+[data-bs-theme="light"] #back-to-top:hover {
+  background-color: #f9fafb;
+  color: #000000;
+  border-color: #d1d5db;
+}
+
+[data-bs-theme="dark"] #back-to-top {
+  background-color: var(--btt-bg-dark);
+  color: var(--btt-text-dark);
+  border-color: var(--btt-border-dark);
+}
+
+[data-bs-theme="dark"] #back-to-top:hover {
+  background-color: #374151;
+  color: #ffffff;
+  border-color: #4b5563;
 }
 
 #back-to-top.show {
