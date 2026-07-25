@@ -1,77 +1,223 @@
 :root {
-  --brawler-primary: #2196f3;
-  --brawler-dark: #0d1b2a;
-  --brawler-accent: #ff4757;
-  --content-card-bg: rgba(255, 255, 255, 0.05);
+  --brawler-primary: #1565c0;
+  --brawler-primary-rgb: 21, 101, 192;
+  --brawler-accent: #d92f44;
+
+  --brawler-dark: #dceeff;
+  --brawler-hero-secondary: #f4f9ff;
+  --brawler-hero-text: #10233d;
+  --brawler-hero-muted: #455d78;
+  --brawler-hero-border: rgba(21, 101, 192, 0.18);
+
+  --content-card-bg: rgba(255, 255, 255, 0.88);
+  --content-card-border: rgba(15, 23, 42, 0.12);
+  --content-card-shadow: rgba(15, 23, 42, 0.1);
+
+  --guide-heading: #172033;
+  --guide-text: #293548;
+  --guide-muted: #5f6b7a;
+  --guide-subtle: #6f7b8b;
+
+  --nav-pill-text: #334155;
+  --nav-pill-hover-bg: rgba(var(--brawler-primary-rgb), 0.09);
+  --nav-pill-active-text: #ffffff;
+
+  --stat-track-bg: rgba(15, 23, 42, 0.13);
+
+  --build-badge-bg: rgba(var(--brawler-primary-rgb), 0.1);
+  --build-badge-border: rgba(var(--brawler-primary-rgb), 0.24);
+}
+
+.container {
+  color: var(--guide-text);
+}
+
+.container > .text-white,
+.container > h1.text-white,
+.container > h2.text-white,
+.container > h3.text-white,
+.container > h4.text-white,
+.container > h5.text-white,
+.container > h6.text-white {
+  color: var(--guide-heading) !important;
+}
+.breadcrumb .text-muted {
+  color: var(--guide-muted) !important;
+}
+
+.breadcrumb a {
+  font-weight: 500;
+}
+
+.breadcrumb a:hover,
+.breadcrumb a:focus-visible {
+  color: var(--brawler-primary) !important;
+}
+
+.breadcrumb-item.active {
+  color: var(--brawler-primary) !important;
+  font-weight: 600;
 }
 
 .brawler-hero {
-  background: linear-gradient(135deg, var(--brawler-dark) 0%, #1b263b 100%);
-  border-radius: 24px;
-  overflow: hidden;
   position: relative;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+  color: var(--brawler-hero-text);
+  background: linear-gradient(
+    135deg,
+    var(--brawler-dark) 0%,
+    var(--brawler-hero-secondary) 100%
+  );
+  border: 1px solid var(--brawler-hero-border);
+  border-radius: 24px;
+  box-shadow:
+    0 18px 45px rgba(var(--brawler-primary-rgb), 0.12),
+    0 4px 14px rgba(15, 23, 42, 0.08);
 }
 
 .brawler-hero-glow {
   position: absolute;
-  top: -50px;
-  right: -50px;
-  width: 300px;
-  height: 300px;
+  top: -70px;
+  right: -60px;
+  width: 360px;
+  height: 360px;
   background: radial-gradient(
     circle,
-    rgba(33, 150, 243, 0.2) 0%,
-    transparent 70%
+    rgba(var(--brawler-primary-rgb), 0.22) 0%,
+    rgba(var(--brawler-primary-rgb), 0.08) 38%,
+    transparent 72%
   );
   pointer-events: none;
 }
 
+.brawler-hero > .row {
+  position: relative;
+  z-index: 1;
+}
+
+.brawler-hero .text-white,
+.brawler-hero h1.text-white {
+  color: var(--brawler-hero-text) !important;
+}
+
+.brawler-hero .text-white-50,
+.brawler-hero .text-muted {
+  color: var(--brawler-hero-muted) !important;
+}
+
+.brawler-hero .badge.bg-primary {
+  color: #ffffff;
+  background-color: var(--brawler-primary) !important;
+}
+
+.brawler-hero .text-warning {
+  color: #a85d00 !important;
+}
+
+.brawler-hero .text-info {
+  color: #006a80 !important;
+}
+
 .content-card {
+  color: var(--guide-text);
   background: var(--content-card-bg);
+  border: 1px solid var(--content-card-border);
+  border-radius: 16px;
+  box-shadow: 0 6px 20px var(--content-card-shadow);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 16px;
   transition:
     transform 0.2s ease,
+    border-color 0.2s ease,
     box-shadow 0.2s ease;
 }
 
 .content-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 8px 24px rgba(33, 150, 243, 0.15);
+  border-color: rgba(var(--brawler-primary-rgb), 0.28);
+  box-shadow:
+    0 12px 30px rgba(var(--brawler-primary-rgb), 0.14),
+    0 5px 16px rgba(15, 23, 42, 0.08);
+}
+
+.content-card .text-white,
+.content-card h1,
+.content-card h2,
+.content-card h3,
+.content-card h4,
+.content-card h5,
+.content-card h6 {
+  color: var(--guide-heading) !important;
+}
+
+.content-card .text-white-50 {
+  color: var(--guide-subtle) !important;
+}
+
+.content-card .text-secondary,
+.content-card .text-muted,
+.content-card .tab-content {
+  color: var(--guide-muted) !important;
+}
+
+.content-card p {
+  line-height: 1.7;
+}
+
+.content-card h4,
+.content-card h5 {
+  line-height: 1.3;
 }
 
 .nav-pills .nav-link {
-  color: #fff;
+  color: var(--nav-pill-text);
   border-radius: 12px;
   padding: 10px 20px;
   font-weight: 600;
-  transition: all 0.3s ease;
+  transition:
+    color 0.2s ease,
+    background-color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+}
+
+.nav-pills .nav-link:hover {
+  color: var(--brawler-primary);
+  background-color: var(--nav-pill-hover-bg);
+}
+
+.nav-pills .nav-link:focus-visible {
+  color: var(--brawler-primary);
+  background-color: var(--nav-pill-hover-bg);
+  outline: 3px solid rgba(var(--brawler-primary-rgb), 0.22);
+  outline-offset: 2px;
 }
 
 .nav-pills .nav-link.active {
+  color: var(--nav-pill-active-text);
   background-color: var(--brawler-primary);
-  box-shadow: 0 4px 12px rgba(33, 150, 243, 0.3);
+  box-shadow: 0 4px 12px rgba(var(--brawler-primary-rgb), 0.3);
 }
 
 .stat-bar-track {
-  height: 8px;
-  border-radius: 4px;
-  background-color: rgba(255, 255, 255, 0.1);
+  height: 9px;
+  overflow: hidden;
+  background-color: var(--stat-track-bg);
+  border-radius: 999px;
 }
 
 .stat-bar-fill {
   height: 100%;
-  border-radius: 4px;
-  background: linear-gradient(90deg, var(--brawler-primary), #00d2ff);
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--brawler-primary), #00a8d6);
 }
 
 .build-badge {
-  background-color: rgba(33, 150, 243, 0.1);
   color: var(--brawler-primary);
-  border: 1px solid rgba(33, 150, 243, 0.2);
+  background-color: var(--build-badge-bg);
+  border: 1px solid var(--build-badge-border);
+  font-weight: 700;
+  padding: 0.5rem 0.75rem;
 }
 
 .brawler-portrait {
@@ -96,4 +242,107 @@
 
 .tracking-wide {
   letter-spacing: 0.1em;
+}
+
+[data-bs-theme="dark"] {
+  --brawler-primary: #2196f3;
+  --brawler-primary-rgb: 33, 150, 243;
+  --brawler-accent: #ff4757;
+
+  --brawler-dark: #0d1b2a;
+  --brawler-hero-secondary: #1b263b;
+  --brawler-hero-text: #ffffff;
+  --brawler-hero-muted: rgba(255, 255, 255, 0.68);
+  --brawler-hero-border: rgba(255, 255, 255, 0.1);
+
+  --content-card-bg: rgba(255, 255, 255, 0.05);
+  --content-card-border: rgba(255, 255, 255, 0.08);
+  --content-card-shadow: rgba(0, 0, 0, 0.18);
+
+  --guide-heading: #ffffff;
+  --guide-text: rgba(255, 255, 255, 0.86);
+  --guide-muted: rgba(255, 255, 255, 0.62);
+  --guide-subtle: rgba(255, 255, 255, 0.5);
+
+  --nav-pill-text: rgba(255, 255, 255, 0.82);
+  --nav-pill-hover-bg: rgba(var(--brawler-primary-rgb), 0.12);
+  --nav-pill-active-text: #ffffff;
+
+  --stat-track-bg: rgba(255, 255, 255, 0.1);
+
+  --build-badge-bg: rgba(var(--brawler-primary-rgb), 0.1);
+  --build-badge-border: rgba(var(--brawler-primary-rgb), 0.2);
+}
+
+[data-bs-theme="dark"] .brawler-hero .text-warning {
+  color: var(--bs-warning) !important;
+}
+
+[data-bs-theme="dark"] .brawler-hero .text-info {
+  color: var(--bs-info) !important;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-bs-theme="light"]) {
+    --brawler-primary: #2196f3;
+    --brawler-primary-rgb: 33, 150, 243;
+
+    --brawler-dark: #0d1b2a;
+    --brawler-hero-secondary: #1b263b;
+    --brawler-hero-text: #ffffff;
+    --brawler-hero-muted: rgba(255, 255, 255, 0.68);
+    --brawler-hero-border: rgba(255, 255, 255, 0.1);
+
+    --content-card-bg: rgba(255, 255, 255, 0.05);
+    --content-card-border: rgba(255, 255, 255, 0.08);
+    --content-card-shadow: rgba(0, 0, 0, 0.18);
+
+    --guide-heading: #ffffff;
+    --guide-text: rgba(255, 255, 255, 0.86);
+    --guide-muted: rgba(255, 255, 255, 0.62);
+    --guide-subtle: rgba(255, 255, 255, 0.5);
+
+    --nav-pill-text: rgba(255, 255, 255, 0.82);
+    --nav-pill-hover-bg: rgba(var(--brawler-primary-rgb), 0.12);
+
+    --stat-track-bg: rgba(255, 255, 255, 0.1);
+
+    --build-badge-bg: rgba(var(--brawler-primary-rgb), 0.1);
+    --build-badge-border: rgba(var(--brawler-primary-rgb), 0.2);
+  }
+}
+
+@media (max-width: 575.98px) {
+  .brawler-hero {
+    border-radius: 18px;
+  }
+
+  .brawler-hero .display-4 {
+    font-size: clamp(2.25rem, 12vw, 3.25rem);
+  }
+
+  .nav-pills {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .nav-pills .nav-item,
+  .nav-pills .nav-link {
+    width: 100%;
+  }
+
+  .content-card {
+    padding: 1.25rem !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .brawler-portrait {
+    animation: none;
+  }
+
+  .content-card,
+  .nav-pills .nav-link {
+    transition: none;
+  }
 }

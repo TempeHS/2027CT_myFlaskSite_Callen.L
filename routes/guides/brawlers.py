@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template
+from flask import Blueprint, render_template, abort
 
 brawlers_bp = Blueprint("brawlers", __name__, url_prefix="/brawlers")
 
