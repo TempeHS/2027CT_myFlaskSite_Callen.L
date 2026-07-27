@@ -1,17 +1,280 @@
-{% extends 'base.html' %} {% block title %}Working in Progress - Brawlable{%
-endblock %} {% block content %}
+{% extends "base.html" %}
 
-<!-- content -->
-<div class="container-fluid px-0">
-  <div class="row justify-content-center mx-0">
-    <div class="col-12 text-center p-4 bg-light">
-      <h1>🚧 Page is under construction</h1>
-      <p>This page is currently not available.</p>
-      <a href="/" class="btn btn-primary text-white text-decoration-none px-3">
-        Let's head back to home
-      </a>
+{% block title %}Brawlers - Brawlable{% endblock %}
+
+{% block extra_css %}
+<style>
+  .rarity-card {
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .rarity-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 0.75rem 1.5rem rgba(0, 0, 0, 0.15);
+  }
+
+  .rarity-image-wrapper {
+    position: relative;
+    height: 180px;
+    overflow: hidden;
+  }
+
+  .rarity-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .rarity-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(225deg,
+        color-mix(in srgb, var(--gradient-start) 78%, transparent),
+        color-mix(in srgb, var(--gradient-end) 78%, transparent));
+  }
+
+  .rarity-overlay::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at top right,
+        rgba(255, 255, 255, 0.3),
+        transparent 55%);
+  }
+
+  .rarity-title {
+    position: relative;
+    z-index: 1;
+    margin: 0;
+    color: #fff;
+    font-size: 1.7rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.08rem;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
+  }
+
+  .rarity-rare {
+    --gradient-start: #54a0ff;
+    --gradient-end: #00d2d3;
+  }
+
+  .rarity-super-rare {
+    --gradient-start: #1dd1a1;
+    --gradient-end: #10ac84;
+  }
+
+  .rarity-epic {
+    --gradient-start: #9c88ff;
+    --gradient-end: #8c7ae6;
+  }
+
+  .rarity-mythic {
+    --gradient-start: #ff6b6b;
+    --gradient-end: #ee5253;
+  }
+
+  .rarity-legendary {
+    --gradient-start: #feca57;
+    --gradient-end: #ff9f43;
+  }
+
+  .rarity-ultra-legendary {
+    --gradient-start: #5f27cd;
+    --gradient-end: #341f97;
+  }
+
+  [data-bs-theme="dark"] .rarity-rare {
+    --gradient-start: #2d6cc7;
+    --gradient-end: #0b7285;
+  }
+
+  [data-bs-theme="dark"] .rarity-super-rare {
+    --gradient-start: #168a73;
+    --gradient-end: #0b6457;
+  }
+
+  [data-bs-theme="dark"] .rarity-epic {
+    --gradient-start: #6b5fc9;
+    --gradient-end: #5346b6;
+  }
+
+  [data-bs-theme="dark"] .rarity-mythic {
+    --gradient-start: #bf3f57;
+    --gradient-end: #8e2b42;
+  }
+
+  [data-bs-theme="dark"] .rarity-legendary {
+    --gradient-start: #c98c17;
+    --gradient-end: #9f6208;
+  }
+
+  [data-bs-theme="dark"] .rarity-ultra-legendary {
+    --gradient-start: #5030b5;
+    --gradient-end: #2f1d78;
+  }
+</style>
+{% endblock %}
+
+{% block content %}
+<section class="py-5">
+  <div class="container">
+
+    <div class="text-center mb-5">
+      <h1>Explore Brawlers</h1>
+      <p class="lead">
+        Pick a rarity below to get started!
+      </p>
+    </div>
+
+    <div class="row g-4">
+
+      <!-- Rare -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100 rarity-card">
+          <div class="rarity-image-wrapper rarity-rare">
+            <img src="{{ url_for('static', filename='images/index-feature1.jpg') }}" alt="Rare Brawlers" loading="lazy"
+              decoding="async" />
+            <div class="rarity-overlay">
+              <h2 class="rarity-title">Rare</h2>
+            </div>
+          </div>
+          <div class="card-body d-flex flex-column">
+            <h3 class="h5 card-title">Rare Brawlers</h3>
+            <p class="card-text">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              Praesent commodo cursus magna vel scelerisque nisl consectetur.
+            </p>
+            <a href="#" class="btn btn-primary align-self-start mt-auto">
+              Learn More
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Super Rare -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100 rarity-card">
+          <div class="rarity-image-wrapper rarity-super-rare">
+            <img src="{{ url_for('static', filename='images/index-feature2.jpg') }}" alt="Super Rare Brawlers"
+              loading="lazy" decoding="async" />
+            <div class="rarity-overlay">
+              <h2 class="rarity-title">Super Rare</h2>
+            </div>
+          </div>
+          <div class="card-body d-flex flex-column">
+            <h3 class="h5 card-title">Super Rare Brawlers</h3>
+            <p class="card-text">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              Praesent commodo cursus magna vel scelerisque nisl consectetur.
+            </p>
+            <a href="#" class="btn btn-primary align-self-start mt-auto">
+              Learn More
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Epic -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100 rarity-card">
+          <div class="rarity-image-wrapper rarity-epic">
+            <img src="{{ url_for('static', filename='images/index-feature3.jpg') }}" alt="Epic Brawlers" loading="lazy"
+              decoding="async" />
+            <div class="rarity-overlay">
+              <h2 class="rarity-title">Epic</h2>
+            </div>
+          </div>
+          <div class="card-body d-flex flex-column">
+            <h3 class="h5 card-title">Epic Brawlers</h3>
+            <p class="card-text">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              Praesent commodo cursus magna vel scelerisque nisl consectetur.
+            </p>
+            <a href="#" class="btn btn-primary align-self-start mt-auto">
+              Learn More
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mythic -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100 rarity-card">
+          <div class="rarity-image-wrapper rarity-mythic">
+            <img src="{{ url_for('static', filename='images/index-feature4.jpg') }}" alt="Mythic Brawlers"
+              loading="lazy" decoding="async" />
+            <div class="rarity-overlay">
+              <h2 class="rarity-title">Mythic</h2>
+            </div>
+          </div>
+          <div class="card-body d-flex flex-column">
+            <h3 class="h5 card-title">Mythic Brawlers</h3>
+            <p class="card-text">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              Praesent commodo cursus magna vel scelerisque nisl consectetur.
+            </p>
+            <a href="#" class="btn btn-primary align-self-start mt-auto">
+              Learn More
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Legendary -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100 rarity-card">
+          <div class="rarity-image-wrapper rarity-legendary">
+            <img src="{{ url_for('static', filename='images/index-feature5.jpg') }}" alt="Legendary Brawlers"
+              loading="lazy" decoding="async" />
+            <div class="rarity-overlay">
+              <h2 class="rarity-title">Legendary</h2>
+            </div>
+          </div>
+          <div class="card-body d-flex flex-column">
+            <h3 class="h5 card-title">Legendary Brawlers</h3>
+            <p class="card-text">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              Praesent commodo cursus magna vel scelerisque nisl consectetur.
+            </p>
+            <a href="#" class="btn btn-primary align-self-start mt-auto">
+              Learn More
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Ultra Legendary -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100 rarity-card">
+          <div class="rarity-image-wrapper rarity-ultra-legendary">
+            <img src="{{ url_for('static', filename='images/index-feature6.jpg') }}" alt="Ultra Legendary Brawlers"
+              loading="lazy" decoding="async" />
+            <div class="rarity-overlay">
+              <h2 class="rarity-title">Ultra Legendary</h2>
+            </div>
+          </div>
+          <div class="card-body d-flex flex-column">
+            <h3 class="h5 card-title">Ultra Legendary Brawlers</h3>
+            <p class="card-text">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              Praesent commodo cursus magna vel scelerisque nisl consectetur.
+            </p>
+            <a href="#" class="btn btn-primary align-self-start mt-auto">
+              Learn More
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-</div>
+</section>
 
+<p style="text-align: center;">For other brawlers including <a
+    class="text-decorations-nontext-decoration-none text-primary" href="#">Start Brawlers</a> and <a
+    class="text-decorations-nontext-decoration-none text-primary" href="#">Limited Time Brawlers</a>.</p>
 {% endblock %}

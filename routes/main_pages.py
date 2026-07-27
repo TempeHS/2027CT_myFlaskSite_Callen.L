@@ -13,6 +13,11 @@ def onboarding():
     return render_template("onboarding.html")
 
 
+@main_bp.route("/brawlers")
+def brawlers():
+    return render_template("brawlers.html")
+
+
 # More Primary Pages Route
 @main_bp.route("/about")
 def about():
