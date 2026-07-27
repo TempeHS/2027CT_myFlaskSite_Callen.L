@@ -62,6 +62,22 @@ planning. Be honest and use evidence — point to a page, a feature or a test.
 
 ### 3.2 What You Delivered
 
+GIFs of Completed Production
+| Page           | Route          | What it delivers                                                                                                                                       |
+| -------------- | -------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Home Hero |  | |
+
+Site Contents
+| Contents   | Route                                             | How it is made and why it is made                                                                                              |
+| ---------- | ------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
+| Hero Video | [↗ View Hero Video](./static/videos/hero.mp4)     | Collected game footage from gameplay and spectator mode and edited in Premiere Pro to create a unique engaging hero.           |
+| Favicon    | [↗ View Site Favicon](./static/images/favicon.svg) | The favicon is made in Adobe Illustrator and is exported as a SVG (Scalable Vector Graphics) as it can be infinitely zoomed in |
+
+| Contents     | Route                                                                                                                                                                                                                                                                                        | Where is it from, Why it is chosen, Additional Decisions made                                                                                                                                                     |
+| ------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Index Images | [↗ View Image 1](./static/images/index-feature1.jpg) <br> [↗ View Image 1](./static/images/index-feature2.jpg) <br> [↗ View Image 1](./static/images/index-feature3.jpg) <br> [↗ View Image 1](./static/images/index-feature4.jpg) <br> [↗ View Image 1](./static/images/index-feature5.jpg) | From [Supercell Brawl Stars Fankit](https://fankit.supercell.com/d/YvtsWV4pUQVm/game-assets), and is used for it to feel distinct and relatable to users. The images are reduced to below 5250KB for performance. |
+
+
 #### Primary Pages of Brawlable
 
 | Page           | Route          | What it delivers                                                                                                                                       |
