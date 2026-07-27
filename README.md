@@ -17,11 +17,12 @@
 
 ## 1. Overview
 
-**Purpose:** <!-- One or two sentences: what the site is and why it exists (from your Statement of Intent). -->
+**Purpose:**
+Brawlable is a beginner-friendly tutorial website for Brawl Stars players. Featuring a homepage with a comprehensive roadmap for beginners, a detailed article gallery on key game mechanics, and a "Quick Start" guide with easy-to-begin tutorials.
 
-**Target audience:** <!-- One sentence: who the site is for (from your personas). -->
+**Target audience:** Brawlable is for new and experienced Brawl Stars players ages 13-21 to sharpen and improve their skill.
 
-**Technology stack:** Python Flask · Jinja2 templates · Bootstrap (CDN) · custom CSS · pytest
+**Technology stack:** Python Flask · Jinja2 templates · Bootstrap (CDN) · custom JS · custom CSS · pytest
 
 ---
 
@@ -42,11 +43,13 @@ This is the most important part of your documentation — it shows your website 
 | **Link / Embed** |        |
 | **Duration**     |        |
 
+<!--
 **Your walkthrough should show:**
 
 - A tour of each page (Home and Contact)
 - Your key Bootstrap components working (navbar, carousel, cards, map, form)
 - The layout responding when the window is resized (navbar collapsing to a hamburger)
+-->
 
 ---
 
@@ -58,20 +61,56 @@ planning. Be honest and use evidence — point to a page, a feature or a test.
 
 ### 3.1 Your Statement of Intent
 
-<!-- Paste the Statement of Intent you wrote during planning so the reader can judge your site against it. -->
+Brawlable is a beginner-friendly tutorial website for Brawl Stars players. Featuring a homepage with a comprehensive roadmap for beginners, a detailed article gallery on key game mechanics, and a "Quick Start" guide with easy-to-begin tutorials.
+
+Currently, Brawl Stars continues to introduce new features and mechanics, resulting in becoming increasingly more complex, leaving beginners struggling to keep up. This often results in unnecessary confusion, poor gameplay experience, and a decline in player engagement.
+
+By addressing this issue with a dedicated site that guides users through Brawl Stars mechanics and brawlers, beginners can find clear and concise descriptions of a range of features. This will help the community become more engaged, encourage player confidence, and support long-term player retention.
+
+The primary audience is young Brawl Stars players aged 13-21 who are either new to Brawl Stars or want to improve their gameplay. These users are comfortable with technology and prefer quick, easily accessible information, but have limited time, so the site must offer both fast navigation and comprehensible content. The secondary audience includes more experienced players who may use the site to enhance their strategies or further deepen their game knowledge.
+
+Brawlable will simplify the learning curve of new players, making it easier to quickly understand and enjoy the game Brawl Stars. With easy-to-follow tutorials, clear game mechanics and practical strategies, we aim to enhance player engagement, confidence and long-term retention.
 
 ### 3.2 What You Delivered
 
-GIFs of Completed Production
-| Page | Route | What it delivers |
-| -------------- | -------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Home Hero | | |
+Primary Pages
+
+<!-- Add later: Showing what you can learn, and a dedicated section for casual trophy players and ranked players. -->
+
+| Page          | Route                     | What it delivers                                                                                                                                       |
+| ------------- | ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Home Page     | `/`                       | Introduces Brawlable as a learning guide to Brawl Stars with a Hero Video. Followed by cards for Brawlers, Game Modes, Mechanics.                      |
+| Contacts Page | `/contact` and `/support` | Offers a contact page with a embeded map from Google Maps, a responsive form for general equiries, support, feedback and bug reports.                  |
+| Search Page   | `/search`                 | Allows users to search for pages using a URL. Matching results shows clickable links while unsuccessful searches shows a warning and suggested results |
+
+.  
+.  
+.  
+.  
+.  
+.  
+.  
+.  
+.  
+.  
+.  
+.  
+.  
+.  
+.  
+.  
+.  
+.  
+.  
+.  
+.
 
 Site Contents
-| Contents | Route | How it is made and why it is made |
-| ---------- | ------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
-| Hero Video | [↗ View Hero Video](./static/videos/hero.mp4) | Collected game footage from gameplay and spectator mode and edited in Premiere Pro to create a unique engaging hero. |
-| Favicon | [↗ View Site Favicon](./static/images/favicon.svg) | The favicon is made in Adobe Illustrator and is exported as a SVG (Scalable Vector Graphics) as it can be infinitely zoomed in |
+
+| Contents   | Route                                              | How it is made and why it is made                                                                                              |
+| ---------- | -------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
+| Hero Video | [↗ View Hero Video](./static/videos/hero.mp4)      | Collected game footage from gameplay and spectator mode and edited in Premiere Pro to create a unique engaging hero.           |
+| Favicon    | [↗ View Site Favicon](./static/images/favicon.svg) | The favicon is made in Adobe Illustrator and is exported as a SVG (Scalable Vector Graphics) as it can be infinitely zoomed in |
 
 | Contents     | Route                                                                                                                                                                                                                                                                                        | Where is it from, Why it is chosen, Additional Decisions made                                                                                                                                                     |
 | ------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
