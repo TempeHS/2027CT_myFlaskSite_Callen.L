@@ -11,13 +11,13 @@
   <nav aria-label="breadcrumb" class="mb-4">
     <ol class="breadcrumb">
       <li class="breadcrumb-item">
-        <a href="/" class="text-decoration-none text-muted">
+        <a href="{{ url_for('home') }}" class="text-decoration-none text-muted">
           Home
         </a>
       </li>
 
       <li class="breadcrumb-item">
-        <a href="/brawlers/rare" class="text-decoration-none text-muted">
+        <a href="{{ url_for('brawlers.rare') }}" class="text-decoration-none text-muted">
           Rare Brawlers
         </a>
       </li>
