@@ -1,17 +1,462 @@
-{% extends 'base.html' %} {% block title %}Bounty - Brawlable{% endblock %} {%
-block content %}
+{% extends 'base.html' %}
 
-<!-- content -->
-<div class="container-fluid px-0">
-  <div class="row justify-content-center mx-0">
-    <div class="col-12 text-center p-4">
-      <h1>🚧 Page is under construction</h1>
-      <p>This page is currently not available.</p>
-      <a href="/" class="btn btn-primary text-white text-decoration-none px-3">
-        Let's head back to home
-      </a>
+{% block title %}Colt Guide - Brawlable{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/section-css/guides.css') }}" />
+{% endblock %}
+
+{% block content %}
+<div class="container brawler-guide my-5">
+  <nav aria-label="breadcrumb" class="mb-4">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item">
+        <a href="/" class="text-decoration-none text-muted">
+          Home
+        </a>
+      </li>
+
+      <li class="breadcrumb-item">
+        <a href="/brawlers/rare" class="text-decoration-none text-muted">
+          Rare Brawlers
+        </a>
+      </li>
+
+      <li class="breadcrumb-item active text-primary" aria-current="page">
+        Colt
+      </li>
+    </ol>
+  </nav>
+
+  <div class="brawler-hero p-4 p-md-5 mb-5 text-white shadow">
+    <div class="brawler-hero-glow"></div>
+
+    <div class="row align-items-center g-4">
+      <div class="col-md-4 text-center">
+        <img src="{{ url_for('static', filename='images/brawlers/rare/portrait/colt_portrait.png') }}"
+          alt="Colt Portrait" class="img-fluid rounded-4 shadow-lg brawler-portrait"
+          style="max-width: 220px; border: 3px solid var(--brawler-primary);">
+      </div>
+
+      <div class="col-md-8">
+        <span class="badge bg-primary mb-2 text-uppercase tracking-wide px-3 py-2">
+          Rare // Marksman
+        </span>
+
+        <h1 class="display-4 font-black mb-2 text-white">
+          Colt
+        </h1>
+
+        <p class="lead text-white-50 mb-4">
+          "The box goes boom!" A long-range rocket specialist built
+          to completely control map choke points and smash open enemy
+          cover.
+        </p>
+
+        <div class="row g-3 text-center text-md-start">
+          <div class="col-6 col-sm-3">
+            <small class="text-muted d-block text-uppercase">
+              Offence
+            </small>
+
+            <span class="text-warning fw-bold fs-5">
+              <i class="bi bi-star-fill"></i>
+              5 / 5
+            </span>
+          </div>
+
+          <div class="col-6 col-sm-3">
+            <small class="text-muted d-block text-uppercase">
+              Defence
+            </small>
+
+            <span class="text-muted fw-bold fs-5">
+              2 / 5
+            </span>
+          </div>
+
+          <div class="col-6 col-sm-3">
+            <small class="text-muted d-block text-uppercase">
+              Utility
+            </small>
+
+            <span class="text-muted fw-bold fs-5">
+              2 / 5
+            </span>
+          </div>
+
+          <div class="col-6 col-sm-3">
+            <small class="text-muted d-block text-uppercase">
+              Range
+            </small>
+
+            <span class="text-info fw-bold fs-5">
+              Very Long
+            </span>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-</div>
 
+  <div class="row g-4 mb-5">
+    <div class="col-lg-8">
+      <div class="content-card p-4 h-100">
+        <ul class="nav nav-pills mb-4 gap-2" id="brawlerTabs" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="attack-tab" data-bs-toggle="pill" data-bs-target="#attack-content"
+              type="button" role="tab" aria-controls="attack-content" aria-selected="true">
+              <i class="bi bi-crosshair me-2"></i>
+              Attack
+            </button>
+          </li>
+
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="super-tab" data-bs-toggle="pill" data-bs-target="#super-content" type="button"
+              role="tab" aria-controls="super-content" aria-selected="false">
+              <i class="bi bi-cloud-hail me-2"></i>
+              Super
+            </button>
+          </li>
+
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="hc-tab" data-bs-toggle="pill" data-bs-target="#hc-content" type="button"
+              role="tab" aria-controls="hc-content" aria-selected="false">
+              <i class="bi bi-lightning-charge me-2"></i>
+              Hypercharge
+            </button>
+          </li>
+        </ul>
+
+        <div class="tab-content text-secondary" id="brawlerTabsContent">
+          <div class="tab-pane fade show active" id="attack-content" role="tabpanel" aria-labelledby="attack-tab"
+            tabindex="0">
+            <h4 class="text-white fw-bold mb-2">
+              Master lorem ipsum :D
+            </h4>
+
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam nec elementum nulla, id eleifend massa.
+              In sit amet sapien vitae diam laoreet condimentum sed eget purus.
+
+            </p>
+
+            <div class="mt-3">
+              <div class="d-flex justify-content-between mb-1">
+                <span class="text-white-50">
+                  Master lorem ipsum :D
+                </span>
+
+                <span class="text-white fw-bold">
+                  Medium
+                </span>
+              </div>
+
+              <div class="d-flex justify-content-between mb-1">
+                <span class="text-white-50">
+                  Reload Speed
+                </span>
+
+                <span class="text-white fw-bold">
+                  Slow
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <div class="tab-pane fade" id="super-content" role="tabpanel" aria-labelledby="super-tab" tabindex="0">
+            <h4 class="text-white fw-bold mb-2">
+              Master lorem ipsum :D
+            </h4>
+
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam nec elementum nulla, id eleifend massa.
+              In sit amet
+              sapien vitae diam laoreet condimentum sed eget purus.
+
+            </p>
+
+            <div class="mt-3">
+              <div class="d-flex justify-content-between mb-1">
+                <span class="text-white-50">
+                  Wall Destruction
+                </span>
+
+                <span class="text-white fw-bold">
+                  Yes
+                </span>
+              </div>
+
+              <div class="d-flex justify-content-between mb-1">
+                <span class="text-white-50">
+                  Total Rockets
+                </span>
+
+                <span class="text-white fw-bold">
+                  9 Projectiles
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <div class="tab-pane fade" id="hc-content" role="tabpanel" aria-labelledby="hc-tab" tabindex="0">
+            <h4 class="text-white fw-bold mb-2">
+              Hypercharge: Rocket Barrage
+            </h4>
+
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam nec elementum nulla, id eleifend massa.
+              In sit amet
+              sapien vitae diam laoreet condimentum sed eget purus.
+
+            </p>
+
+            <div class="mt-3">
+              <div class="d-flex justify-content-between mb-1">
+                <span class="text-white-50">
+                  Stat Boosts
+                </span>
+
+                <span class="text-white fw-bold">
+                  +20% Speed, +25% Damage
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-4">
+      <div class="content-card p-4 h-100 text-white">
+        <h4 class="fw-bold mb-4">
+          Base Vitals (Max Level)
+        </h4>
+
+        <div class="mb-3">
+          <div class="d-flex justify-content-between small text-white-50 mb-1">
+            <span>Health Points</span>
+
+            <span class="fw-bold text-white">
+              6000
+            </span>
+          </div>
+
+          <div class="stat-bar-track">
+            <div class="stat-bar-fill" style="width: 45%;"></div>
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <div class="d-flex justify-content-between small text-white-50 mb-1">
+            <span>Main Rocket Per Hit</span>
+
+            <span class="fw-bold text-white">
+              2,320
+            </span>
+          </div>
+
+          <div class="stat-bar-track">
+            <div class="stat-bar-fill" style="width: 85%;"></div>
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <div class="d-flex justify-content-between small text-white-50 mb-1">
+            <span>Super Rocket (Per Hit)</span>
+
+            <span class="fw-bold text-white">
+              2,080
+            </span>
+          </div>
+
+          <div class="stat-bar-track">
+            <div class="stat-bar-fill" style="width: 75%;"></div>
+          </div>
+        </div>
+
+        <div class="mb-0">
+          <div class="d-flex justify-content-between small text-white-50 mb-1">
+            <span>Movement Profile</span>
+
+            <span class="fw-bold text-white">
+              Normal
+            </span>
+          </div>
+
+          <div class="stat-bar-track">
+            <div class="stat-bar-fill" style="width: 55%;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="content-card p-4 mb-5">
+    <h3 class="text-white fw-bold mb-4">
+      <i class="bi bi-journal-bookmark-fill text-primary me-2"></i>
+      How to Use Colt
+    </h3>
+
+    <div class="row g-4">
+      <div class="col-md-6">
+        <div class="d-flex align-items-start gap-3">
+          <div class="bg-primary text-white rounded-circle p-2 px-3 fw-bold">
+            1
+          </div>
+
+          <div>
+            <h5 class="text-white fw-bold">
+              Master lorem ipsum :D
+            </h5>
+
+            <p class="text-secondary">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam nec elementum nulla, id eleifend massa.
+              In sit amet
+              sapien vitae diam laoreet condimentum sed eget purus.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="d-flex align-items-start gap-3">
+          <div class="bg-primary text-white rounded-circle p-2 px-3 fw-bold">
+            2
+          </div>
+
+          <div>
+            <h5 class="text-white fw-bold">
+              Master lorem ipsum :D
+            </h5>
+
+            <p class="text-secondary">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam nec elementum nulla, id eleifend massa.
+              In sit amet
+              sapien vitae diam laoreet condimentum sed eget purus.
+
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="d-flex align-items-start gap-3">
+          <div class="bg-primary text-white rounded-circle p-2 px-3 fw-bold">
+            3
+          </div>
+
+          <div>
+            <h5 class="text-white fw-bold">
+              Master lorem ipsum :D
+            </h5>
+
+            <p class="text-secondary">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam nec elementum nulla, id eleifend massa.
+              In sit amet
+              sapien vitae diam laoreet condimentum sed eget purus.
+
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="d-flex align-items-start gap-3">
+          <div class="bg-primary text-white rounded-circle p-2 px-3 fw-bold">
+            4
+          </div>
+
+          <div>
+            <h5 class="text-white fw-bold">
+              Master lorem ipsum :D
+            </h5>
+
+            <p class="text-secondary">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam nec elementum nulla, id eleifend massa.
+              In sit amet
+              sapien vitae diam laoreet condimentum sed eget purus.
+
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h3 class="text-white fw-bold mb-4">
+    <i class="bi bi-gear-fill text-primary me-2"></i>
+    Competitive Meta Build
+  </h3>
+
+  <div class="row g-4 text-white">
+    <div class="col-md-4">
+      <div class="content-card p-4 text-center h-100">
+        <div class="mb-3 text-primary">
+          <i class="bi bi-arrow-up-right-circle-fill fs-1"></i>
+        </div>
+
+        <h5 class="fw-bold mb-1">
+          Best Gadget
+        </h5>
+
+        <span class="badge build-badge mb-3">
+          Rocket Lace
+        </span>
+
+        <p class="text-secondary small mb-0">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam nec
+          elementum nulla, id eleifend massa. In sit amet
+          sapien vitae diam laoreet condimentum sed eget purus.
+        </p>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="content-card p-4 text-center h-100">
+        <div class="mb-3 text-warning">
+          <i class="bi bi-fire fs-1"></i>
+        </div>
+
+        <h5 class="fw-bold mb-1">
+          Best Star Power
+        </h5>
+
+        <span class="badge build-badge mb-3">
+          More Rockets
+        </span>
+
+        <p class="text-secondary small mb-0">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam nec elementum nulla, id eleifend massa. In
+          sit amet sapien vitae diam laoreet condimentum sed eget purus.
+        </p>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="content-card p-4 text-center h-100">
+        <div class="mb-3 text-info">
+          <i class="bi bi-shield-plus fs-1"></i>
+        </div>
+
+        <h5 class="fw-bold mb-1">
+          Recommended Gears
+        </h5>
+
+        <span class="badge build-badge mb-3">
+          Reload Speed + Damage
+        </span>
+
+        <p class="text-secondary small mb-0">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam nec elementum nulla, id eleifend massa. In
+          sit amet sapien vitae diam laoreet condimentum sed eget purus.
+        </p>
+      </div>
+    </div>
+  </div>
+
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{{ url_for('static', filename='js/fade-in-fx.js') }}" defer></script>
 {% endblock %}
