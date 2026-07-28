@@ -73,13 +73,15 @@
               Learn all the different brawlers Brawl Stars offers, and each of
               its advantages.
             </p>
-            <button href="#" class="btn btn-primary">Learn More</button>
+            <button class="btn btn-primary"><a href="{{ url_for('main.brawlers') }}"
+                class="text-decoration-none text-white">Learn
+                More</a></button>
           </div>
         </div>
       </div>
 
       <!-- Card 2 -->
-      <div class="col-md-4 mb-4">
+      <div class=" col-md-4 mb-4">
         <div class="card h-100">
           <img src="{{ url_for('static', filename='images/index-feature2.jpg') }}" class="card-img-top"
             alt="PSG Brawl Ball Cup Loading Screen Image with Dynamike, Shelly and Darryl playing Brawl Ball"
