@@ -37,7 +37,6 @@
   --build-badge-border: rgba(var(--brawler-primary-rgb), 0.24);
 }
 
-
 .brawler-guide {
   color: var(--guide-text);
 }
@@ -128,7 +127,6 @@
 .brawler-hero .text-info {
   color: #006a80 !important;
 }
-
 
 .content-card {
   color: var(--guide-text);
@@ -267,7 +265,6 @@
     0 0 14px var(--base-vitals-yellow-glow);
 }
 
-
 .build-badge {
   color: var(--brawler-primary);
   background-color: var(--build-badge-bg);
@@ -275,7 +272,6 @@
   font-weight: 700;
   padding: 0.5rem 0.75rem;
 }
-
 
 .brawler-portrait {
   animation: floatImage 4s ease-in-out infinite;
@@ -300,7 +296,6 @@
 .tracking-wide {
   letter-spacing: 0.1em;
 }
-
 
 [data-bs-theme="dark"] {
   --brawler-primary: #2196f3;
