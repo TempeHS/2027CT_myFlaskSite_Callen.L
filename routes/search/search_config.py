@@ -138,4 +138,19 @@ SEARCH_PAGES = [
         "description": "Wipeout game mode.",
         "keywords": ["gamemode", "team", "5v5"],
     },
+    # Individual Brawlers
+    {
+        "title": "🚀 Brock Guide",
+        "endpoint": "guides_brawlers.rare_brawler_guide",
+        "url_values": {"name": "brock"},
+        "description": "A guide for playing Brock.",
+        "keywords": ["brock", "rare", "brawler", "guide"],
+    },
+    {
+        "title": "🐂 Bull Guide",
+        "endpoint": "guides_brawlers.rare_brawler_guide",
+        "url_values": {"name": "bull"},
+        "description": "A guide for playing Bull.",
+        "keywords": ["bull", "rare", "brawler", "guide"],
+    },
 ]

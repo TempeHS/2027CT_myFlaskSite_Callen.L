@@ -11,11 +11,19 @@ def sanitize_search_query(raw_query: str) -> str:
     return " ".join(query.split())
 
 
-def find_exact_match_endpoint(query: str) -> str | None:
-    q = query.lower()
+def find_exact_match_endpoint(query: str) -> dict | None:
+    normalized_query = query.lower().strip("/").replace("-", "_")
+
     for page in SEARCH_PAGES:
-        if q == page["title"].lower() or q == page["endpoint"].lower():
-            return page["endpoint"]
+        endpoint_name = page["endpoint"].rsplit(".", 1)[-1].lower()
+
+        brawler_name = (
+            page.get("url_values", {}).get("name", "").lower().replace("-", "_")
+        )
+
+        if normalized_query in (endpoint_name, brawler_name):
+            return page
+
     return None
 
 

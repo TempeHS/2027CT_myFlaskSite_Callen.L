@@ -21,4 +21,5 @@ def rare_brawler_guide(name):
 
     if brawler_id in rare_brawlers:
         return render_template(f"brawlers/rare/{brawler_id}.html")
+
     abort(404)

@@ -33,16 +33,25 @@ def search():
     results = []
 
     if query:
-        endpoint = find_exact_match_endpoint(query)
-        if endpoint:
-            return redirect(url_for(endpoint))
+        page = find_exact_match_endpoint(query)
+
+        if page:
+            return redirect(
+                url_for(
+                    page["endpoint"],
+                    **page.get("url_values", {}),
+                )
+            )
 
         for page in find_partial_matches(query):
             results.append(
                 {
                     "title": page["title"],
                     "description": page["description"],
-                    "url": url_for(page["endpoint"]),
+                    "url": url_for(
+                        page["endpoint"],
+                        **page.get("url_values", {}),
+                    ),
                 }
             )
 
