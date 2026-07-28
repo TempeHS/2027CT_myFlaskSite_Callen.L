@@ -5,9 +5,9 @@ Rare Brawlers - Brawlable
 {% endblock %}
 
 {% block extra_css %}
+
 <link rel="stylesheet" href="{{ url_for('static', filename='css/section-css/brawler-scroll.css') }}" />
-<link rel="stylesheet" href="{{ url_for('static', filename='css/section-css/brawler-cards.css') }}" />
-{% endblock %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/section-css/brawler-cards.css') }}" /> {% endblock %}
 
 {% block content %}
 
@@ -54,8 +54,8 @@ Rare Brawlers - Brawlable
 }
 ] %}
 
-<div class="container mt-5 mb-4 fade-in-fx">
-  <div class="text-center mb-4">
+<div class="container mt-5 mb-4">
+  <div class="text-center mb-4 fade-in-fx">
     <h1 class="fw-bold">Choose a Rare Brawler</h1>
     <p class="text-muted mb-0">
       Tap a Brawler below to learn more.
@@ -70,7 +70,10 @@ Rare Brawlers - Brawlable
     <ul class="scroll-wheel">
       {% for brawler in brawlers %}
       <li class="card-scroll">
-        <a href="/brawlers/rare/{{ brawler.id }}">
+        <a href="{{ url_for(
+            'guides_brawlers.rare_brawler_guide',
+            name=brawler.id
+          ) }}">
           <img src="{{ url_for(
               'static',
               filename='images/brawlers/rare/idle/' ~ brawler.id ~ '.png'
@@ -89,27 +92,30 @@ Rare Brawlers - Brawlable
 
 <section class="py-4">
   <div class="container">
-    <div class="row g-4">
-      {% for brawler in brawlers %}
-      <div id="{{ brawler.id }}" class="col-md-6 col-lg-4 align">
+    <div class="row g-4"> {% for brawler in brawlers %} {% set brawler_url = url_for(
+      "guides_brawlers.rare_brawler_guide", name=brawler.id ) %}
+
+      <div class="col-md-6 col-lg-4 align">
         <article class="card h-100 brawler-card a-pinned-card">
           <div class="row g-0 align-items-center">
             <div class="col-4">
               <img src="{{ url_for(
-                  'static',
-                  filename='images/brawlers/rare/portrait/' ~
-                  brawler.id ~
-                  '_portrait.png'
-                ) }}" alt="{{ brawler.name }} portrait" class="brawler-portrait" loading="lazy" />
+              'static',
+              filename='images/brawlers/rare/portrait/' ~
+              brawler.id ~
+              '_portrait.png'
+            ) }}" alt="{{ brawler.name }} portrait" class="brawler-portrait" loading="lazy" />
             </div>
 
             <div class="col-8">
               <div class="card-body">
                 <span>{{ brawler.name }}</span>
+
                 <p class="card-text">
                   {{ brawler.description }}
                 </p>
-                <a href="/brawlers/rare/{{ brawler.id }}" class="btn btn-primary btn-sm">
+
+                <a href="{{ brawler_url }}" class="btn btn-primary btn-sm">
                   Learn More
                 </a>
               </div>
@@ -119,12 +125,16 @@ Rare Brawlers - Brawlable
       </div>
       {% endfor %}
     </div>
+
   </div>
 </section>
 
 {% endblock %}
 
 {% block extra_js %}
+
 <script src="{{ url_for('static', filename='js/section-js/brawler-scroll.js') }}" defer></script>
+
 <script src="{{ url_for('static', filename='js/fade-in-fx.js') }}" defer></script>
+
 {% endblock %}

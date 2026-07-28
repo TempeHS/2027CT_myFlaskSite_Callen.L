@@ -20,6 +20,8 @@ document.addEventListener("DOMContentLoaded", () => {
   let activePointerId = null;
   let resizeTimer = null;
 
+  const dragThreshold = 10;
+
   const getCards = () => {
     return [...scrollWheel.querySelectorAll(".card-scroll")];
   };
@@ -116,9 +118,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     dragStartX = event.clientX;
     dragStartScrollLeft = scrollWheel.scrollLeft;
-
-    scrollWheel.classList.add("is-dragging");
-    scrollWheel.setPointerCapture(event.pointerId);
   });
 
   scrollWheel.addEventListener("pointermove", (event) => {
@@ -128,8 +127,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const distanceMoved = event.clientX - dragStartX;
 
-    if (Math.abs(distanceMoved) > 5) {
+    if (!hasDragged && Math.abs(distanceMoved) > dragThreshold) {
       hasDragged = true;
+
+      scrollWheel.classList.add("is-dragging");
+      scrollWheel.setPointerCapture(event.pointerId);
+    }
+
+    if (!hasDragged) {
+      return;
     }
 
     scrollWheel.scrollLeft = dragStartScrollLeft - distanceMoved;
@@ -140,13 +146,15 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
+    const pointerId = activePointerId;
+
     isDragging = false;
     activePointerId = null;
 
     scrollWheel.classList.remove("is-dragging");
 
-    if (scrollWheel.hasPointerCapture(event.pointerId)) {
-      scrollWheel.releasePointerCapture(event.pointerId);
+    if (scrollWheel.hasPointerCapture(pointerId)) {
+      scrollWheel.releasePointerCapture(pointerId);
     }
 
     if (hasDragged) {
@@ -184,7 +192,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     resizeTimer = window.setTimeout(() => {
       updateButtons();
-
       snapToClosestCard("auto");
     }, 100);
   });

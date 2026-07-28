@@ -143,6 +143,11 @@ Provides a quick visual overview of the Brawlers.
 @media (min-width: 768px) {
   .scroll-wheel {
     gap: 2rem;
+    padding-inline: 0;
+  }
+
+  .scroll-arrow {
+    display: none;
   }
 }
 
