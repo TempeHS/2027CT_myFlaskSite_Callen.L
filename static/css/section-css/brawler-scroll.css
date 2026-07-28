@@ -1,63 +1,31 @@
 /* -----------------------------------------------------------------------
 Brawler horizontal scroller
-This is to have a quick visual look of the brawlers!
+Provides a quick visual overview of the Brawlers.
 ----------------------------------------------------------------------- */
-
-.brawler-pinned-card .col-4 {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-
-  min-height: 170px;
-}
-
-.brawler-pinned-card .brawler-portrait {
-  display: block;
-
-  width: 100%;
-  height: 170px;
-
-  object-fit: contain;
-  object-position: left center;
-}
-
-.brawler-pinned-card .card-body {
-  padding: 0.75rem;
-}
-
-@media (max-width: 575.98px) {
-  .brawler-pinned-card .col-4 {
-    flex: 0 0 40%;
-    max-width: 40%;
-    min-height: 140px;
-  }
-
-  .brawler-pinned-card .col-8 {
-    flex: 0 0 60%;
-    max-width: 60%;
-  }
-
-  .brawler-pinned-card .brawler-portrait {
-    height: 140px;
-  }
-}
 
 .scroll-wheel-wrapper {
   position: relative;
+
   display: flex;
   align-items: center;
+
   width: 100%;
+  min-width: 0;
 }
 
 .scroll-wheel {
   display: flex;
   flex: 1;
+  justify-content: flex-start;
   gap: 1rem;
 
+  min-width: 0;
   margin: 0;
   padding: 0.5rem 3.5rem;
 
   overflow-x: auto;
+  overscroll-behavior-inline: contain;
+
   list-style: none;
 
   scroll-behavior: smooth;
@@ -83,6 +51,7 @@ This is to have a quick visual look of the brawlers!
 
 .card-scroll {
   flex: 0 0 120px;
+
   scroll-snap-align: center;
   scroll-snap-stop: always;
 }
@@ -94,6 +63,10 @@ This is to have a quick visual look of the brawlers!
 
   color: inherit;
   text-decoration: none;
+}
+
+.card-scroll p {
+  margin-bottom: 0;
 }
 
 .card-scroll img {
@@ -121,6 +94,7 @@ This is to have a quick visual look of the brawlers!
 
   width: 44px;
   height: 44px;
+  padding: 0;
 
   border: 2px solid rgba(0, 0, 0, 0.12);
   border-radius: 50%;
@@ -169,11 +143,6 @@ This is to have a quick visual look of the brawlers!
 @media (min-width: 768px) {
   .scroll-wheel {
     gap: 2rem;
-    padding-inline: 0;
-  }
-
-  .scroll-arrow {
-    display: none;
   }
 }
 
@@ -185,17 +154,5 @@ This is to have a quick visual look of the brawlers!
   .card-scroll img,
   .scroll-arrow {
     transition: none;
-  }
-}
-
-@media (min-width: 768px) {
-  .scroll-wheel {
-    justify-content: center;
-    gap: 2rem;
-    padding-inline: 0;
-  }
-
-  .scroll-arrow {
-    display: none;
   }
 }

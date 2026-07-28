@@ -17,16 +17,12 @@
   "workbench.iconTheme": "vscode-icons",
   "github.copilot.enable": {
     "python": false,
-    "html": false,
     "css": false,
-    "SQL": false
+    "SQL": false,
+    "html": true
   },
   "chat.agent.enabled": false,
-  "cSpell.words": [
-    "Brawlable",
-    "gamemode",
-    "Gamemodes"
-  ],
+  "cSpell.words": ["Brawlable", "gamemode", "Gamemodes"],
   "[html]": {
     "editor.defaultFormatter": "vscode.html-language-features"
   }

@@ -18,13 +18,25 @@ document.addEventListener("DOMContentLoaded", () => {
   let dragStartX = 0;
   let dragStartScrollLeft = 0;
   let activePointerId = null;
+  let resizeTimer = null;
 
   const getCards = () => {
     return [...scrollWheel.querySelectorAll(".card-scroll")];
   };
 
+  const getCardScrollPosition = (card) => {
+    const cardCentre = card.offsetLeft + card.offsetWidth / 2;
+
+    return cardCentre - scrollWheel.clientWidth / 2;
+  };
+
   const getClosestCard = () => {
     const cards = getCards();
+
+    if (!cards.length) {
+      return null;
+    }
+
     const wheelCentre = scrollWheel.scrollLeft + scrollWheel.clientWidth / 2;
 
     return cards.reduce((closestCard, card) => {
@@ -32,25 +44,26 @@ document.addEventListener("DOMContentLoaded", () => {
       const closestCentre =
         closestCard.offsetLeft + closestCard.offsetWidth / 2;
 
-      return Math.abs(cardCentre - wheelCentre) <
-        Math.abs(closestCentre - wheelCentre)
-        ? card
-        : closestCard;
-    }, cards[0]);
+      const cardDistance = Math.abs(cardCentre - wheelCentre);
+      const closestDistance = Math.abs(closestCentre - wheelCentre);
+
+      return cardDistance < closestDistance ? card : closestCard;
+    });
   };
 
-  const snapToClosestCard = () => {
-    const closestCard = getClosestCard();
-
-    if (!closestCard) {
+  const scrollToCard = (card, behavior = "smooth") => {
+    if (!card) {
       return;
     }
 
-    closestCard.scrollIntoView({
-      behavior: "smooth",
-      block: "nearest",
-      inline: "center",
+    scrollWheel.scrollTo({
+      left: getCardScrollPosition(card),
+      behavior,
     });
+  };
+
+  const snapToClosestCard = (behavior = "smooth") => {
+    scrollToCard(getClosestCard(), behavior);
   };
 
   const updateButtons = () => {
@@ -58,7 +71,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const threshold = 2;
 
-    leftButton.disabled = scrollWheel.scrollLeft <= threshold;
+    leftButton.disabled =
+      maximumScroll <= threshold || scrollWheel.scrollLeft <= threshold;
 
     rightButton.disabled =
       maximumScroll <= threshold ||
@@ -67,12 +81,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const scrollByOneCard = (direction) => {
     const cards = getCards();
+    const closestCard = getClosestCard();
 
-    if (!cards.length) {
+    if (!cards.length || !closestCard) {
       return;
     }
 
-    const closestCard = getClosestCard();
     const currentIndex = cards.indexOf(closestCard);
 
     const nextIndex = Math.max(
@@ -80,11 +94,7 @@ document.addEventListener("DOMContentLoaded", () => {
       Math.min(cards.length - 1, currentIndex + direction),
     );
 
-    cards[nextIndex].scrollIntoView({
-      behavior: "smooth",
-      block: "nearest",
-      inline: "center",
-    });
+    scrollToCard(cards[nextIndex]);
   };
 
   leftButton.addEventListener("click", () => {
@@ -123,7 +133,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     scrollWheel.scrollLeft = dragStartScrollLeft - distanceMoved;
-    updateButtons();
   });
 
   const finishDragging = (event) => {
@@ -140,12 +149,17 @@ document.addEventListener("DOMContentLoaded", () => {
       scrollWheel.releasePointerCapture(event.pointerId);
     }
 
-    snapToClosestCard();
+    if (hasDragged) {
+      snapToClosestCard();
+    }
+
     updateButtons();
   };
 
   scrollWheel.addEventListener("pointerup", finishDragging);
+
   scrollWheel.addEventListener("pointercancel", finishDragging);
+
   scrollWheel.addEventListener(
     "click",
     (event) => {
@@ -155,6 +169,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       event.preventDefault();
       event.stopPropagation();
+
       hasDragged = false;
     },
     true,
@@ -165,8 +180,13 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   window.addEventListener("resize", () => {
-    updateButtons();
-    snapToClosestCard();
+    window.clearTimeout(resizeTimer);
+
+    resizeTimer = window.setTimeout(() => {
+      updateButtons();
+
+      snapToClosestCard("auto");
+    }, 100);
   });
 
   updateButtons();

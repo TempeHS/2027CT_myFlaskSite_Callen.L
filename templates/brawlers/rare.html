@@ -1,42 +1,90 @@
-{% extends 'base.html' %} {% block title %}Rare Brawlers - Brawlable{% endblock
-%} {% block content %}
+{% extends "base.html" %}
+
+{% block title %}
+Rare Brawlers - Brawlable
+{% endblock %}
 
 {% block extra_css %}
 <link rel="stylesheet" href="{{ url_for('static', filename='css/section-css/brawler-scroll.css') }}" />
 <link rel="stylesheet" href="{{ url_for('static', filename='css/section-css/brawler-cards.css') }}" />
 {% endblock %}
 
-<!-- Brawlers ID -->
-{% set brawlers = [ { 'id': 'barley', 'name': 'Barley', 'description': 'Thrower
-control brawler with strong area denial.' }, { 'id': 'brock', 'name': 'Brock',
-'description': 'Long-range damage dealer with explosive rocket pressure.' }, {
-'id': 'bull', 'name': 'Bull', 'description': 'Tanky close-range brawler with
-explosive engage.' }, { 'id': 'colt', 'name': 'Colt', 'description': 'Sharp
-shooter with fast, precise projectile lanes.' }, { 'id': 'el-primo', 'name': 'El
-Primo', 'description': 'Aggressive melee tank with mobility super jump.' }, {
-'id': 'nita', 'name': 'Nita', 'description': 'Balanced fighter with summon
-pressure and control.' }, { 'id': 'poco', 'name': 'Poco', 'description':
-'Support brawler with healing utility for team fights.' }, { 'id': 'rosa',
-'name': 'Rosa', 'description': 'Durable fighter with strong close-range pressure
-and shielding.' } ] %}
+{% block content %}
 
-<div class="container mt-5 mb-4">
-  <div class="text-center mb-4 fade-in-fx">
+{% set brawlers = [
+{
+"id": "barley",
+"name": "Barley",
+"description": "Thrower control brawler with strong area denial."
+},
+{
+"id": "brock",
+"name": "Brock",
+"description": "Long-range damage dealer with explosive rocket pressure."
+},
+{
+"id": "bull",
+"name": "Bull",
+"description": "Tanky close-range brawler with explosive engage."
+},
+{
+"id": "colt",
+"name": "Colt",
+"description": "Sharpshooter with fast, precise projectile lanes."
+},
+{
+"id": "el-primo",
+"name": "El Primo",
+"description": "Aggressive melee tank with mobility super jump."
+},
+{
+"id": "nita",
+"name": "Nita",
+"description": "Balanced fighter with summon pressure and control."
+},
+{
+"id": "poco",
+"name": "Poco",
+"description": "Support brawler with healing utility for team fights."
+},
+{
+"id": "rosa",
+"name": "Rosa",
+"description": "Durable fighter with strong close-range pressure and shielding."
+}
+] %}
+
+<div class="container mt-5 mb-4 fade-in-fx">
+  <div class="text-center mb-4">
     <h1 class="fw-bold">Choose a Rare Brawler</h1>
-    <p class="text-muted mb-0">Tap a Brawler below to be learn more.</p>
+    <p class="text-muted mb-0">
+      Tap a Brawler below to learn more.
+    </p>
   </div>
 
-  <ul class="scroll-wheel justify-content-center fade-in-fx">
-    {% for brawler in brawlers %}
-    <li class="card-scroll">
-      <a href="/brawlers/rare/{{ brawler.id }}">
-        <img src="{{ url_for('static', filename='images/brawlers/rare/idle/' ~ brawler.id ~ '.png') }}"
-          alt="{{ brawler.name }} brawler art" loading="lazy" />
-        <p>{{ brawler.name }}</p>
-      </a>
-    </li>
-    {% endfor %}
-  </ul>
+  <div class="scroll-wheel-wrapper fade-in-fx">
+    <button class="scroll-arrow scroll-arrow-left" type="button" aria-label="Previous Brawler">
+      &#8249;
+    </button>
+
+    <ul class="scroll-wheel">
+      {% for brawler in brawlers %}
+      <li class="card-scroll">
+        <a href="/brawlers/rare/{{ brawler.id }}">
+          <img src="{{ url_for(
+              'static',
+              filename='images/brawlers/rare/idle/' ~ brawler.id ~ '.png'
+            ) }}" alt="{{ brawler.name }} brawler art" loading="lazy" />
+          <p>{{ brawler.name }}</p>
+        </a>
+      </li>
+      {% endfor %}
+    </ul>
+
+    <button class="scroll-arrow scroll-arrow-right" type="button" aria-label="Next Brawler">
+      &#8250;
+    </button>
+  </div>
 </div>
 
 <section class="py-4">
@@ -47,15 +95,23 @@ and shielding.' } ] %}
         <article class="card h-100 brawler-card a-pinned-card">
           <div class="row g-0 align-items-center">
             <div class="col-4">
-              <img
-                src="{{ url_for('static', filename='images/brawlers/rare/portrait/' ~ brawler.id ~ '_portrait.png') }}"
-                alt="{{ brawler.name }} portrait" class="brawler-portrait" loading="lazy" />
+              <img src="{{ url_for(
+                  'static',
+                  filename='images/brawlers/rare/portrait/' ~
+                  brawler.id ~
+                  '_portrait.png'
+                ) }}" alt="{{ brawler.name }} portrait" class="brawler-portrait" loading="lazy" />
             </div>
+
             <div class="col-8">
               <div class="card-body">
                 <span>{{ brawler.name }}</span>
-                <p class="card-text">{{ brawler.description }}</p>
-                <a href="/brawlers/rare/{{ brawler.id }}" class="btn btn-primary btn-sm">Learn More</a>
+                <p class="card-text">
+                  {{ brawler.description }}
+                </p>
+                <a href="/brawlers/rare/{{ brawler.id }}" class="btn btn-primary btn-sm">
+                  Learn More
+                </a>
               </div>
             </div>
           </div>
@@ -66,9 +122,9 @@ and shielding.' } ] %}
   </div>
 </section>
 
+{% endblock %}
+
 {% block extra_js %}
 <script src="{{ url_for('static', filename='js/section-js/brawler-scroll.js') }}" defer></script>
 <script src="{{ url_for('static', filename='js/fade-in-fx.js') }}" defer></script>
-{% endblock %}
-
 {% endblock %}
