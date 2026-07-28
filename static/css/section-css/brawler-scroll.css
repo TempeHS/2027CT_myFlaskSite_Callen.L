@@ -16,7 +16,7 @@ Provides a quick visual overview of the Brawlers.
 .scroll-wheel {
   display: flex;
   flex: 1;
-  justify-content: flex-start;
+  justify-content: center;
   gap: 1rem;
 
   min-width: 0;
