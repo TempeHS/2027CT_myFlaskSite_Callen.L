@@ -50,34 +50,23 @@
     });
   }
 
-  if (video && audioToggle && icon) {
-    audioToggle.setAttribute("aria-pressed", String(!video.muted));
-    audioToggle.setAttribute(
-      "aria-label",
-      video.muted ? "Unmute video audio" : "Mute video audio",
-    );
-    icon.className = video.muted
+  const handleAudioToggle = () => {
+    video.muted = !video.muted;
+
+    const isMuted = video.muted;
+
+    icon.className = isMuted
       ? "bi bi-volume-mute-fill fs-5"
       : "bi bi-volume-up-fill fs-5";
 
-    const handleAudioToggle = () => {
-      video.muted = !video.muted;
-      const isMuted = video.muted;
+    audioToggle.setAttribute("aria-pressed", String(!isMuted));
+    audioToggle.setAttribute(
+      "aria-label",
+      isMuted ? "Unmute video audio" : "Mute video audio",
+    );
+  };
 
-      icon.className = isMuted
-        ? "bi bi-volume-mute-fill fs-5"
-        : "bi bi-volume-up-fill fs-5";
-
-      audioToggle.setAttribute("aria-pressed", String(!isMuted));
-      audioToggle.setAttribute(
-        "aria-label",
-        isMuted ? "Unmute video audio" : "Mute video audio",
-      );
-    };
-
-    audioToggle.removeEventListener("click", handleAudioToggle);
-    audioToggle.addEventListener("click", handleAudioToggle);
-  }
+  audioToggle.onclick = handleAudioToggle;
 
   const DB_NAME = "HeroVideoCacheDB";
   const STORE_NAME = "videos";
@@ -193,16 +182,20 @@
 const bg = document.querySelector(".hero-video");
 let ticking = false;
 
-window.addEventListener(
-  "scroll",
-  () => {
-    if (!bg || ticking) return;
-    ticking = true;
-    requestAnimationFrame(() => {
-      const offset = window.pageYOffset || 0;
-      bg.style.transform = `translateY(${offset * 0.35}px)`;
-      ticking = false;
-    });
-  },
-  { passive: true },
-);
+if (bg) {
+  window.addEventListener(
+    "scroll",
+    () => {
+      if (ticking) return;
+
+      ticking = true;
+
+      requestAnimationFrame(() => {
+        const offset = window.pageYOffset || 0;
+        bg.style.transform = `translateY(${offset * 0.35}px)`;
+        ticking = false;
+      });
+    },
+    { passive: true },
+  );
+}
