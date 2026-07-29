@@ -6,8 +6,8 @@
 | **Student Name(s)**            | Callen Lin                                                                             |
 | **Class / Course**             | Year 9 Computer Technology                                                             |
 | **Repository**                 | https://github.com/TempeHS/2027CT_myFlaskSite_Callen.L                                 |
-| **Live Site / Codespaces URL** | v0.2 Alpha: https://github.com/TempeHS/2027CT_myFlaskSite_Callen.L/releases/tag/v0.2-a |
-| **Date**                       | Last Edited on the 23rd of July 2026 :D                                                |
+| **Live Site / Codespaces URL** | v0.3 Alpha: https://github.com/TempeHS/2027CT_myFlaskSite_Callen.L/releases/tag/v0.3-a |
+| **Date**                       | Last Edited on the 30th of July 2026 :D                                                |
 
 > Your website is the main piece of work. This README is short on purpose — it
 > points a reader to your **2-minute walkthrough** and gives an honest
@@ -40,8 +40,9 @@ This is the most important part of your documentation — it shows your website 
 
 | Field            | Detail |
 | ---------------- | ------ |
-| **Link / Embed** |        |
-| **Duration**     |        |
+| **Link / Embed** | https://github.com/user-attachments/assets/bd304338-b4bb-4667-992f-d50daaf1ad87
+ |
+| **Duration**     | 1 minute 50 seconds |
 
   <!--
   **Your walkthrough should show:**
