@@ -30,26 +30,26 @@ Brawlable is a beginner-friendly tutorial website for Brawl Stars players. Featu
 
 This is the most important part of your documentation — it shows your website running.
 
-<!--
-  Embed a ~2 minute walkthrough. Replace VIDEO_ID with your YouTube video ID:
-  [![Website Walkthrough](https://img.youtube.com/vi/VIDEO_ID/0.jpg)](https://www.youtube.com/watch?v=VIDEO_ID)
+  <!--
+    Embed a ~2 minute walkthrough. Replace VIDEO_ID with your YouTube video ID:
+    [![Website Walkthrough](https://img.youtube.com/vi/VIDEO_ID/0.jpg)](https://www.youtube.com/watch?v=VIDEO_ID)
 
-  OR link a screen recording stored in the repository:
-  [Watch the Walkthrough](./docs/walkthrough.mp4)
--->
+    OR link a screen recording stored in the repository:
+    [Watch the Walkthrough](./docs/walkthrough.mp4)
+  -->
 
 | Field            | Detail |
 | ---------------- | ------ |
 | **Link / Embed** |        |
 | **Duration**     |        |
 
-<!--
-**Your walkthrough should show:**
+  <!--
+  **Your walkthrough should show:**
 
-- A tour of each page (Home and Contact)
-- Your key Bootstrap components working (navbar, carousel, cards, map, form)
-- The layout responding when the window is resized (navbar collapsing to a hamburger)
--->
+  - A tour of each page (Home and Contact)
+  - Your key Bootstrap components working (navbar, carousel, cards, map, form)
+  - The layout responding when the window is resized (navbar collapsing to a hamburger)
+  -->
 
 ---
 
@@ -73,16 +73,38 @@ Brawlable will simplify the learning curve of new players, making it easier to q
 
 ### 3.2 What You Delivered
 
-Primary Pages
+  <!-- Add later: Showing what you can learn, and a dedicated section for casual trophy players and ranked players. -->
 
-<!-- Add later: Showing what you can learn, and a dedicated section for casual trophy players and ranked players. -->
+> [!IMPORTANT] Notice
+> The site has numerous href="#" or working in progress pages.  
+> The reason is that I find it unfeasible to collect all assets and designs necessary to rebuild something towards a wiki platform.
 
-| Page          | Route                     | What it delivers                                                                                                                                       |
-| ------------- | ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Home Page     | `/`                       | Introduces Brawlable as a learning guide to Brawl Stars with a Hero Video. Followed by cards for Brawlers, Game Modes, Mechanics.                      |
-| Contacts Page | `/contact` and `/support` | Offers a contact page with a embeded map from Google Maps, a responsive form for general equiries, support, feedback and bug reports.                  |
-| Search Page   | `/search`                 | Allows users to search for pages using a URL. Matching results shows clickable links while unsuccessful searches shows a warning and suggested results |
+**My Primary Pages**
 
+| Pages            | Route       | What it has delivered                                                                                                                                                                                                                                                                                                                                          |
+| ---------------- | ----------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| The Homepage     | `/`         | Homepage with a Bootstrap navbar and dropdown menu, 82vh hero video with mute/un-mute button using Bootstrap Icons and a call-to-action text, greetings section, three features topic cards (Brawlers, Gamemodes, Mechanics), six advanced strategy cards using Bootstrap Cards and Icons, two feature cards with game modes (Ranked or Trophy), and a footer. |
+| The Contact Page | `/contact`  | The Contact page featuring an embedded Google Map and a responsive Bootstrap contact form with fields for name, email address, and message.                                                                                                                                                                                                                    |
+| The Brawler Page | `/brawlers` | The Brawler Page with six Bootstrap cards organised by rarity, each featuring a image, a gradient overlay, a description and a navigation button to each of the individual Brawler categories.                                                                                                                                                                 |
+| The Search Page  | `/search`   | The Search Page has a dynamic search results displaying titles and descriptions, and suggested navigation links when no matching results found.                                                                                                                                                                                                                |
+| The About Page   | `/about`    | About Us shows the website's missions, using Bootstrap card and grids, information explaining the purpose of the website, a call-to-action link to the onboarding page.                                                                                                                                                                                        |
+
+**Other Significant Pages**
+
+| Pages              | Route          | What it has delivered                                                                                                                                                                                                                                                     |
+| ------------------ | -------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| The Attributions   | `/attribution` | The Attribution page features quick id navigation shortcuts on the top, organised acknowledgement for Python Dependencies, third-party repos, content sources and project contributors. It also includes direct links to the external program and LICENSE files attached. |
+| The Privacy Policy | `/privacy`     | The Privacy Policy page outlines how the website collects data, cookies, third-party services, policy updates and contact page link for inquiries.                                                                                                                        |
+| The Site Map       | `/sitemap`     | The Site Map page with categorised for main pages, resources, brawler content, gamemodes to improve site navigation experience.                                                                                                                                           |
+| Page Not Found     | `/404`         | 404 error page with custom error message, navigation buttons back to homepage or site map, expandable technical details that has a copy report feature and a link to support page.                                                                                        |
+
+**Small and Major Codebase Architectural Change!**
+| What is it | What changed? |
+| - | - |
+| Flask Blueprints | The original app.py was refactored into multiple separate Flask Blueprints, organised into modules for main pages, brawlers, gamemodes, guides, search and error handling. This allows the code to be much more maintainable, and reduces the code size of app.py. <br> <br> Find at: [Routes folder](./routes) and [File for app.py](./app.py)|
+
+.  
+.  
 .  
 .  
 .  
@@ -105,36 +127,92 @@ Primary Pages
 .  
 .
 
-Site Contents
+<!--
+This section was kept for personal archival purposes and as a cool previous archive of what it used to look like.
 
-| Contents   | Route                                              | How it is made and why it is made                                                                                              |
-| ---------- | -------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
-| Hero Video | [↗ View Hero Video](./static/videos/hero.mp4)      | Collected game footage from gameplay and spectator mode and edited in Premiere Pro to create a unique engaging hero.           |
-| Favicon    | [↗ View Site Favicon](./static/images/favicon.svg) | The favicon is made in Adobe Illustrator and is exported as a SVG (Scalable Vector Graphics) as it can be infinitely zoomed in |
+My Primary Pages
 
-| Contents     | Route                                                                                                                                                                                                                                                                                        | Where is it from, Why it is chosen, Additional Decisions made                                                                                                                                                     |
-| ------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Index Images | [↗ View Image 1](./static/images/index-feature1.jpg) <br> [↗ View Image 1](./static/images/index-feature2.jpg) <br> [↗ View Image 1](./static/images/index-feature3.jpg) <br> [↗ View Image 1](./static/images/index-feature4.jpg) <br> [↗ View Image 1](./static/images/index-feature5.jpg) | From [Supercell Brawl Stars Fankit](https://fankit.supercell.com/d/YvtsWV4pUQVm/game-assets), and is used for it to feel distinct and relatable to users. The images are reduced to below 5250KB for performance. |
+| Pages             | What it has delivered                                                                                                                                                                                                   |
+| ----------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| The Homepage      | The homepage comes with a hero video that greets the user, and as they scroll down, they see a small fade in effect, key pages in the site in cards, what else they can do on the website and a simplified options list |
+| The Contacts Page | The contacts pages shows a Google Maps iframe, a email and location, a form the user can submit inquiries, bug reports, and more!                                                                                       |
+| The Brawlers Page | The page shows the different rarities of brawlers with a anchor that redirects them to a category of brawlers in the rarity group with each having a image and a gradient overlay to make each more unique :D           |
+| The Search Page   | The search page provides a list of values you have searched for, and when you search a page that doesn't exists, it provides you other follow up actions you can take.                                                  |
+| The About Page    | The page shows what we are trying to do at Brawlable and a simplified design with a follow up action the user can take!                                                                                                 |
 
-#### Primary Pages of Brawlable
 
-| Page           | Route          | What it delivers                                                                                                                                       |
-| -------------- | -------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Home           | `/`            |                                                                                                                                                        |
-| Contact        | `/contact`     | Provides a page that allows you to provide feedback, receive assistance and report bugs.                                                               |
-| Sitemap        | `/sitemap`     | A site map that shows all the pages across the site with categories for accessibility                                                                  |
-| Privacy Policy | `/privacy`     | Provides information how the site handles data in the website                                                                                          |
-| Attributions   | `/attribution` | Provides attribution to all the dependencies and repositories used in the project with a direct link and the LICENSE file accessible in a static link. |
-| Search         | `/search`      | Offers a search that can be found on the header where it will show search results and instantly redirect you for exact matches.                        |
+Other Significant Pages
 
-#### Backend Features of Brawlable
+| Pages            | What it has delivered                                                                                                                                                                                                          |
+| ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| The Attributions | The attribution pages lists all the python dependencies, content and assets used throughout the website. They also provide a hyperlink to the project and have a static licenses file to view all the licenses in the project  |
+| The Privacy Page | This page tells how Brawlable handles user data and offers a redirect link on what the user can do if they have more questions.                                                                                                |
+| The Sitemap Page | This page provides a universal link to all the pages across the website that are active and in use :)                                                                                                                          |
+| The Support Page | This just does a 302 temporary redirect to the contacts page in short :P                                                                                                                                                       |
+| The Not Found    | This page shows a 404 error when the user goes to a page that does not exist. It provides buttons to head back to home or the sitemap, an error code with a timestamp and page location that can be copied right into support. |
 
-| Page                  | Route     | File Location                                      | What it delivers                                                                                                                                                                                                                                                |
-| --------------------- | --------- | -------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 404 Page Not Found    | `/404`    | `templates/error_handler/404.html`, `test_app3.py` | When you visit a page that is not found by the website, it results in a 404 page, and provides options to go to the homepage or visit the sitemap. It also provides a detailed report that can be immediately copied into support with a hyperlink to the page. |
-| Search Configurations | `/search` | `templates/search.html`, `search_config.py`        | The search configurations allows you search the exact names to get immediately redirected handled by search_services, and keywords show recommended results. This also filters disallowed text.                                                                 |
-| Search Services       | `/search` | `templates/search.html`, `search_services.py`      | This sanitizes the input of the text being input into the search bar. Handling blank text, script injection, limiting the length of requests, and allows the requests to be handled and sent to the user as a query in the format of `/search?q=asd`            |
-| Search No Results     | `/search` | `templates/search.html`, `~/search_services.py`    | When a query does not return any results for a query that includes a value, it provides a notice telling the user that no results were found for the content and shows suggested results the user can try.                                                      |
+Small Codebase Architectural Changes
+
+| What is it       | What changed?                                                                                                                                                                                                                                     |
+| ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Flask Blueprints | The app.py has been separated into different flask blueprints that you can find in the program                                                                                                                                                    |
+| Search Configs   | The search configurations contains what type of text is allowed in the input to sanitize the input and searches in its list of files if there are matches to what the user wants from exact and keywords with the followup description and title. |
+| Search Services  | The search_config.py file handles redirecting people immediately to the page if match exactly or sending the data to search.html if its general or not found.                                                                                     |
+| Static Files     | The static file has been separated into files named css js videos and licenses with css and js having a additional section-css or section-js to indicate its not global and is section specific to a page. search                                 |
+-->
+
+.  
+ .  
+ .  
+ .  
+ .
+.
+.  
+ .
+.
+.
+.
+.
+.
+.
+.
+.  
+ .  
+ .  
+ .  
+ .  
+ .  
+ .  
+ .  
+ .  
+ .
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.  
+ .  
+ .  
+ .  
+ .  
+ .  
+ .
 
 ### 3.3 Evaluation Against Your Intent (2–3 paragraphs)
 
@@ -142,7 +220,7 @@ Site Contents
 > delivered site meets it**. Where did you meet your intent? Where did you fall
 > short, and why? Support every judgement with evidence from your site.
 
-<!-- Write 2–3 paragraphs. -->
+  <!-- Write 2–3 paragraphs. -->
 
 ### 3.4 Overall Effectiveness (1–2 paragraphs)
 
@@ -150,7 +228,7 @@ Site Contents
 > achieving its purpose for its target audience? Weigh what works against what
 > falls short, and state what you would improve to better meet your intent.
 
-<!-- Write 1–2 paragraphs. -->
+  <!-- Write 1–2 paragraphs. -->
 
 ---
 
