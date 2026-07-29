@@ -78,7 +78,7 @@ Brawlable will simplify the learning curve of new players, making it easier to q
   You can find the older version at the very bottom of this document since you are reading this comment :P
 -->
 
-> [!IMPORTANT] Notice
+> [!IMPORTANT]
 > The site has numerous href="#" or working in progress pages.  
 > The reason is that I find it unfeasible to collect all assets and designs necessary to rebuild something towards a wiki platform.
 
