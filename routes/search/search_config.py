@@ -6,7 +6,7 @@ DISALLOWED_SEARCH_CHARS = re.compile(r"[^a-zA-Z0-9\s_\-']")
 SEARCH_PAGES = [
     {
         "title": "🏡 Home",
-        "endpoint": "home",  # use "main.home" if you moved "/" into main_bp
+        "endpoint": "home",
         "description": "The homepage of Brawlable!",
         "keywords": ["index", "main", "start"],
     },

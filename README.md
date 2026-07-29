@@ -73,21 +73,23 @@ Brawlable will simplify the learning curve of new players, making it easier to q
 
 ### 3.2 What You Delivered
 
-  <!-- Add later: Showing what you can learn, and a dedicated section for casual trophy players and ranked players. -->
+<!--
+  Here is a heavily refined version :D
+  You can find the older version at the very bottom of this document since you are reading this comment :P
+-->
 
 > [!IMPORTANT] Notice
 > The site has numerous href="#" or working in progress pages.  
 > The reason is that I find it unfeasible to collect all assets and designs necessary to rebuild something towards a wiki platform.
 
 **My Primary Pages**
-
-| Pages            | Route       | What it has delivered                                                                                                                                                                                                                                                                                                                                          |
+| Pages | Route | What it has delivered |
 | ---------------- | ----------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| The Homepage     | `/`         | Homepage with a Bootstrap navbar and dropdown menu, 82vh hero video with mute/un-mute button using Bootstrap Icons and a call-to-action text, greetings section, three features topic cards (Brawlers, Gamemodes, Mechanics), six advanced strategy cards using Bootstrap Cards and Icons, two feature cards with game modes (Ranked or Trophy), and a footer. |
-| The Contact Page | `/contact`  | The Contact page featuring an embedded Google Map and a responsive Bootstrap contact form with fields for name, email address, and message.                                                                                                                                                                                                                    |
-| The Brawler Page | `/brawlers` | The Brawler Page with six Bootstrap cards organised by rarity, each featuring a image, a gradient overlay, a description and a navigation button to each of the individual Brawler categories.                                                                                                                                                                 |
-| The Search Page  | `/search`   | The Search Page has a dynamic search results displaying titles and descriptions, and suggested navigation links when no matching results found.                                                                                                                                                                                                                |
-| The About Page   | `/about`    | About Us shows the website's missions, using Bootstrap card and grids, information explaining the purpose of the website, a call-to-action link to the onboarding page.                                                                                                                                                                                        |
+| The Homepage | `/` | Homepage with a Bootstrap navbar and dropdown menu, 82vh hero video with mute/un-mute button using Bootstrap Icons and a call-to-action text, greetings section, three features topic cards (Brawlers, Gamemodes, Mechanics), six advanced strategy cards using Bootstrap Cards and Icons, two feature cards with game modes (Ranked or Trophy), and a footer. |
+| The Contact Page | `/contact` | The Contact page featuring an embedded Google Map and a responsive Bootstrap contact form with fields for name, email address, and message. |
+| The Brawler Page | `/brawlers` | The Brawler Page with six Bootstrap cards organised by rarity, each featuring a image, a gradient overlay, a description and a navigation button to each of the individual Brawler categories. |
+| The Search Page | `/search` | The Search Page has a dynamic search results displaying titles and descriptions, and suggested navigation links when no matching results found. |
+| The About Page | `/about` | About Us shows the website's missions, using Bootstrap card and grids, information explaining the purpose of the website, a call-to-action link to the onboarding page. |
 
 **Other Significant Pages**
 
@@ -98,10 +100,19 @@ Brawlable will simplify the learning curve of new players, making it easier to q
 | The Site Map       | `/sitemap`     | The Site Map page with categorised for main pages, resources, brawler content, gamemodes to improve site navigation experience.                                                                                                                                           |
 | Page Not Found     | `/404`         | 404 error page with custom error message, navigation buttons back to homepage or site map, expandable technical details that has a copy report feature and a link to support page.                                                                                        |
 
+**Backend Functionalities of the Site**
+
+| What is it            | What does it do?                                                                                                                                                                                                                                                                                                                                                                                                          |
+| --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Search Configurations | A search_config.py file was made to store the searchable website pages in search.html which includes keywords, descriptions, and input sanitisation. This allows quick access to adding new search items into the search engine without modifying other components. <br><br> Related to: [Search Configurations](./routes/search/search_config.py), [Search Page](./templates/search.html) and [app.py File](./app.py)    |
+| Search Services       | A search_service.py file was made to handle user input sanitisation based on what chars is allowed, finding the exact pages to immediately redirects, finding the keyword-based results and page routes for redirects. Using /search?q= to receive values to process. <br><br> Related to: [Search Services Route](./routes/search/search_service.py), [Search Page](./templates/search.html) and [app.py File](./app.py) |
+
 **Small and Major Codebase Architectural Change!**
-| What is it | What changed? |
-| - | - |
-| Flask Blueprints | The original app.py was refactored into multiple separate Flask Blueprints, organised into modules for main pages, brawlers, gamemodes, guides, search and error handling. This allows the code to be much more maintainable, and reduces the code size of app.py. <br> <br> Find at: [Routes folder](./routes) and [File for app.py](./app.py)|
+
+| What is it               | What changed?                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+| ------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Flask Blueprints         | The original app.py was refactored into multiple separate Flask Blueprints, organised into modules for main pages, brawlers, gamemodes, guides, search and error handling. This allows the code to be much more maintainable, and reduces the code size of app.py. <br> <br> Related Pages: [Routes Folder](./routes) and [app.py File](./app.py)                                                                                                                      |
+| Static Code Organisation | The static assets were restructured into organised categories each for CSS, JavaScript, images, videos and licenses. Site wide styling and code were separated from page-specific resources, while images and media were placed into relevant folders to improve maintainability. <br> <br> Related Pages: [Static Folder](./static/), [Static CSS](./static/css/), [Static JS](./static/js/), [Static Video](./static/videos/), [Static Licenses](./static/licenses/) |
 
 .  
 .  
@@ -126,41 +137,6 @@ Brawlable will simplify the learning curve of new players, making it easier to q
 .  
 .  
 .
-
-<!--
-This section was kept for personal archival purposes and as a cool previous archive of what it used to look like.
-
-My Primary Pages
-
-| Pages             | What it has delivered                                                                                                                                                                                                   |
-| ----------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| The Homepage      | The homepage comes with a hero video that greets the user, and as they scroll down, they see a small fade in effect, key pages in the site in cards, what else they can do on the website and a simplified options list |
-| The Contacts Page | The contacts pages shows a Google Maps iframe, a email and location, a form the user can submit inquiries, bug reports, and more!                                                                                       |
-| The Brawlers Page | The page shows the different rarities of brawlers with a anchor that redirects them to a category of brawlers in the rarity group with each having a image and a gradient overlay to make each more unique :D           |
-| The Search Page   | The search page provides a list of values you have searched for, and when you search a page that doesn't exists, it provides you other follow up actions you can take.                                                  |
-| The About Page    | The page shows what we are trying to do at Brawlable and a simplified design with a follow up action the user can take!                                                                                                 |
-
-
-Other Significant Pages
-
-| Pages            | What it has delivered                                                                                                                                                                                                          |
-| ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| The Attributions | The attribution pages lists all the python dependencies, content and assets used throughout the website. They also provide a hyperlink to the project and have a static licenses file to view all the licenses in the project  |
-| The Privacy Page | This page tells how Brawlable handles user data and offers a redirect link on what the user can do if they have more questions.                                                                                                |
-| The Sitemap Page | This page provides a universal link to all the pages across the website that are active and in use :)                                                                                                                          |
-| The Support Page | This just does a 302 temporary redirect to the contacts page in short :P                                                                                                                                                       |
-| The Not Found    | This page shows a 404 error when the user goes to a page that does not exist. It provides buttons to head back to home or the sitemap, an error code with a timestamp and page location that can be copied right into support. |
-
-Small Codebase Architectural Changes
-
-| What is it       | What changed?                                                                                                                                                                                                                                     |
-| ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Flask Blueprints | The app.py has been separated into different flask blueprints that you can find in the program                                                                                                                                                    |
-| Search Configs   | The search configurations contains what type of text is allowed in the input to sanitize the input and searches in its list of files if there are matches to what the user wants from exact and keywords with the followup description and title. |
-| Search Services  | The search_config.py file handles redirecting people immediately to the page if match exactly or sending the data to search.html if its general or not found.                                                                                     |
-| Static Files     | The static file has been separated into files named css js videos and licenses with css and js having a additional section-css or section-js to indicate its not global and is section specific to a page. search                                 |
--->
-
 .  
  .  
  .  
@@ -248,3 +224,37 @@ Small Codebase Architectural Changes
 ---
 
 > **Student Declaration:** All work submitted is my own except where explicitly acknowledged above.
+
+<!--
+This section was kept for personal archival purposes and as a cool previous archive of what it used to look like.
+
+My Primary Pages
+
+| Pages             | What it has delivered                                                                                                                                                                                                   |
+| ----------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| The Homepage      | The homepage comes with a hero video that greets the user, and as they scroll down, they see a small fade in effect, key pages in the site in cards, what else they can do on the website and a simplified options list |
+| The Contacts Page | The contacts pages shows a Google Maps iframe, a email and location, a form the user can submit inquiries, bug reports, and more!                                                                                       |
+| The Brawlers Page | The page shows the different rarities of brawlers with a anchor that redirects them to a category of brawlers in the rarity group with each having a image and a gradient overlay to make each more unique :D           |
+| The Search Page   | The search page provides a list of values you have searched for, and when you search a page that doesn't exists, it provides you other follow up actions you can take.                                                  |
+| The About Page    | The page shows what we are trying to do at Brawlable and a simplified design with a follow up action the user can take!                                                                                                 |
+
+
+Other Significant Pages
+
+| Pages            | What it has delivered                                                                                                                                                                                                          |
+| ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| The Attributions | The attribution pages lists all the python dependencies, content and assets used throughout the website. They also provide a hyperlink to the project and have a static licenses file to view all the licenses in the project  |
+| The Privacy Page | This page tells how Brawlable handles user data and offers a redirect link on what the user can do if they have more questions.                                                                                                |
+| The Sitemap Page | This page provides a universal link to all the pages across the website that are active and in use :)                                                                                                                          |
+| The Support Page | This just does a 302 temporary redirect to the contacts page in short :P                                                                                                                                                       |
+| The Not Found    | This page shows a 404 error when the user goes to a page that does not exist. It provides buttons to head back to home or the sitemap, an error code with a timestamp and page location that can be copied right into support. |
+
+Small Codebase Architectural Changes
+
+| What is it       | What changed?                                                                                                                                                                                                                                     |
+| ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Flask Blueprints | The app.py has been separated into different flask blueprints that you can find in the program                                                                                                                                                    |
+| Search Configs   | The search configurations contains what type of text is allowed in the input to sanitize the input and searches in its list of files if there are matches to what the user wants from exact and keywords with the followup description and title. |
+| Search Services  | The search_config.py file handles redirecting people immediately to the page if match exactly or sending the data to search.html if its general or not found.                                                                                     |
+| Static Files     | The static file has been separated into files named css js videos and licenses with css and js having a additional section-css or section-js to indicate its not global and is section specific to a page. search                                 |
+-->
