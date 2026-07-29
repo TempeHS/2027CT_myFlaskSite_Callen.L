@@ -80,10 +80,6 @@ html {
   scroll-margin-top: var(--header-height);
 }
 
-:target {
-  scroll-margin-top: var(--header-height);
-}
-
 section[id],
 div[id],
 article[id] {

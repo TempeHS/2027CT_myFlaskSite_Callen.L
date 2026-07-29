@@ -32,7 +32,6 @@
   }
 
   function stopLoadingText() {
-    // Clear the delay timer if it hasn't fired yet
     if (delayTimer) clearTimeout(delayTimer);
     delayTimer = null;
 

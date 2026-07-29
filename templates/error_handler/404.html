@@ -4,11 +4,7 @@ block content %}
 <div class="container-fluid px-0">
   <div class="row justify-content-center mx-0">
     <div class="col-12 text-center p-4">
-      <img
-        src="amazing place holder"
-        alt="Temporary 404 illustration"
-        class="img-fluid rounded mb-4"
-      />
+      <img src="amazing place holder" alt="Temporary 404 illustration" class="img-fluid rounded mb-4" />
 
       <h1 class="display-5 fw-bold mb-2">404</h1>
 
@@ -21,9 +17,7 @@ block content %}
       <div class="container mt-2">
         <p>
           Or maybe visit our
-          <a href="{{ url_for('main.sitemap_page') }}" class="text-decoration-none"
-            >Site Map!</a
-          >
+          <a href="{{ url_for('main.sitemap_page') }}" class="text-decoration-none">Site Map!</a>
         </p>
       </div>
 
@@ -33,10 +27,7 @@ block content %}
             <small style="user-select: none">Detailed Reason</small>
           </summary>
 
-          <div
-            id="debug-info"
-            class="mt-2 p-3 rounded border position-relative"
-          >
+          <div id="debug-info" class="mt-2 p-3 rounded border position-relative">
             <p>A unexpected problem has occurred for:</p>
 
             <p class="m-0 mb-2">
@@ -44,16 +35,10 @@ block content %}
               <br />
               {{ error_code }} occurring at <time id="aest-time"></time>
               <br />
-              <a href="{{ site_url }}" class="text-decoration-none"
-                >{{ site_url }}</a
-              >
+              <a href="{{ site_url }}" class="text-decoration-none">{{ site_url }}</a>
             </p>
 
-            <button
-              type="button"
-              class="btn btn-sm btn-outline-secondary"
-              onclick="copyDebugInfo(this)"
-            >
+            <button type="button" class="btn btn-sm btn-outline-secondary" onclick="copyDebugInfo(this)">
               Copy Report
             </button>
           </div>
@@ -62,9 +47,7 @@ block content %}
 
           <p>
             You can provide this to staff members to get it fixed at
-            <a href="{{ url_for('main.support') }}" class="text-decoration-none"
-              >Support</a
-            >!
+            <a href="{{ url_for('main.support') }}" class="text-decoration-none">Support</a>!
           </p>
         </details>
       </div>
@@ -88,7 +71,7 @@ block content %}
 
   const formatter = new Intl.DateTimeFormat("en-AU", options);
   document.getElementById("aest-time").textContent =
-    formatter.format(loadTime) + " AEST";
+    formatter.format(loadTime) + " AEDT";
 </script>
 
 <script>
