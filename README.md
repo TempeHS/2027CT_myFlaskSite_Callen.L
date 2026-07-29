@@ -6,8 +6,8 @@
 | **Student Name(s)**            | Callen Lin                                                                             |
 | **Class / Course**             | Year 9 Computer Technology                                                             |
 | **Repository**                 | https://github.com/TempeHS/2027CT_myFlaskSite_Callen.L                                 |
-| **Live Site / Codespaces URL** | v0.2 Alpha: https://github.com/TempeHS/2027CT_myFlaskSite_Callen.L/releases/tag/v0.2-a |
-| **Date**                       | Last Edited on the 23rd of July 2026 :D                                                |
+| **Live Site / Codespaces URL** | v0.3 Alpha: https://github.com/TempeHS/2027CT_myFlaskSite_Callen.L/releases/tag/v0.3-a |
+| **Date**                       | Last Edited on the 30th of July 2026 :D                                                |
 
 > Your website is the main piece of work. This README is short on purpose — it
 > points a reader to your **2-minute walkthrough** and gives an honest
@@ -40,8 +40,8 @@ This is the most important part of your documentation — it shows your website 
 
 | Field            | Detail |
 | ---------------- | ------ |
-| **Link / Embed** |        |
-| **Duration**     |        |
+| **Link / Embed** | https://github.com/user-attachments/assets/bd304338-b4bb-4667-992f-d50daaf1ad87 |
+| **Duration**     | 1 minute 50 seconds |
 
   <!--
   **Your walkthrough should show:**
@@ -114,81 +114,6 @@ Brawlable will simplify the learning curve of new players, making it easier to q
 | Flask Blueprints         | The original app.py was refactored into multiple separate Flask Blueprints, organised into modules for main pages, brawlers, gamemodes, guides, search and error handling. This allows the code to be much more maintainable, and reduces the code size of app.py. <br> <br> Related Pages: [Routes Folder](./routes) and [app.py File](./app.py)                                                                                                                      |
 | Static Code Organisation | The static assets were restructured into organised categories each for CSS, JavaScript, images, videos and licenses. Site wide styling and code were separated from page-specific resources, while images and media were placed into relevant folders to improve maintainability. <br> <br> Related Pages: [Static Folder](./static/), [Static CSS](./static/css/), [Static JS](./static/js/), [Static Video](./static/videos/), [Static Licenses](./static/licenses/) |
 
-.  
-.  
-.  
-.  
-.  
-.  
-.  
-.  
-.  
-.  
-.  
-.  
-.  
-.  
-.  
-.  
-.  
-.  
-.  
-.  
-.  
-.  
-.
-.  
- .  
- .  
- .  
- .
-.
-.  
- .
-.
-.
-.
-.
-.
-.
-.
-.  
- .  
- .  
- .  
- .  
- .  
- .  
- .  
- .  
- .
-.
-.
-.
-.
-.
-.
-.
-.
-.
-.
-.
-.
-.
-.
-.
-.
-.
-.
-.
-.
-.  
- .  
- .  
- .  
- .  
- .  
- .
 
 ### 3.3 Evaluation Against Your Intent (2–3 paragraphs)
 
