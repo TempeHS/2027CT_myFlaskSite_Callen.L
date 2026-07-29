@@ -40,8 +40,7 @@ This is the most important part of your documentation — it shows your website 
 
 | Field            | Detail |
 | ---------------- | ------ |
-| **Link / Embed** | https://github.com/user-attachments/assets/bd304338-b4bb-4667-992f-d50daaf1ad87
- |
+| **Link / Embed** | https://github.com/user-attachments/assets/bd304338-b4bb-4667-992f-d50daaf1ad87 |
 | **Duration**     | 1 minute 50 seconds |
 
   <!--
@@ -115,81 +114,6 @@ Brawlable will simplify the learning curve of new players, making it easier to q
 | Flask Blueprints         | The original app.py was refactored into multiple separate Flask Blueprints, organised into modules for main pages, brawlers, gamemodes, guides, search and error handling. This allows the code to be much more maintainable, and reduces the code size of app.py. <br> <br> Related Pages: [Routes Folder](./routes) and [app.py File](./app.py)                                                                                                                      |
 | Static Code Organisation | The static assets were restructured into organised categories each for CSS, JavaScript, images, videos and licenses. Site wide styling and code were separated from page-specific resources, while images and media were placed into relevant folders to improve maintainability. <br> <br> Related Pages: [Static Folder](./static/), [Static CSS](./static/css/), [Static JS](./static/js/), [Static Video](./static/videos/), [Static Licenses](./static/licenses/) |
 
-.  
-.  
-.  
-.  
-.  
-.  
-.  
-.  
-.  
-.  
-.  
-.  
-.  
-.  
-.  
-.  
-.  
-.  
-.  
-.  
-.  
-.  
-.
-.  
- .  
- .  
- .  
- .
-.
-.  
- .
-.
-.
-.
-.
-.
-.
-.
-.  
- .  
- .  
- .  
- .  
- .  
- .  
- .  
- .  
- .
-.
-.
-.
-.
-.
-.
-.
-.
-.
-.
-.
-.
-.
-.
-.
-.
-.
-.
-.
-.
-.  
- .  
- .  
- .  
- .  
- .  
- .
 
 ### 3.3 Evaluation Against Your Intent (2–3 paragraphs)
 
