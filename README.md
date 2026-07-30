@@ -6,8 +6,8 @@
 | **Student Name(s)**            | Callen Lin                                                                             |
 | **Class / Course**             | Year 9 Computer Technology                                                             |
 | **Repository**                 | https://github.com/TempeHS/2027CT_myFlaskSite_Callen.L                                 |
-| **Live Site / Codespaces URL** | v0.3 Alpha: https://github.com/TempeHS/2027CT_myFlaskSite_Callen.L/releases/tag/v0.3-a |
-| **Date**                       | Last Edited on the 30th of July 2026 :D                                                |
+| **Live Site / Codespaces URL** | v1.0.0 https://github.com/TempeHS/2027CT_myFlaskSite_Callen.L/releases/tag/v1.0.0 |
+| **Date**                       | Last Edited on the 31st of July 2026 :D                                                |
 
 > Your website is the main piece of work. This README is short on purpose — it
 > points a reader to your **2-minute walkthrough** and gives an honest
