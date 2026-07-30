@@ -82,6 +82,8 @@ Brawlable will simplify the learning curve of new players, making it easier to q
 > The site has numerous href="#" or working in progress pages.  
 > The reason is that I find it unfeasible to collect all assets and designs necessary to rebuild something towards a wiki platform.
 
+> **Example of pages with content completed includes "brock" which you can search**
+
 **My Primary Pages**
 | Pages | Route | What it has delivered |
 | ---------------- | ----------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -93,12 +95,13 @@ Brawlable will simplify the learning curve of new players, making it easier to q
 
 **Other Significant Pages**
 
-| Pages              | Route          | What it has delivered                                                                                                                                                                                                                                                     |
-| ------------------ | -------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| The Attributions   | `/attribution` | The Attribution page features quick id navigation shortcuts on the top, organised acknowledgement for Python Dependencies, third-party repos, content sources and project contributors. It also includes direct links to the external program and LICENSE files attached. |
-| The Privacy Policy | `/privacy`     | The Privacy Policy page outlines how the website collects data, cookies, third-party services, policy updates and contact page link for inquiries.                                                                                                                        |
-| The Site Map       | `/sitemap`     | The Site Map page with categorised for main pages, resources, brawler content, gamemodes to improve site navigation experience.                                                                                                                                           |
-| Page Not Found     | `/404`         | 404 error page with custom error message, navigation buttons back to homepage or site map, expandable technical details that has a copy report feature and a link to support page.                                                                                        |
+| Pages              | Route            | What it has delivered                                                                                                                                                                                                                                                                                                                                                       |
+| ------------------ | ---------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| The Attributions   | `/attribution`   | The Attribution page features quick id navigation shortcuts on the top, organised acknowledgement for Python Dependencies, third-party repos, content sources and project contributors. It also includes direct links to the external program and LICENSE files attached.                                                                                                   |
+| The Privacy Policy | `/privacy`       | The Privacy Policy page outlines how the website collects data, cookies, third-party services, policy updates and contact page link for inquiries.                                                                                                                                                                                                                          |
+| The Site Map       | `/sitemap`       | The Site Map page with categorised for main pages, resources, brawler content, gamemodes to improve site navigation experience.                                                                                                                                                                                                                                             |
+| Page Not Found     | `/404`           | 404 error page with custom error message, navigation buttons back to homepage or site map, expandable technical details that has a copy report feature and a link to support page.                                                                                                                                                                                          |
+| Rare Brawler Pages | `/brawlers/rare` | Includes a horizontal scrolling Brawler selector for quick visual navigation, followed by a responsive Bootstrap card grid displaying each Rare Brawler with their image, description and navigation link to their individual guide page.<br><br><b>There is also visible buttons on a mobile interface which is typically hidden on Desktop and Tablet sized displays.</b> |
 
 **💻 Backend Functionalities of the Site**
 
@@ -132,6 +135,9 @@ Brawlable will simplify the learning curve of new players, making it easier to q
 | Flask Blueprints         | The original app.py was refactored into multiple separate Flask Blueprints, organised into modules for main pages, brawlers, gamemodes, guides, search and error handling. This allows the code to be much more maintainable, and reduces the code size of app.py. <br> <br> Related Pages: [Routes Folder](./routes) and [app.py File](./app.py)                                                                                                                      |
 | Static Code Organisation | The static assets were restructured into organised categories each for CSS, JavaScript, images, videos and licenses. Site wide styling and code were separated from page-specific resources, while images and media were placed into relevant folders to improve maintainability. <br> <br> Related Pages: [Static Folder](./static/), [Static CSS](./static/css/), [Static JS](./static/js/), [Static Video](./static/videos/), [Static Licenses](./static/licenses/) |
 
+> [!NOTE]
+> There are much more other features in the website that I didn't have enough time to fully document here!
+
 ### 3.3 Evaluation Against Your Intent (2–3 paragraphs)
 
 > Take each aim in your Statement of Intent and evaluate **how well the
@@ -156,12 +162,33 @@ Brawlable will simplify the learning curve of new players, making it easier to q
 > libraries. Using content without acknowledgement may constitute academic
 > misconduct.
 
-| What you used      | Source / Creator | Licence | What you used it for   |
-| ------------------ | ---------------- | ------- | ---------------------- |
-| Bootstrap          | Bootstrap team   | MIT     | Layout and components  |
-| Flask              | Pallets Projects | BSD     | Web server and routing |
-| Brawl Stars FanKit | Supercell        | Closed  | Gameplay and Assets    |
-|                    |                  |         |                        |
+> [!IMPORTANT]
+> The content below are derived from templates/pages/attribution.html and summarised here.
+
+> You can find each of the individual licenses in static/licenses
+
+| What you used                       | Source / Creator | Licence                          | What you used it for                                  |
+| ----------------------------------- | ---------------- | -------------------------------- | ----------------------------------------------------- |
+| Bootstrap                           | Bootstrap Team   | MIT                              | Website layout and JavaScript components              |
+| Bootstrap Icons                     | Bootstrap Team   | MIT                              | Icons used throughout the website                     |
+| Flask                               | Pallets Projects | BSD-3-Clause                     | Web application framework, routing and HTTP requests  |
+| Blinker                             | Pallets Projects | MIT                              | Signal broadcasting                                   |
+| Click                               | Pallets Projects | BSD-3-Clause                     | Flask command-line utilities                          |
+| ItsDangerous                        | Pallets Projects | BSD-3-Clause                     | Secure data signing (Flask dependency)                |
+| Jinja                               | Pallets Projects | BSD-3-Clause                     | HTML templating engine                                |
+| MarkupSafe                          | Pallets Projects | BSD-3-Clause                     | Safe HTML and XML escaping                            |
+| Werkzeug                            | Pallets Projects | BSD-3-Clause                     | WSGI utilities, request/response handling and routing |
+| Packaging                           | PyPA             | Apache-2.0                       | Python package management utilities                   |
+| Pluggy                              | pytest-dev       | MIT                              | Plugin management for pytest                          |
+| Psycopg                             | Psycopg Team     | LGPL-3.0-only                    | PostgreSQL database connectivity                      |
+| Pygments                            | Pygments Team    | BSD-2-Clause                     | Syntax highlighting                                   |
+| Pytest                              | pytest-dev       | MIT                              | Testing framework                                     |
+| CallenLin Python Flask DevContainer | CallenLin        | MIT                              | GitHub Codespaces DevContainer configuration          |
+| CallenLin Website Task Project      | CallenLin        | Apache-2.0                       | Footer adapted from previous project                  |
+| TempeHS Python Flask DevContainer   | TempeHS          | GPL-3.0                          | Base GitHub Codespaces DevContainer                   |
+| Supercell FanKit Assets             | Supercell        | Proprietary (Fan Content Policy) | Images, graphics and other game assets                |
+| Brawl Stars Gameplay                | Supercell        | Proprietary (Fan Content Policy) | Gameplay videos and related media                     |
+| Brawl Stars Wiki                    | Fandom Community | CC BY-SA                         | Game information and descriptions                     |
 
 ---
 
