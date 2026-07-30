@@ -24,10 +24,12 @@
   "chat.agent.enabled": false,
   "cSpell.words": [
     "Brawlable",
+    "colour",
     "gamemode",
     "Gamemodes",
     "Organisation",
-    "sanitisation"
+    "sanitisation",
+    "sanitised"
   ],
   "[html]": {
     "editor.defaultFormatter": "vscode.html-language-features"
