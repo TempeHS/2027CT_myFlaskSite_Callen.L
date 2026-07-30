@@ -144,7 +144,11 @@ Brawlable will simplify the learning curve of new players, making it easier to q
 > delivered site meets it**. Where did you meet your intent? Where did you fall
 > short, and why? Support every judgement with evidence from your site.
 
-  <!-- Write 2–3 paragraphs. -->
+Brawlable has achieved its main aim of simplifying the learning curve of the game Brawl Stars for beginners and experienced players sharpening their skills. I have made my guides into short and concise descriptions with clear headings in defined sections that makes information easier to read and understand. For example, the Brock Brawler guide page shows a simple quick overview of his offence, defence and his class followed by his different attacks and his stats at max level. It also provide strategies and builds people can use that helps reduce decision fatigue and start developing their skills. The homepage, brawler category page and search makes it easy for people to find where they want to begin and navigate content that matches their interests!
+
+The site has also achieved its second goal of providing quick, digestible and accessible information for its audience. Featuring a responsive Bootstrap layouts, a search system, breadcrumb navigation, and consistent design in guides makes it easy for users to find information on the go or at their desk. The website is built around the idea that players want a quick explanation or strategy that they can use while playing, so features like back-to-top button and dark mode improves their experience especially on mobile devices.
+
+However, Brawlable unfortunately was not above to achieve the full scope originally planned in the Statement of Intent. The original goal has included covering a large range of Brawlers, Gamemodes and Mechanics, but the amount of content required was significantly larger than expected. Because of this, many pages remain incompleted or use placeholder text. Instead of lowering the quality to complete all the pages, I’ve decided to focus on creating consistency, accessibility and responsiveness throughout the website that allows the site to have future guides and content added much easily.
 
 ### 3.4 Overall Effectiveness (1–2 paragraphs)
 
