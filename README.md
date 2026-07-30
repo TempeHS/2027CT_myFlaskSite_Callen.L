@@ -152,7 +152,11 @@ Brawlable will simplify the learning curve of new players, making it easier to q
 > achieving its purpose for its target audience? Weigh what works against what
 > falls short, and state what you would improve to better meet your intent.
 
-  <!-- Write 1–2 paragraphs. -->
+Brawlable is a Brawl Stars tutorial website designed for new and experienced players to learn new stuff. The frustrations people experience including me find many existing wikis are not designed for mobile interfaces and the descriptions are often too descriptive and too lengthy for a quick read. This website helps solve that problem with pages such as Brock’s brawler page with content simplified to the key ideas and actionable steps that people can take immediately in a clean interface. The scroll back-to-top button and dark mode makes it great for a quick read and while also reducing eye strain from bright backgrounds in dark places.
+
+Some of the visual features I am most proud of in this project includes the colourful design language, the semi-transparent navigation bar and fade-in-effects the site has around making it feel more alive and not static. Some features I did find is limited is the onboarding where I have not exactly figured out what questions to ask prior to giving a suggestion. If I had more time, I would improve it so it is more personalised depending on your current skill level and what play style you enjoy.
+
+Overall, I think Brawlable has indeed made a tutorial site that both new and experienced players could use on the go, and find it easy to learn new stuff that a typical wiki page may have in different blocks of text. Making Brawl Stars enjoyable just like how it was intended to be!
 
 ---
 
