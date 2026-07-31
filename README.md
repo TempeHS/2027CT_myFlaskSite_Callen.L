@@ -179,7 +179,13 @@ Overall, I think Brawlable has indeed made a tutorial site that both new and exp
 
 > [!NOTE]
 > Site contents and descriptions are licensed under the CC BY-SA 4.0 by the creator [@CallenLin](https://github.com/CallenLin)
-> Other contents not owned nor created by the creator must follow the licenses listed below.
+> Other contents not owned nor created by the creator must follow the licenses listed below. Exceptions exist, view below.
+
+> [!WARNING]
+> The hero video was created by me, and I own the full creative work; however, the assets within the video are the intellectual property of Supercell and follow the [Supercell Fan Content Policy Guidelines](https://supercell.com/en/fan-content-policy). 
+> 
+> Due to "Mere Aggregation" rules, the GPLv3 license applies strictly to content from the [TempeHS Python Flask DevContainer](https://github.com/TempeHS/TempeHS_Python-Flask_DevContainer) and does not extend to the rest of this repository.
+
 
 
 | What you used                       | Source / Creator | Licence                          | What you used it for                                  |
