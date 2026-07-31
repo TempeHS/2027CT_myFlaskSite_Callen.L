@@ -82,6 +82,8 @@ Brawlable will simplify the learning curve of new players, making it easier to q
 > The site has numerous href="#" or working in progress pages.  
 > The reason is that I find it unfeasible to collect all assets and designs necessary to rebuild something towards a wiki platform.
 
+> [!NOTE]
+> This description of what was delivered slightly undersells on the project because it got too large 😅  
 > **Example of pages with content completed includes "brock" which you can search**
 
 **My Primary Pages**
@@ -95,13 +97,14 @@ Brawlable will simplify the learning curve of new players, making it easier to q
 
 **Other Significant Pages**
 
-| Pages              | Route            | What it has delivered                                                                                                                                                                                                                                                                                                                                                       |
-| ------------------ | ---------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| The Attributions   | `/attribution`   | The Attribution page features quick id navigation shortcuts on the top, organised acknowledgement for Python Dependencies, third-party repos, content sources and project contributors. It also includes direct links to the external program and LICENSE files attached.                                                                                                   |
-| The Privacy Policy | `/privacy`       | The Privacy Policy page outlines how the website collects data, cookies, third-party services, policy updates and contact page link for inquiries.                                                                                                                                                                                                                          |
-| The Site Map       | `/sitemap`       | The Site Map page with categorised for main pages, resources, brawler content, gamemodes to improve site navigation experience.                                                                                                                                                                                                                                             |
-| Page Not Found     | `/404`           | 404 error page with custom error message, navigation buttons back to homepage or site map, expandable technical details that has a copy report feature and a link to support page.                                                                                                                                                                                          |
-| Rare Brawler Pages | `/brawlers/rare` | Includes a horizontal scrolling Brawler selector for quick visual navigation, followed by a responsive Bootstrap card grid displaying each Rare Brawler with their image, description and navigation link to their individual guide page.<br><br><b>There is also visible buttons on a mobile interface which is typically hidden on Desktop and Tablet sized displays.</b> |
+| Pages              | Route                  | What it has delivered                                                                                                                                                                                                                                                                                                                                                       |
+| ------------------ | ---------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| The Attributions   | `/attribution`         | The Attribution page features quick id navigation shortcuts on the top, organised acknowledgement for Python Dependencies, third-party repos, content sources and project contributors. It also includes direct links to the external program and LICENSE files attached.                                                                                                   |
+| The Privacy Policy | `/privacy`             | The Privacy Policy page outlines how the website collects data, cookies, third-party services, policy updates and contact page link for inquiries.                                                                                                                                                                                                                          |
+| The Site Map       | `/sitemap`             | The Site Map page with categorised for main pages, resources, brawler content, gamemodes to improve site navigation experience.                                                                                                                                                                                                                                             |
+| Page Not Found     | `/404`                 | 404 error page with custom error message, navigation buttons back to homepage or site map, expandable technical details that has a copy report feature and a link to support page.                                                                                                                                                                                          |
+| Rare Brawler Pages | `/brawlers/rare`       | Includes a horizontal scrolling Brawler selector for quick visual navigation, followed by a responsive Bootstrap card grid displaying each Rare Brawler with their image, description and navigation link to their individual guide page.<br><br><b>There is also visible buttons on a mobile interface which is typically hidden on Desktop and Tablet sized displays.</b> |
+| Rare Brawler Pages | `/brawlers/rare/brock` | Individual Brawler guide featuring breadcrumb navigation, hero overview, interactive Bootstrap tabs for abilities, base stat visualisations, gameplay tips and recommended competitive builds.                                                                                                                                                                              |
 
 **💻 Backend Functionalities of the Site**
 
@@ -193,6 +196,10 @@ Brawlable will simplify the learning curve of new players, making it easier to q
 ---
 
 > **Student Declaration:** All work submitted is my own except where explicitly acknowledged above.
+
+---
+
+<small>Fun Fact: This repository is measured in feet.</small>
 
 <!--
 This section was kept for personal archival purposes and as a cool previous archive of what it used to look like.
