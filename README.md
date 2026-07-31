@@ -1,13 +1,13 @@
 # Brawlable
 
-| Field                          | Detail                                                                                 |
-| ------------------------------ | -------------------------------------------------------------------------------------- |
-| **Website Title**              | Brawlable                                                                              |
-| **Student Name(s)**            | Callen Lin                                                                             |
-| **Class / Course**             | Year 9 Computer Technology                                                             |
-| **Repository**                 | https://github.com/TempeHS/2027CT_myFlaskSite_Callen.L                                 |
+| Field                          | Detail                                                                            |
+| ------------------------------ | --------------------------------------------------------------------------------- |
+| **Website Title**              | Brawlable                                                                         |
+| **Student Name(s)**            | Callen Lin                                                                        |
+| **Class / Course**             | Year 9 Computer Technology                                                        |
+| **Repository**                 | https://github.com/TempeHS/2027CT_myFlaskSite_Callen.L                            |
 | **Live Site / Codespaces URL** | v1.0.0 https://github.com/TempeHS/2027CT_myFlaskSite_Callen.L/releases/tag/v1.0.0 |
-| **Date**                       | Last Edited on the 31st of July 2026 :D                                                |
+| **Date**                       | Last Edited on the 31st of July 2026 :D                                           |
 
 > Your website is the main piece of work. This README is short on purpose — it
 > points a reader to your **2-minute walkthrough** and gives an honest
@@ -90,7 +90,7 @@ Brawlable will simplify the learning curve of new players, making it easier to q
 | Pages | Route | What it has delivered |
 | ---------------- | ----------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | The Homepage | `/` | Homepage with a Bootstrap navbar and dropdown menu, 82vh hero video with mute/un-mute button using Bootstrap Icons and a call-to-action text, greetings section, three features topic cards (Brawlers, Gamemodes, Mechanics), six advanced strategy cards using Bootstrap Cards and Icons, two feature cards with game modes (Ranked or Trophy), and a footer. |
-| The Contact Page | `/contact` | The Contact page featuring an embedded Google Map and a responsive Bootstrap contact form with fields for name, email address, and message. |
+| The Contact Page | `/contact` | The Contact page featuring an embedded Google Map and a responsive Bootstrap contact form with fields for name, email address, and message. When a form is submitted, a success message appears to tell the user it is submitted :D |
 | The Brawler Page | `/brawlers` | The Brawler Page with six Bootstrap cards organised by rarity, each featuring a image, a gradient overlay, a description and a navigation button to each of the individual Brawler categories. |
 | The Search Page | `/search` | The Search Page has a dynamic search results displaying titles and descriptions, and suggested navigation links when no matching results found. |
 | The About Page | `/about` | About Us shows the website's missions, using Bootstrap card and grids, information explaining the purpose of the website, a call-to-action link to the onboarding page. |
