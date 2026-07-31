@@ -6,8 +6,8 @@
 | **Student Name(s)**            | Callen Lin                                                                             |
 | **Class / Course**             | Year 9 Computer Technology                                                             |
 | **Repository**                 | https://github.com/TempeHS/2027CT_myFlaskSite_Callen.L                                 |
-| **Live Site / Codespaces URL** | v0.3 Alpha: https://github.com/TempeHS/2027CT_myFlaskSite_Callen.L/releases/tag/v0.3-a |
-| **Date**                       | Last Edited on the 30th of July 2026 :D                                                |
+| **Live Site / Codespaces URL** | v1.0.0 https://github.com/TempeHS/2027CT_myFlaskSite_Callen.L/releases/tag/v1.0.0 |
+| **Date**                       | Last Edited on the 31st of July 2026 :D                                                |
 
 > Your website is the main piece of work. This README is short on purpose — it
 > points a reader to your **2-minute walkthrough** and gives an honest
@@ -147,7 +147,11 @@ Brawlable will simplify the learning curve of new players, making it easier to q
 > delivered site meets it**. Where did you meet your intent? Where did you fall
 > short, and why? Support every judgement with evidence from your site.
 
-  <!-- Write 2–3 paragraphs. -->
+Brawlable has achieved its main aim of simplifying the learning curve of the game Brawl Stars for beginners and experienced players sharpening their skills. I have made my guides into short and concise descriptions with clear headings in defined sections that makes information easier to read and understand. For example, the Brock Brawler guide page shows a simple quick overview of his offence, defence and his class followed by his different attacks and his stats at max level. It also provide strategies and builds people can use that helps reduce decision fatigue and start developing their skills. The homepage, brawler category page and search makes it easy for people to find where they want to begin and navigate content that matches their interests!
+
+The site has also achieved its second goal of providing quick, digestible and accessible information for its audience. Featuring a responsive Bootstrap layouts, a search system, breadcrumb navigation, and consistent design in guides makes it easy for users to find information on the go or at their desk. The website is built around the idea that players want a quick explanation or strategy that they can use while playing, so features like back-to-top button and dark mode improves their experience especially on mobile devices.
+
+However, Brawlable unfortunately was not above to achieve the full scope originally planned in the Statement of Intent. The original goal has included covering a large range of Brawlers, Gamemodes and Mechanics, but the amount of content required was significantly larger than expected. Because of this, many pages remain incompleted or use placeholder text. Instead of lowering the quality to complete all the pages, I’ve decided to focus on creating consistency, accessibility and responsiveness throughout the website that allows the site to have future guides and content added much easily.
 
 ### 3.4 Overall Effectiveness (1–2 paragraphs)
 
@@ -155,7 +159,11 @@ Brawlable will simplify the learning curve of new players, making it easier to q
 > achieving its purpose for its target audience? Weigh what works against what
 > falls short, and state what you would improve to better meet your intent.
 
-  <!-- Write 1–2 paragraphs. -->
+Brawlable is a Brawl Stars tutorial website designed for new and experienced players to learn new stuff. The frustrations people experience including me find many existing wikis are not designed for mobile interfaces and the descriptions are often too descriptive and too lengthy for a quick read. This website helps solve that problem with pages such as Brock’s brawler page with content simplified to the key ideas and actionable steps that people can take immediately in a clean interface. The scroll back-to-top button and dark mode makes it great for a quick read and while also reducing eye strain from bright backgrounds in dark places.
+
+Some of the visual features I am most proud of in this project includes the colourful design language, the semi-transparent navigation bar and fade-in-effects the site has around making it feel more alive and not static. Some features I did find is limited is the onboarding where I have not exactly figured out what questions to ask prior to giving a suggestion. If I had more time, I would improve it so it is more personalised depending on your current skill level and what play style you enjoy.
+
+Overall, I think Brawlable has indeed made a tutorial site that both new and experienced players could use on the go, and find it easy to learn new stuff that a typical wiki page may have in different blocks of text. Making Brawl Stars enjoyable just like how it was intended to be!
 
 ---
 
