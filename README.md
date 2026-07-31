@@ -6,7 +6,7 @@
 | **Student Name(s)**            | Callen Lin                                                                        |
 | **Class / Course**             | Year 9 Computer Technology                                                        |
 | **Repository**                 | https://github.com/TempeHS/2027CT_myFlaskSite_Callen.L                            |
-| **Live Site / Codespaces URL** | v1.0.0 https://github.com/TempeHS/2027CT_myFlaskSite_Callen.L/releases/tag/v1.0.0 |
+| **Live Site / Codespaces URL** | v1.0.1 https://github.com/TempeHS/2027CT_myFlaskSite_Callen.L/releases/tag/v1.0.1 |
 | **Date**                       | Last Edited on the 31st of July 2026 :D                                           |
 
 > Your website is the main piece of work. This README is short on purpose — it
@@ -175,8 +175,12 @@ Overall, I think Brawlable has indeed made a tutorial site that both new and exp
 
 > [!IMPORTANT]
 > The content below are derived from templates/pages/attribution.html and summarised here.
+> You can find each of the individual licenses in [static/licenses](./static/licenses)
 
-> You can find each of the individual licenses in static/licenses
+> [!NOTE]
+> Site contents and descriptions are licensed under the CC BY-SA 4.0 by the creator [@CallenLin](https://github.com/CallenLin)
+> Other contents not owned nor created by the creator must follow the licenses listed below.
+
 
 | What you used                       | Source / Creator | Licence                          | What you used it for                                  |
 | ----------------------------------- | ---------------- | -------------------------------- | ----------------------------------------------------- |
@@ -204,10 +208,6 @@ Overall, I think Brawlable has indeed made a tutorial site that both new and exp
 ---
 
 > **Student Declaration:** All work submitted is my own except where explicitly acknowledged above.
-
----
-
-<small>Fun Fact: This repository is measured in feet.</small>
 
 <!--
 This section was kept for personal archival purposes and as a cool previous archive of what it used to look like.
